@@ -9,7 +9,7 @@
 
 // Enumeration for constructor eficiency
 namespace {
-enum SENSOR_TYPE : uint8_t {
+enum SENSOR_TYPE : const uint8_t {
     MQ_SENSOR_DUMMY,
     MQ_SENSOR_POTENTIOMETER,
     MQ_SENSOR_2,
@@ -54,8 +54,8 @@ public:
         _current_value += random(-10, 10);
         if (_current_value < 0)
             _current_value = 0;
-        if (_current_value > 255)
-            _current_value = 255;
+        if (_current_value > 1023)
+            _current_value = 1023;
         return _current_value;
     };
 protected:
