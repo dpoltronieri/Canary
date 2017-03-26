@@ -13,25 +13,32 @@ enum serialPortType : const uint8_t {
 
 class PrintManager {
 public:
-    PrintManager(HardwareSerial * serialPortHW, size_t messageSize = 128)
-        : _message { (uint16_t * const) malloc(sizeof(uint16_t) * messageSize) },
+    PrintManager(HardwareSerial * serialPortHW)
+        : _message { "" }, // (unsigned char * const) malloc(sizeof(unsigned char) * messageSize)
     _serialPortType { HARDWARE },
     _serialPortHW { serialPortHW },
     _serialPortSW { NULL } { };
 
-    PrintManager(SoftwareSerial * serialPortSW, size_t messageSize = 128)
-        : _message { (uint16_t * const) malloc(sizeof(uint16_t) * messageSize) },
+    PrintManager(SoftwareSerial * serialPortSW)
+        : _message { "" },
     _serialPortType { SOFTWARE },
     _serialPortHW { NULL },
     _serialPortSW { serialPortSW } { };
 
+    // //////Non-Variadic/////////////////////////////////////////////
     uint8_t sendData();
+    void fastValue(const char fmt, const double value);
 
-    void addValue(const char * fmt, ...); // variadic
+    // //////Variadic////////////////////////////////////////////////
+    void addValue(const char * fmt, ...);   // variadic
+    void fastValue(const char * fmt, ...);  // variadic
+    void addValueSC(const char * fmt, ...); // variadic
 
 protected:
-    uint16_t * const _message; // The pointer cant be changed // Descobrir se char nao seria melhor
+    // unsigned char * const _message; // The pointer cant be changed // Descobrir se char nao seria melhor
+    String _message;
     uint8_t _serialPortType;
+    double _tempValue; // talvez double
     HardwareSerial * _serialPortHW;
     SoftwareSerial * _serialPortSW;
 };
