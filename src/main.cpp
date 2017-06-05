@@ -32,8 +32,8 @@ double TemperatureHumidity[10];
 
 // Build
 void setup(){
-    pinMode(A0, INPUT);
-    pinMode(5, INPUT);
+    pinMode(DHT11_PIN, INPUT);
+    pinMode(LDR_PIN, INPUT);
 
     Serial.begin(115200);
     // Por enquanto
@@ -56,6 +56,7 @@ void setup(){
 
 void loop(){
     // Serial1.println("Hello");
+    // TODO: reescrever isso
     dhtDebug(DHTSensor, DHT11_PIN);
     TemperatureHumidity[0] = DHTSensor.read11(DHT11_PIN);
     TemperatureHumidity[1] = DHTSensor.temperature;
