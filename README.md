@@ -1,50 +1,38 @@
-# Arduino Libraries
+# Canary Project
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-<a href="https://codeclimate.com/github/dpoltronieri/Arduino"><img src="https://codeclimate.com/github/dpoltronieri/Arduino/badges/gpa.svg" /></a>
-<a href="https://codeclimate.com/github/dpoltronieri/Arduino/coverage"><img src="https://codeclimate.com/github/dpoltronieri/Arduino/badges/coverage.svg" /></a>
-<a href="https://codeclimate.com/github/dpoltronieri/Arduino"><img src="https://codeclimate.com/github/dpoltronieri/Arduino/badges/issue_count.svg" /></a>
+[![Build Status](https://travis-ci.org/dpoltronieri/Canary.svg?branch=master)](https://travis-ci.org/dpoltronieri/Canary)
+[![Code Climate](https://codeclimate.com/github/dpoltronieri/Canary/badges/gpa.svg)](https://codeclimate.com/github/dpoltronieri/Canary)
+[![Test Coverage](https://codeclimate.com/github/dpoltronieri/Canary/badges/coverage.svg)](https://codeclimate.com/github/dpoltronieri/Canary/coverage)
+[![Issue Count](https://codeclimate.com/github/dpoltronieri/Canary/badges/issue_count.svg)](https://codeclimate.com/github/dpoltronieri/Canary)
 
-> This is the root folder for all of my Arduino Libraries.
+[Versão em Português.](README_PTBR.md)
 
-> Este é o repositório raiz das minhas Bibliotecas para Arduino.
+The **Canary Project** is a mobile ambient monitoring device developed in Arduino and written in C++ with a companion app to be developed for Android and iOS.
+Its goal is to monitor air quality through the measurement of air pollutants, temperature, humidity and sound pollution levels.
 
-In this directory you can find the libraries `Hbridge`, used to control **H Bridge** circuits and `LineController`, used to read **Line Reader** circuits, ready or *DIY* ones.
-
-Neste diretório se encontram as bibliotecas `Hbridge`, para controle de circuitos **Ponte H** e `LineController`, para leitura de circuitos de **Detecção de Linha**, podendo ser um pronto ou *DIY*.
 
 ## Table of Contents
-English | Português
---- | ---
-- [Background](#background) | - [Histórico](#Histórico)
-- [Install](#install) | - [Instalação](#Instalação)
-- [Usage](#usage) | - [Uso](#Uso)
-- [Contribute](#contribute) | - [Contribuir](#Contribuir)
-- [License](#license) | - [Licensa](#Licensa)
--  | - <a href="http://ohmi.com.br">Onde Comprar</a>
+- [Background](#background)
+- [Install](#install)
+- [Usage](#usage)
+- [Contribute](#contribute)
+- [License](#license)
 
 ## Background
-These libraries were initially created for the discipline Programming Languages III, lessioned by professor Cristian Pagot in late 2016 in Universidade Federal da Paraíba, Brazil. Currently it has continuous support.
+This project started in February 2017 as my graduation thesis.
 
 ## Install
-More information can be found in https://www.arduino.cc/en/Guide/Libraries
-#### Windows
-Copy the desired library to `Libraries` inside the `Arduino` folder in `My Documents`.
-
-#### Linux
-Copy the desired library to `Libraries` inside the Arduino IDE instalation folder.
-
-#### Atom
-Copy the desired library to the `Lib` folder in the compilation directory.
+TODO
 
 ## Usage
-Follow each library **README**.
-- [Hbridge](/Hbridge/docs/README.md)
-- [LineController](/LineController/docs/README.md)
+TODO
 
 ## Contribute
 
-Feel free to copy and improve this library, if necessary, you may [report a problem](https://github.com/dpoltronieri/Arduino/issues/new). Doubts and suggestions, contact me at <danppoltronieri@gmail.com>.
+TODO
+
+Feel free to copy and improve this library, if necessary, you may [report a problem](https://github.com/dpoltronieri/Canary/issues/new). Doubts and suggestions, contact me at <danppoltronieri@gmail.com>.
 
 See [the contribute file](contribute.md)!
 
@@ -52,30 +40,4 @@ PRs accepted.
 
 ## License
 
-[MIT © Richard McRichface.](LICENSE)
-
-## Histórico
-Essas bibliotecas foram criadas inicialmente para a disciplina de Linguagem de Programação III ministrada pelo professor Cristian Pagot no período 2016.1 da Universidade Federal da Paraíba. Atualmente ela possui suporte contínuo.
-
-## Instalação
-Mais informações podem ser encontradas em https://www.arduino.cc/en/Guide/Libraries
-#### Windows
-Copie a biblioteca desejada para a pasta `Libraries` dentro da pasta `Arduino` em `Meus Documentos`.
-
-#### Linux
-Copie a biblioteca desejada para a pasta `Libraries` dentro do diretório de instalação da IDE Arduino.
-
-#### Atom
-Copie a biblioteca desejada para a pasta `Lib` dentro do diretório de compilação.
-
-## Uso
-Siga o **README** de cada biblioteca.
-[Hbridge](/Hbridge/docs/README)
-
-## Contribuir
-Sinta-se livre para copiar e melhorar essa biblioteca, e se necessário [relatar um problema](https://github.com/dpoltronieri/Arduino/issues/new). Dúvidas e sugestões, me contate por mensagem ou por e-mail em <danppoltronieri@gmail.com>.
-
-Veja o [guia de contribuição](contribute.md)!
-
-## Licensa
-[MIT © Richard McRichface.](LICENSE)
+[GNU AGPL V3.](LICENSE)
