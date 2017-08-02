@@ -2,6 +2,8 @@
  * Created by Daniel P. Poltronieri
  */
 
+// TODO: MQ7 - Monóxido de Carbono
+
 #ifndef MQSensor_h
 #define MQSensor_h
 
@@ -171,6 +173,8 @@ public:
 private:
     // TODO: Averiguar essas curvas
     float _C2H5OHCurve[3] = { 0.18, 0.02, -0.16 };
+    // TODO: Essa pode ser a fórmila correta
+    // float _C2H5OHCurve[3] = { 0.18, 0.02, -0.00035555555555556 };
     // two points are taken from the curve.
     // with these two points, a line is formed which is "approximately equivalent"
     // to the original curve.
@@ -189,16 +193,21 @@ public:
     float * read(bool print);
     // Easier access function
     float const MQGetGasPercentage(const float rs_ro_ratio, const uint8_t gas_id);
-    float readLPG();
-    float readCO();
-    float readSmoke();
+    float readMethane();
+    float readCH4(){
+        return readMethane();
+    }
+
+    float readAlcohol();
+    float readC3H8();
 
 
 private:
     // TODO: Averiguar essas curvas
-    float _LPGCurve[3] = { 2.3, 0.21, -0.47 },
-      _COCurve[3]      = { 2.3, 0.72, -0.34 },
-      _SmokeCurve[3]   = { 2.3, 0.53, -0.44 };
+    float _MethaneCurve[3] = { 0.25, 0.1, -0.00021428571428571 },
+    // TODO: Configurar essas curvas
+      _AlcoholCurve[3] = { 2.3, 0.72, -0.34 },
+      _C3H8Curve[3]    = { 2.3, 0.53, -0.44 };
     // two points are taken from the curve.
     // with these two points, a line is formed which is "approximately equivalent"
     // to the original curve.
@@ -207,9 +216,9 @@ private:
     // _RO_CLEAN_AIR_FACTOR = 9.83,
     // _Ro = 10; // praticamente um chute
 
-    float _LPG = 0,
-      _CO      = 0,
-      _Smoke   = 0;
+    float _Methane = 0,
+      _Alcohol     = 0,
+      _C3H8        = 0;
 };
 
 #endif // ifndef mq_h

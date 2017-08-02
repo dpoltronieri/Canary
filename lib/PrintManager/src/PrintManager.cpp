@@ -52,16 +52,21 @@ void PrintManager::fastValue(const char fmt, const double value){
 };
 
 uint8_t PrintManager::sendData(){
+    // TODO: Programar a mensagem em Software
+    _message += "~";
+    if (_sdLogManager) {
+        _sdLogManager->println(_message);
+    }
     if (_serialPortType == HARDWARE) {
-        _message += "~";
         _serialPortHW->println(_message);
-        Serial.println(_message);
-        _message = "#";
-        return 0;
+    } else if (_serialPortType == SOFTWARE) {
+        _serialPortSW->println(_message);
     } else {
         return 1;
     }
-    return -1;
+    Serial.println(_message);
+    _message = "#";
+    return 0;
 }
 
 // //////////////////////////////////////////////////////////////////////////
