@@ -1,0 +1,120 @@
+.TH "Backup/MQ135/MQ135.h" 3 "Wed Jul 5 2017" "Canary" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Backup/MQ135/MQ135.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'WProgram\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBMQ135\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBRLOAD\fP   10\&.0"
+.br
+.RI "\fIThe load resistance on the board\&. \fP"
+.ti -1c
+.RI "#define \fBRZERO\fP   76\&.63"
+.br
+.RI "\fICalibration resistance at atmospheric CO2 level\&. \fP"
+.ti -1c
+.RI "#define \fBPARA\fP   116\&.6020682"
+.br
+.RI "\fIParameters for calculating ppm of CO2 from sensor resistance\&. \fP"
+.ti -1c
+.RI "#define \fBPARB\fP   2\&.769034857"
+.br
+.ti -1c
+.RI "#define \fBCORA\fP   0\&.00035"
+.br
+.RI "\fIParameters to model temperature and humidity dependence\&. \fP"
+.ti -1c
+.RI "#define \fBCORB\fP   0\&.02718"
+.br
+.ti -1c
+.RI "#define \fBCORC\fP   1\&.39538"
+.br
+.ti -1c
+.RI "#define \fBCORD\fP   0\&.0018"
+.br
+.ti -1c
+.RI "#define \fBATMOCO2\fP   397\&.13"
+.br
+.RI "\fIAtmospheric CO2 level for calibration purposes\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.PP
+\fBAuthor:\fP
+.RS 4
+G\&.Krocker (Mad Frog Labs)  GNU GPLv3
+.RE
+.PP
+First version of an Arduino Library for the \fBMQ135\fP gas sensor TODO: Review the correction factor calculation\&. This currently relies on the datasheet but the information there seems to be wrong\&.
+.SH "HISTORY"
+.PP
+v1\&.0 - First release 
+.PP
+Definition in file \fBMQ135\&.h\fP\&.
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define ATMOCO2   397\&.13"
+
+.PP
+Atmospheric CO2 level for calibration purposes\&. 
+.PP
+Definition at line 39 of file MQ135\&.h\&.
+.SS "#define CORA   0\&.00035"
+
+.PP
+Parameters to model temperature and humidity dependence\&. 
+.PP
+Definition at line 33 of file MQ135\&.h\&.
+.SS "#define CORB   0\&.02718"
+
+.PP
+Definition at line 34 of file MQ135\&.h\&.
+.SS "#define CORC   1\&.39538"
+
+.PP
+Definition at line 35 of file MQ135\&.h\&.
+.SS "#define CORD   0\&.0018"
+
+.PP
+Definition at line 36 of file MQ135\&.h\&.
+.SS "#define PARA   116\&.6020682"
+
+.PP
+Parameters for calculating ppm of CO2 from sensor resistance\&. 
+.PP
+Definition at line 29 of file MQ135\&.h\&.
+.SS "#define PARB   2\&.769034857"
+
+.PP
+Definition at line 30 of file MQ135\&.h\&.
+.SS "#define RLOAD   10\&.0"
+
+.PP
+The load resistance on the board\&. 
+.PP
+Definition at line 25 of file MQ135\&.h\&.
+.SS "#define RZERO   76\&.63"
+
+.PP
+Calibration resistance at atmospheric CO2 level\&. 
+.PP
+Definition at line 27 of file MQ135\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Canary from the source code\&.

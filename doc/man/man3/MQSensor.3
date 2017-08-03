@@ -1,0 +1,230 @@
+.TH "MQSensor" 3 "Wed Jul 5 2017" "Canary" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MQSensor \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MQSensor\&.hpp>\fP
+.PP
+Inherited by \fBMQ2\fP, \fBMQ3\fP, \fBMQ4\fP, \fBMQDummy\fP, and \fBMQPotentiometer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "uint16_t \fBcheck\fP (void)"
+.br
+.ti -1c
+.RI "void \fBbegin\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetRlValue\fP (const uint8_t rlvalue)"
+.br
+.ti -1c
+.RI "void \fBsetCalibrationSampleTimes\fP (const uint8_t cst)"
+.br
+.ti -1c
+.RI "void \fBsetCalibrationSampleInterval\fP (const uint8_t csi)"
+.br
+.ti -1c
+.RI "void \fBsetReadSampleInterval\fP (const uint8_t rsi)"
+.br
+.ti -1c
+.RI "void \fBsetReadSampleTimes\fP (const uint8_t rst)"
+.br
+.ti -1c
+.RI "void \fBSetRo\fP (const float ro_factor)"
+.br
+.ti -1c
+.RI "void \fBSetRoCleanAirFactor\fP (const float ro_clean_air_factor)"
+.br
+.ti -1c
+.RI "float const \fBGetRoCleanAirFactor\fP (void)"
+.br
+.ti -1c
+.RI "float const \fBGetRo\fP (void)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBMQSensor\fP \fBNewMQSensor\fP (const uint8_t mqpin, const uint8_t mqtype)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMQSensor\fP (const uint8_t mqpin)"
+.br
+.ti -1c
+.RI "float const \fBMQRead\fP ()"
+.br
+.ti -1c
+.RI "float const \fBMQGetPercentage\fP (const float rs_ro_ratio, const float *pcurve)"
+.br
+.ti -1c
+.RI "float \fBMQCalibration\fP ()"
+.br
+.ti -1c
+.RI "float const \fBMQResistanceCalculation\fP (const int raw_adc)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "size_t \fB_LAST_READ_TIME\fP = 0"
+.br
+.ti -1c
+.RI "size_t \fB_READ_SENSOR_INTERVAL\fP = 10000"
+.br
+.ti -1c
+.RI "uint8_t \fB_MQ_pin\fP"
+.br
+.ti -1c
+.RI "uint8_t \fB_CALIBARAION_SAMPLE_TIMES\fP = 5"
+.br
+.ti -1c
+.RI "uint8_t \fB_CALIBRATION_SAMPLE_INTERVAL\fP = 50"
+.br
+.ti -1c
+.RI "uint8_t \fB_READ_SAMPLE_INTERVAL\fP = 50"
+.br
+.ti -1c
+.RI "uint8_t \fB_READ_SAMPLE_TIMES\fP = 5"
+.br
+.ti -1c
+.RI "float \fB_RO_CLEAN_AIR_FACTOR\fP = 9\&.83"
+.br
+.ti -1c
+.RI "float \fB_Ro\fP = 10"
+.br
+.ti -1c
+.RI "float \fB_RL_VALUE\fP = 5"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 35 of file MQSensor\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MQSensor::MQSensor (const uint8_t mqpin)\fC [protected]\fP"
+
+.PP
+Definition at line 29 of file MQSensor\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void MQSensor::begin ()"
+
+.PP
+Definition at line 75 of file MQSensor\&.cpp\&.
+.SS "uint16_t MQSensor::check (void)\fC [inline]\fP"
+
+.PP
+Definition at line 43 of file MQSensor\&.hpp\&.
+.SS "float const MQSensor::GetRo (void)"
+
+.PP
+Definition at line 70 of file MQSensor\&.cpp\&.
+.SS "float const MQSensor::GetRoCleanAirFactor (void)"
+
+.PP
+Definition at line 67 of file MQSensor\&.cpp\&.
+.SS "float MQSensor::MQCalibration ()\fC [protected]\fP"
+
+.PP
+Definition at line 123 of file MQSensor\&.cpp\&.
+.SS "float const MQSensor::MQGetPercentage (const float rs_ro_ratio, const float * pcurve)\fC [protected]\fP"
+
+.PP
+Definition at line 161 of file MQSensor\&.cpp\&.
+.SS "float const MQSensor::MQRead ()\fC [protected]\fP"
+
+.PP
+Definition at line 138 of file MQSensor\&.cpp\&.
+.SS "float const MQSensor::MQResistanceCalculation (const int raw_adc)\fC [inline]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 92 of file MQSensor\&.cpp\&.
+.SS "\fBMQSensor\fP MQSensor::NewMQSensor (const uint8_t mqpin, const uint8_t mqtype)\fC [static]\fP"
+
+.PP
+Definition at line 7 of file MQSensor\&.cpp\&.
+.SS "void MQSensor::setCalibrationSampleInterval (const uint8_t csi)"
+
+.PP
+Definition at line 58 of file MQSensor\&.cpp\&.
+.SS "void MQSensor::setCalibrationSampleTimes (const uint8_t cst)"
+
+.PP
+Definition at line 55 of file MQSensor\&.cpp\&.
+.SS "void MQSensor::setReadSampleInterval (const uint8_t rsi)"
+
+.PP
+Definition at line 61 of file MQSensor\&.cpp\&.
+.SS "void MQSensor::setReadSampleTimes (const uint8_t rst)"
+
+.PP
+Definition at line 64 of file MQSensor\&.cpp\&.
+.SS "void MQSensor::setRlValue (const uint8_t rlvalue)"
+
+.PP
+Definition at line 52 of file MQSensor\&.cpp\&.
+.SS "void MQSensor::SetRo (const float ro_factor)"
+
+.PP
+Definition at line 46 of file MQSensor\&.cpp\&.
+.SS "void MQSensor::SetRoCleanAirFactor (const float ro_clean_air_factor)"
+
+.PP
+Definition at line 49 of file MQSensor\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "uint8_t MQSensor::_CALIBARAION_SAMPLE_TIMES = 5\fC [protected]\fP"
+
+.PP
+Definition at line 67 of file MQSensor\&.hpp\&.
+.SS "uint8_t MQSensor::_CALIBRATION_SAMPLE_INTERVAL = 50\fC [protected]\fP"
+
+.PP
+Definition at line 68 of file MQSensor\&.hpp\&.
+.SS "size_t MQSensor::_LAST_READ_TIME = 0\fC [protected]\fP"
+
+.PP
+Definition at line 64 of file MQSensor\&.hpp\&.
+.SS "uint8_t MQSensor::_MQ_pin\fC [protected]\fP"
+
+.PP
+Definition at line 66 of file MQSensor\&.hpp\&.
+.SS "uint8_t MQSensor::_READ_SAMPLE_INTERVAL = 50\fC [protected]\fP"
+
+.PP
+Definition at line 69 of file MQSensor\&.hpp\&.
+.SS "uint8_t MQSensor::_READ_SAMPLE_TIMES = 5\fC [protected]\fP"
+
+.PP
+Definition at line 70 of file MQSensor\&.hpp\&.
+.SS "size_t MQSensor::_READ_SENSOR_INTERVAL = 10000\fC [protected]\fP"
+
+.PP
+Definition at line 65 of file MQSensor\&.hpp\&.
+.SS "float MQSensor::_RL_VALUE = 5\fC [protected]\fP"
+
+.PP
+Definition at line 74 of file MQSensor\&.hpp\&.
+.SS "float MQSensor::_Ro = 10\fC [protected]\fP"
+
+.PP
+Definition at line 73 of file MQSensor\&.hpp\&.
+.SS "float MQSensor::_RO_CLEAN_AIR_FACTOR = 9\&.83\fC [protected]\fP"
+
+.PP
+Definition at line 72 of file MQSensor\&.hpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Canary from the source code\&.

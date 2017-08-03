@@ -1,0 +1,89 @@
+An Arduino library for the H\+C-\/05 Bluetooth I\+Tead Studio H\+C-\/05 Serial Port Module.
+
+See the {\ttfamily L\+I\+C\+E\+N\+SE} file for copyright and license information.
+
+The serial port can be configured as any supported Serial port or a Software\+Serial port.
+
+Includes a demonstration program that can be uses to change the name reported by an H\+C-\/05 module.
+
+Additional information is available as an \href{http://rockingdlabs.dunmire.org/exercises-experiments/hc05-bluetooth}{\tt exercise} at \href{http://rockingdlabs.dunmire.org}{\tt RockingD Labs}.
+
+\subsection*{Components }
+
+{\ttfamily \hyperlink{class_h_c05}{H\+C05}} A class for controlling and communicating through an I\+Tead Studio H\+C-\/05 Serial Port Module. This class inherits from the Stream class.
+
+\subsubsection*{Methods\+:}
+
+The Stream class is extended with the following methods.
+
+{\ttfamily find\+Baud()} Determine H\+C-\/05 communications speed. Make this call in \hyperlink{echo__server_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup()} instead of {\ttfamily begin()}. {\ttfamily begin()} is still avaialble and can be used inplace of {\ttfamily find\+Baud()} if you know the H\+C-\/05 communications speed.
+
+{\ttfamily set\+Baud(unsigned long rate)} Specify the H\+C-\/05 communications speed. The speed is non-\/volatile so call this only when the rate returned by find\+Baud() is not the one you require.
+
+{\ttfamily set\+Baud(unsigned long rate, unsigned long parity, unsigned long stopbits)} Use this method when you need something besides the default no parity, one stop bit settings that are the default. {\bfseries C\+A\+U\+T\+I\+O\+N!} The H\+C-\/05 supports many serial configurations that are not compatible with an Arduino. For example, the Arduino software serial port port supports only no parity, one stop bit settings.
+
+{\ttfamily cmd()} Send a command to the module. The \textquotesingle{}key\textquotesingle{} (cmd\+Pin) pin is activated to put the module in command mode where \textquotesingle{}AT\textquotesingle{} commands are recognized.
+
+{\ttfamily cmd\+Mode2\+Start(int pwr\+Pin)} This is an alternate command mode. This 2nd command mode has the advantage forcing the H\+C-\/05 into a know communications speed\+: 38400. However, entering this 2nd command mode requires switching the power to the H\+C-\/05.
+
+{\ttfamily cmd\+Mode2\+End()} Exits the alternate command mode, leaving the power to the H\+C-\/05 on.
+
+{\ttfamily connected()} (Only if H\+C05\+\_\+\+S\+T\+A\+T\+E\+\_\+\+P\+IN is defined in {\ttfamily \hyperlink{_h_c05_8h}{H\+C05.\+h}}) Returns true when a BT connection has been established.
+
+{\ttfamily write()} {\ttfamily print$\ast$()} The write(), and print$\ast$(), methods block until there is a BT connection.
+
+\subsection*{Example Programs }
+
+The default library configuration uses a software serial port. The example programs will work with either a hardware or a software serial port. The configuration is changed by modifying the {\ttfamily \hyperlink{_h_c05_8h}{H\+C05.\+h}} file.
+
+See the {\ttfamily Software\+Serial.\+fzz} file for the proper default connections. ({\ttfamily .fzz} files can be read by the free program available from \href{http://fritzing.org/home/}{\tt Fritzing})
+
+{\ttfamily change\+Name} This application is one of the reasons I wrote this library. I wanted to be able to change the name reported by the H\+C-\/05 because I have multiple H\+C-\/05 modules that I kept mixing up. With this program you can set the name of the H\+C-\/05 module to reflect something physically identifying (or anything else that helps you tell your modules apart).
+
+{\ttfamily echo} Echo characters as they are received.
+
+{\ttfamily hc05\+\_\+test} Tests the disconnect command (A\+T+\+D\+I\+SC). This was something I used during development and probably is not of general interest.
+
+{\ttfamily recover} This example used the 2nd command mode to {\itshape recover} the H\+C-\/05 when its serial port settings are incompatible with the Arduino serial ports. Power to H\+C-\/05 must be controlled by an Arduino pin. See the {\ttfamily Recovery.\+fzz} diagram for suitable connections.
+
+{\ttfamily find\+Baud\+Test} Tests both set\+Baud() and find\+Baud() by trying every combination of supported rates. The output from this example looks best if D\+E\+B\+U\+G\+\_\+\+H\+C05 is not defined. (Simply comment out that line in \hyperlink{_h_c05_8h}{H\+C05.\+h}).
+
+\subsection*{Installation }
+
+\subsubsection*{Option 1\+: Git (Recommended)}
+
+
+\begin{DoxyItemize}
+\item Follow this \href{https://github.com/jdunmire/HC05}{\tt Git\+Hub repository} and use {\ttfamily git} to track your own changes by cloning\+:
+
+\$ cd $\sim$/sketchbook/libraries \$ git clone \href{https://github.com/jdunmire/HC05.git}{\tt https\+://github.\+com/jdunmire/\+H\+C05.\+git}
+\item Start the Arduino I\+DE and you should find {\ttfamily \hyperlink{class_h_c05}{H\+C05}} in the libraries section.
+\end{DoxyItemize}
+
+\subsubsection*{Option 2\+: Source only}
+
+
+\begin{DoxyItemize}
+\item Download a Z\+IP file. The Z\+IP button at \href{https://github.com/jdunmire/HC05}{\tt Git\+Hub} will always get the latest version, but you may prefer one of the \href{https://github.com/jdunmire/HC05/tags}{\tt tagged} versions.
+\item Unpack the zip file into your sketchbook library directory ({\ttfamily $\sim$/sketchbook/libraries} on Linux).
+\item Rename the resulting directory (or create a symlink) to $\sim$/sketchbook/libraries/\+H\+C05
+\item Start the Arduino I\+DE and you should find {\ttfamily \hyperlink{class_h_c05}{H\+C05}} in the libraries section.
+\end{DoxyItemize}
+
+\subsubsection*{Configuration}
+
+By default the library is configured for a software serial port and debugging output to the hardware serial port (Serial) is turned on. You will need to edit the \hyperlink{_h_c05_8h}{H\+C05.\+h} file if you want to change those settings.
+
+See the {\ttfamily Software\+Serial.\+fzz} file for the proper default connections. The {\ttfamily Hardware\+Serial.\+fzz} shows the hardware port alternative. The files can be read by the free program available from \href{http://fritzing.org/home/}{\tt Fritzing}
+
+The Bluetooth port is {\ttfamily bt\+Serial} and must be setup as shown at the top of the Example sketches. If debugging output is enabled in \hyperlink{_h_c05_8h}{H\+C05.\+h} (it is by default) then your sketch must include a \hyperlink{_h_c05_8h_aa13ce4e79fa7e62c8716cc31e158e5a6}{D\+E\+B\+U\+G\+\_\+\+B\+E\+G\+I\+N(baud)} command to initialize the debug output port and set it\textquotesingle{}s baud rate.
+
+\paragraph*{Hardware Serial Port Issues for U\+NO}
+
+Using the hardware serial port on the U\+NO comes with some caveats\+:
+
+
+\begin{DoxyItemize}
+\item You will have to disconnect the H\+C-\/05 module to upload a sketch.
+\item If you use the Arduino {\ttfamily Serial Monitor} you will see the traffic to and from the H\+C-\/05 serial port. If you type in the {\ttfamily Serial Monitor} it will interfere with the H\+C-\/05 traffic. 
+\end{DoxyItemize}

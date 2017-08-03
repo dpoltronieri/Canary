@@ -1,0 +1,270 @@
+\hypertarget{class_m_q135}{}\section{M\+Q135 Class Reference}
+\label{class_m_q135}\index{M\+Q135@{M\+Q135}}
+
+
+{\ttfamily \#include $<$M\+Q135.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_q135_a0c2f7edac1cfd8eeba31ac921eb16007}{M\+Q135} (uint8\+\_\+t pin)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+float \hyperlink{class_m_q135_a83aeaf6f5d96201420b2e8309101799c}{get\+Correction\+Factor} (float t, float h)
+\begin{DoxyCompactList}\small\item\em Get the correction factor to correct for temperature and humidity. \end{DoxyCompactList}\item 
+float \hyperlink{class_m_q135_a5517b514c0a0459632d6c431bc884c92}{get\+Resistance} ()
+\begin{DoxyCompactList}\small\item\em Get the resistance of the sensor, ie. the measurement value. \end{DoxyCompactList}\item 
+float \hyperlink{class_m_q135_ae2831a68678ed327a646b8a112cd2932}{get\+Corrected\+Resistance} (float t, float h)
+\begin{DoxyCompactList}\small\item\em Get the resistance of the sensor, ie. the measurement value corrected for temp/hum. \end{DoxyCompactList}\item 
+float \hyperlink{class_m_q135_a93a37053cc2fcc536817ec647af1c41c}{get\+P\+PM} ()
+\begin{DoxyCompactList}\small\item\em Get the ppm of C\+O2 sensed (assuming only C\+O2 in the air) \end{DoxyCompactList}\item 
+float \hyperlink{class_m_q135_af005fbc44840d36609bd2f866673b80b}{get\+Corrected\+P\+PM} (float t, float h)
+\begin{DoxyCompactList}\small\item\em Get the ppm of C\+O2 sensed (assuming only C\+O2 in the air), corrected for temp/hum. \end{DoxyCompactList}\item 
+float \hyperlink{class_m_q135_a2ccddd2fd1d23a24c62473a3c0f62ee7}{get\+R\+Zero} ()
+\begin{DoxyCompactList}\small\item\em Get the resistance R\+Zero of the sensor for calibration purposes. \end{DoxyCompactList}\item 
+float \hyperlink{class_m_q135_ab97826ce83bc0e598de26a8806e0b851}{get\+Corrected\+R\+Zero} (float t, float h)
+\begin{DoxyCompactList}\small\item\em Get the corrected resistance R\+Zero of the sensor for calibration purposes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 41 of file M\+Q135.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+Q135@{M\+Q135}!M\+Q135@{M\+Q135}}
+\index{M\+Q135@{M\+Q135}!M\+Q135@{M\+Q135}}
+\subsubsection[{\texorpdfstring{M\+Q135(uint8\+\_\+t pin)}{MQ135(uint8_t pin)}}]{\setlength{\rightskip}{0pt plus 5cm}M\+Q135\+::\+M\+Q135 (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{pin}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q135_a0c2f7edac1cfd8eeba31ac921eb16007}{}\label{class_m_q135_a0c2f7edac1cfd8eeba31ac921eb16007}
+
+
+Default constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin} & The analog input pin for the readout of the sensor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file M\+Q135.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{M\+Q135@{M\+Q135}!get\+Corrected\+P\+PM@{get\+Corrected\+P\+PM}}
+\index{get\+Corrected\+P\+PM@{get\+Corrected\+P\+PM}!M\+Q135@{M\+Q135}}
+\subsubsection[{\texorpdfstring{get\+Corrected\+P\+P\+M(float t, float h)}{getCorrectedPPM(float t, float h)}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q135\+::get\+Corrected\+P\+PM (
+\begin{DoxyParamCaption}
+\item[{float}]{t, }
+\item[{float}]{h}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q135_af005fbc44840d36609bd2f866673b80b}{}\label{class_m_q135_af005fbc44840d36609bd2f866673b80b}
+
+
+Get the ppm of C\+O2 sensed (assuming only C\+O2 in the air), corrected for temp/hum. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em t} & The ambient air temperature \\
+\hline
+\mbox{\tt in}  & {\em h} & The relative humidity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The ppm of C\+O2 in the air 
+\end{DoxyReturn}
+
+
+Definition at line 95 of file M\+Q135.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+% FIG 0
+
+
+\index{M\+Q135@{M\+Q135}!get\+Corrected\+Resistance@{get\+Corrected\+Resistance}}
+\index{get\+Corrected\+Resistance@{get\+Corrected\+Resistance}!M\+Q135@{M\+Q135}}
+\subsubsection[{\texorpdfstring{get\+Corrected\+Resistance(float t, float h)}{getCorrectedResistance(float t, float h)}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q135\+::get\+Corrected\+Resistance (
+\begin{DoxyParamCaption}
+\item[{float}]{t, }
+\item[{float}]{h}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q135_ae2831a68678ed327a646b8a112cd2932}{}\label{class_m_q135_ae2831a68678ed327a646b8a112cd2932}
+
+
+Get the resistance of the sensor, ie. the measurement value corrected for temp/hum. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em t} & The ambient air temperature \\
+\hline
+\mbox{\tt in}  & {\em h} & The relative humidity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corrected sensor resistance k\+Ohm 
+\end{DoxyReturn}
+
+
+Definition at line 69 of file M\+Q135.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+\index{M\+Q135@{M\+Q135}!get\+Corrected\+R\+Zero@{get\+Corrected\+R\+Zero}}
+\index{get\+Corrected\+R\+Zero@{get\+Corrected\+R\+Zero}!M\+Q135@{M\+Q135}}
+\subsubsection[{\texorpdfstring{get\+Corrected\+R\+Zero(float t, float h)}{getCorrectedRZero(float t, float h)}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q135\+::get\+Corrected\+R\+Zero (
+\begin{DoxyParamCaption}
+\item[{float}]{t, }
+\item[{float}]{h}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q135_ab97826ce83bc0e598de26a8806e0b851}{}\label{class_m_q135_ab97826ce83bc0e598de26a8806e0b851}
+
+
+Get the corrected resistance R\+Zero of the sensor for calibration purposes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em t} & The ambient air temperature \\
+\hline
+\mbox{\tt in}  & {\em h} & The relative humidity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The corrected sensor resistance R\+Zero in k\+Ohm 
+\end{DoxyReturn}
+
+
+Definition at line 121 of file M\+Q135.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+\index{M\+Q135@{M\+Q135}!get\+Correction\+Factor@{get\+Correction\+Factor}}
+\index{get\+Correction\+Factor@{get\+Correction\+Factor}!M\+Q135@{M\+Q135}}
+\subsubsection[{\texorpdfstring{get\+Correction\+Factor(float t, float h)}{getCorrectionFactor(float t, float h)}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q135\+::get\+Correction\+Factor (
+\begin{DoxyParamCaption}
+\item[{float}]{t, }
+\item[{float}]{h}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q135_a83aeaf6f5d96201420b2e8309101799c}{}\label{class_m_q135_a83aeaf6f5d96201420b2e8309101799c}
+
+
+Get the correction factor to correct for temperature and humidity. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em t} & The ambient air temperature \\
+\hline
+\mbox{\tt in}  & {\em h} & The relative humidity\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated correction factor 
+\end{DoxyReturn}
+
+
+Definition at line 42 of file M\+Q135.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 4
+
+
+\index{M\+Q135@{M\+Q135}!get\+P\+PM@{get\+P\+PM}}
+\index{get\+P\+PM@{get\+P\+PM}!M\+Q135@{M\+Q135}}
+\subsubsection[{\texorpdfstring{get\+P\+P\+M()}{getPPM()}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q135\+::get\+P\+PM (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q135_a93a37053cc2fcc536817ec647af1c41c}{}\label{class_m_q135_a93a37053cc2fcc536817ec647af1c41c}
+
+
+Get the ppm of C\+O2 sensed (assuming only C\+O2 in the air) 
+
+\begin{DoxyReturn}{Returns}
+The ppm of C\+O2 in the air 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file M\+Q135.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+% FIG 5
+
+
+\index{M\+Q135@{M\+Q135}!get\+Resistance@{get\+Resistance}}
+\index{get\+Resistance@{get\+Resistance}!M\+Q135@{M\+Q135}}
+\subsubsection[{\texorpdfstring{get\+Resistance()}{getResistance()}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q135\+::get\+Resistance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q135_a5517b514c0a0459632d6c431bc884c92}{}\label{class_m_q135_a5517b514c0a0459632d6c431bc884c92}
+
+
+Get the resistance of the sensor, ie. the measurement value. 
+
+\begin{DoxyReturn}{Returns}
+The sensor resistance in k\+Ohm 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file M\+Q135.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 6
+
+
+\index{M\+Q135@{M\+Q135}!get\+R\+Zero@{get\+R\+Zero}}
+\index{get\+R\+Zero@{get\+R\+Zero}!M\+Q135@{M\+Q135}}
+\subsubsection[{\texorpdfstring{get\+R\+Zero()}{getRZero()}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q135\+::get\+R\+Zero (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q135_a2ccddd2fd1d23a24c62473a3c0f62ee7}{}\label{class_m_q135_a2ccddd2fd1d23a24c62473a3c0f62ee7}
+
+
+Get the resistance R\+Zero of the sensor for calibration purposes. 
+
+\begin{DoxyReturn}{Returns}
+The sensor resistance R\+Zero in k\+Ohm 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file M\+Q135.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+% FIG 7
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Backup/\+M\+Q135/\hyperlink{_m_q135_8h}{M\+Q135.\+h}\item 
+Backup/\+M\+Q135/\hyperlink{_m_q135_8cpp}{M\+Q135.\+cpp}\end{DoxyCompactItemize}

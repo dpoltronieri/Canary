@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['_5fcalibaraion_5fsample_5ftimes',['_CALIBARAION_SAMPLE_TIMES',['../class_m_q_sensor.html#ae04756d16f8d90e492fdb48c5ac4e930',1,'MQSensor']]],
+  ['_5fcalibration_5fsample_5finterval',['_CALIBRATION_SAMPLE_INTERVAL',['../class_m_q_sensor.html#a440f40e2d8109c9cda26ce2b3d8ff564',1,'MQSensor']]],
+  ['_5fcurrent_5fvalue',['_current_value',['../class_m_q_dummy.html#af00eaac2153761e9bbdf201d95bf415a',1,'MQDummy']]],
+  ['_5flast_5fread_5ftime',['_LAST_READ_TIME',['../class_m_q_sensor.html#a464b0db94d80b771efca70a0eb58f951',1,'MQSensor']]],
+  ['_5fldr_5fpin',['_ldr_pin',['../classldr.html#a0ddae76803b13590fc0c453e2d55571d',1,'ldr']]],
+  ['_5fmessage',['_message',['../class_print_manager.html#a05df6919d0e6af854f9215d20786b026',1,'PrintManager']]],
+  ['_5fmq_5fpin',['_MQ_pin',['../class_m_q_sensor.html#aaa75c5a8dbb6b8bfba63a7b8749acd82',1,'MQSensor']]],
+  ['_5fread_5fsample_5finterval',['_READ_SAMPLE_INTERVAL',['../class_m_q_sensor.html#a7dcb6e9f9ff88b498d7b47dd33b0809f',1,'MQSensor']]],
+  ['_5fread_5fsample_5ftimes',['_READ_SAMPLE_TIMES',['../class_m_q_sensor.html#a3c6ba8a07087b67ee99941bced73e940',1,'MQSensor']]],
+  ['_5fread_5fsensor_5finterval',['_READ_SENSOR_INTERVAL',['../class_m_q_sensor.html#a4a8e710f1bc61afb702d26ceb1366f11',1,'MQSensor']]],
+  ['_5frl_5fvalue',['_RL_VALUE',['../class_m_q_sensor.html#a2cf9585b95f5beaac2dc8edbab7eff42',1,'MQSensor']]],
+  ['_5fro',['_Ro',['../class_m_q_sensor.html#ade2e483ebc557d1caf753d41a8b3afde',1,'MQSensor']]],
+  ['_5fro_5fclean_5fair_5ffactor',['_RO_CLEAN_AIR_FACTOR',['../class_m_q_sensor.html#adc7e7af2139868a784d31d27d73b7df3',1,'MQSensor']]],
+  ['_5fserialporthw',['_serialPortHW',['../class_print_manager.html#a68416e0bf4a0dc10203c6df2fb5b0dbd',1,'PrintManager::_serialPortHW()'],['../class_print_manager.html#a19cd58c07357e6142b92ed4598cda1bc',1,'PrintManager::_serialPortHW()']]],
+  ['_5fserialportsw',['_serialPortSW',['../class_print_manager.html#aa079f14838d51ffd18ac814323c3d177',1,'PrintManager']]],
+  ['_5fserialporttype',['_serialPortType',['../class_print_manager.html#ae1b8f767b738748027e0ac2a97f1be6c',1,'PrintManager']]],
+  ['_5ftempvalue',['_tempValue',['../class_print_manager.html#a550ad6ba340af9c4f689b8e25bd420f3',1,'PrintManager']]]
+];

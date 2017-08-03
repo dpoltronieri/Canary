@@ -10,26 +10,46 @@ uint8_t LogManager::startLogManager(){
     Serial.println("initialization done.");
 
     // TODO: decidir se o teste fica
-    _LOG = SD.open(_fileName, FILE_WRITE);
+    _LOG = SD.open(_fileName, FILE_READ);
     if (_LOG) {
         _LOG.close();
         Serial.println("File OK");
         return 0;
     } else {
+        _LOG.close();
         Serial.println("File NOT OK");
         return 1;
     }
 }
 
-uint16_t LogManager::println(String message){
-    uint16_t returntemp;
+/*
+ * uint16_t LogManager::println(String message){
+ *  uint16_t returntemp;
+ *
+ *  returntemp = _LOG.println(message);
+ *  _LOG.flush();
+ *  if (_VERBOSE)
+ *      Serial.println(message + " para o SD " + returntemp);
+ *  return returntemp;
+ * }
+ * //*/
+uint16_t LogManager::println(const String message){
+    uint16_t temp;
 
-    returntemp = _LOG.println(message);
-    _LOG.flush();
-    if (_VERBOSE)
-        Serial.println(message);
-    return returntemp;
-}
+    if (SD.exists(_fileName)) {
+        // check the card is still there
+        // now append new data file
+        _LOG = SD.open(_fileName, FILE_WRITE);
+        if (_LOG) {
+            temp = _LOG.println(message);
+            _LOG.close(); // close the file
+            Serial.println(temp);
+        }
+    } else {
+        Serial.println("Error writing to file !");
+    }
+    return temp;
+};
 
 String LogManager::readln(){
     String tempReturn = "";

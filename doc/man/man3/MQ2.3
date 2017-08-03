@@ -1,0 +1,63 @@
+.TH "MQ2" 3 "Wed Jul 5 2017" "Canary" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MQ2 \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MQSensor\&.hpp>\fP
+.PP
+Inherits \fBMQSensor\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMQ2\fP (const uint8_t mqpin)"
+.br
+.ti -1c
+.RI "float const \fBMQGetGasPercentage\fP (const float rs_ro_ratio, const uint8_t gas_id)"
+.br
+.ti -1c
+.RI "float \fBreadLPG\fP ()"
+.br
+.ti -1c
+.RI "float \fBreadCO\fP ()"
+.br
+.ti -1c
+.RI "float \fBreadSmoke\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 119 of file MQSensor\&.hpp\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MQ2::MQ2 (const uint8_t mqpin)"
+
+.PP
+Definition at line 186 of file MQSensor\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "float const MQ2::MQGetGasPercentage (const float rs_ro_ratio, const uint8_t gas_id)"
+
+.PP
+Definition at line 202 of file MQSensor\&.cpp\&.
+.SS "float MQ2::readCO ()"
+
+.PP
+Definition at line 227 of file MQSensor\&.cpp\&.
+.SS "float MQ2::readLPG ()"
+
+.PP
+Definition at line 219 of file MQSensor\&.cpp\&.
+.SS "float MQ2::readSmoke ()"
+
+.PP
+Definition at line 235 of file MQSensor\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Canary from the source code\&.

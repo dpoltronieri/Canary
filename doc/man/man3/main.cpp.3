@@ -1,0 +1,105 @@
+.TH "src/main.cpp" 3 "Wed Jul 5 2017" "Canary" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/main.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'Arduino\&.h'\fP
+.br
+\fC#include 'main\&.hpp'\fP
+.br
+\fC#include 'dht\&.h'\fP
+.br
+\fC#include <ldr\&.hpp>\fP
+.br
+\fC#include <\&.\&./lib/MQ\-Sensor/src/MQSensor\&.hpp>\fP
+.br
+\fC#include <\&.\&./lib/PrintManager/src/PrintManager\&.hpp>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDHT11_PIN\fP   5"
+.br
+.ti -1c
+.RI "#define \fBLDR_PIN\fP   A0"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetup\fP ()"
+.br
+.ti -1c
+.RI "void \fBloop\fP ()"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBdht\fP \fBDHTSensor\fP"
+.br
+.ti -1c
+.RI "\fBldr\fP \fBLDRSensor\fP = \fBldr\fP(\fBLDR_PIN\fP)"
+.br
+.ti -1c
+.RI "\fBMQSensor\fP \fBDummy\fP = \fBMQSensor::NewMQSensor\fP(1, MQ_SENSOR_DUMMY)"
+.br
+.ti -1c
+.RI "\fBPrintManager\fP \fBBT_Serial\fP = \fBPrintManager\fP(&Serial1)"
+.br
+.ti -1c
+.RI "double \fBTemperatureHumidity\fP [10]"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define DHT11_PIN   5"
+
+.PP
+Definition at line 13 of file main\&.cpp\&.
+.SS "#define LDR_PIN   A0"
+
+.PP
+Definition at line 14 of file main\&.cpp\&.
+.SH "Function Documentation"
+.PP 
+.SS "void loop ()"
+
+.PP
+Definition at line 57 of file main\&.cpp\&.
+.SS "void setup ()"
+
+.PP
+Definition at line 34 of file main\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "\fBPrintManager\fP BT_Serial = \fBPrintManager\fP(&Serial1)"
+
+.PP
+Definition at line 20 of file main\&.cpp\&.
+.SS "\fBdht\fP DHTSensor"
+
+.PP
+Definition at line 17 of file main\&.cpp\&.
+.SS "\fBMQSensor\fP Dummy = \fBMQSensor::NewMQSensor\fP(1, MQ_SENSOR_DUMMY)"
+
+.PP
+Definition at line 19 of file main\&.cpp\&.
+.SS "\fBldr\fP LDRSensor = \fBldr\fP(\fBLDR_PIN\fP)"
+
+.PP
+Definition at line 18 of file main\&.cpp\&.
+.SS "double TemperatureHumidity[10]"
+
+.PP
+Definition at line 31 of file main\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Canary from the source code\&.

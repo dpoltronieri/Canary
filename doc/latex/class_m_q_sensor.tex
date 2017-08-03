@@ -1,0 +1,471 @@
+\hypertarget{class_m_q_sensor}{}\section{M\+Q\+Sensor Class Reference}
+\label{class_m_q_sensor}\index{M\+Q\+Sensor@{M\+Q\+Sensor}}
+
+
+{\ttfamily \#include $<$M\+Q\+Sensor.\+hpp$>$}
+
+
+
+Inheritance diagram for M\+Q\+Sensor\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \hyperlink{class_m_q_sensor_acc2b495b544c2e801a4708c91df7a874}{check} (void)
+\item 
+void \hyperlink{class_m_q_sensor_ae6d1b0181e6769745caf5766ceef1522}{begin} ()
+\item 
+void \hyperlink{class_m_q_sensor_a54d01cd9465f177f431f070f7e96821d}{set\+Rl\+Value} (const uint8\+\_\+t rlvalue)
+\item 
+void \hyperlink{class_m_q_sensor_ad93e118f8bce230241af72307a7c2b79}{set\+Calibration\+Sample\+Times} (const uint8\+\_\+t cst)
+\item 
+void \hyperlink{class_m_q_sensor_ad14ad2558241aac29113e13b8a5137f7}{set\+Calibration\+Sample\+Interval} (const uint8\+\_\+t csi)
+\item 
+void \hyperlink{class_m_q_sensor_acefcf4fca770e50814f32bac2c80459c}{set\+Read\+Sample\+Interval} (const uint8\+\_\+t rsi)
+\item 
+void \hyperlink{class_m_q_sensor_a8e4a65e66a55f8abbe4365400e27ab97}{set\+Read\+Sample\+Times} (const uint8\+\_\+t rst)
+\item 
+void \hyperlink{class_m_q_sensor_a03eb97a82d462ee54ed249bc11da916a}{Set\+Ro} (const float ro\+\_\+factor)
+\item 
+void \hyperlink{class_m_q_sensor_a870f6dacc4896cdea8cb114b3b508ea3}{Set\+Ro\+Clean\+Air\+Factor} (const float ro\+\_\+clean\+\_\+air\+\_\+factor)
+\item 
+float const \hyperlink{class_m_q_sensor_a48389f7f5b5757092f7ae7a0893fe33f}{Get\+Ro\+Clean\+Air\+Factor} (void)
+\item 
+float const \hyperlink{class_m_q_sensor_a7292dbbdb30f7dac813f16009b6cd282}{Get\+Ro} (void)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_m_q_sensor}{M\+Q\+Sensor} \hyperlink{class_m_q_sensor_a7f29aed48ad89d8403f08a4e83b136b5}{New\+M\+Q\+Sensor} (const uint8\+\_\+t mqpin, const uint8\+\_\+t mqtype)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_q_sensor_a58bc8dbc8dc2e97584a34f1a545f93e1}{M\+Q\+Sensor} (const uint8\+\_\+t mqpin)
+\item 
+float const \hyperlink{class_m_q_sensor_ac769cc3eade7067313d185848f63f2cf}{M\+Q\+Read} ()
+\item 
+float const \hyperlink{class_m_q_sensor_a92ef594a160b257ca124481a21840a96}{M\+Q\+Get\+Percentage} (const float rs\+\_\+ro\+\_\+ratio, const float $\ast$pcurve)
+\item 
+float \hyperlink{class_m_q_sensor_aae67f9f2749712bd2afa90a2a97a29fd}{M\+Q\+Calibration} ()
+\item 
+float const \hyperlink{class_m_q_sensor_a1bb39a92869446ede5ba1c6854034e20}{M\+Q\+Resistance\+Calculation} (const int raw\+\_\+adc)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \hyperlink{class_m_q_sensor_a464b0db94d80b771efca70a0eb58f951}{\+\_\+\+L\+A\+S\+T\+\_\+\+R\+E\+A\+D\+\_\+\+T\+I\+ME} = 0
+\item 
+size\+\_\+t \hyperlink{class_m_q_sensor_a4a8e710f1bc61afb702d26ceb1366f11}{\+\_\+\+R\+E\+A\+D\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+I\+N\+T\+E\+R\+V\+AL} = 10000
+\item 
+uint8\+\_\+t \hyperlink{class_m_q_sensor_aaa75c5a8dbb6b8bfba63a7b8749acd82}{\+\_\+\+M\+Q\+\_\+pin}
+\item 
+uint8\+\_\+t \hyperlink{class_m_q_sensor_ae04756d16f8d90e492fdb48c5ac4e930}{\+\_\+\+C\+A\+L\+I\+B\+A\+R\+A\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES} = 5
+\item 
+uint8\+\_\+t \hyperlink{class_m_q_sensor_a440f40e2d8109c9cda26ce2b3d8ff564}{\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL} = 50
+\item 
+uint8\+\_\+t \hyperlink{class_m_q_sensor_a7dcb6e9f9ff88b498d7b47dd33b0809f}{\+\_\+\+R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL} = 50
+\item 
+uint8\+\_\+t \hyperlink{class_m_q_sensor_a3c6ba8a07087b67ee99941bced73e940}{\+\_\+\+R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES} = 5
+\item 
+float \hyperlink{class_m_q_sensor_adc7e7af2139868a784d31d27d73b7df3}{\+\_\+\+R\+O\+\_\+\+C\+L\+E\+A\+N\+\_\+\+A\+I\+R\+\_\+\+F\+A\+C\+T\+OR} = 9.\+83
+\item 
+float \hyperlink{class_m_q_sensor_ade2e483ebc557d1caf753d41a8b3afde}{\+\_\+\+Ro} = 10
+\item 
+float \hyperlink{class_m_q_sensor_a2cf9585b95f5beaac2dc8edbab7eff42}{\+\_\+\+R\+L\+\_\+\+V\+A\+L\+UE} = 5
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 35 of file M\+Q\+Sensor.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{M\+Q\+Sensor(const uint8\+\_\+t mqpin)}{MQSensor(const uint8_t mqpin)}}]{\setlength{\rightskip}{0pt plus 5cm}M\+Q\+Sensor\+::\+M\+Q\+Sensor (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t}]{mqpin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_m_q_sensor_a58bc8dbc8dc2e97584a34f1a545f93e1}{}\label{class_m_q_sensor_a58bc8dbc8dc2e97584a34f1a545f93e1}
+
+
+Definition at line 29 of file M\+Q\+Sensor.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!begin@{begin}}
+\index{begin@{begin}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{begin()}{begin()}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+Q\+Sensor\+::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_sensor_ae6d1b0181e6769745caf5766ceef1522}{}\label{class_m_q_sensor_ae6d1b0181e6769745caf5766ceef1522}
+
+
+Definition at line 75 of file M\+Q\+Sensor.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!check@{check}}
+\index{check@{check}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{check(void)}{check(void)}}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t M\+Q\+Sensor\+::check (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_m_q_sensor_acc2b495b544c2e801a4708c91df7a874}{}\label{class_m_q_sensor_acc2b495b544c2e801a4708c91df7a874}
+
+
+Definition at line 43 of file M\+Q\+Sensor.\+hpp.
+
+
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 4
+
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!Get\+Ro@{Get\+Ro}}
+\index{Get\+Ro@{Get\+Ro}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{Get\+Ro(void)}{GetRo(void)}}]{\setlength{\rightskip}{0pt plus 5cm}float const M\+Q\+Sensor\+::\+Get\+Ro (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_sensor_a7292dbbdb30f7dac813f16009b6cd282}{}\label{class_m_q_sensor_a7292dbbdb30f7dac813f16009b6cd282}
+
+
+Definition at line 70 of file M\+Q\+Sensor.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 5
+
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!Get\+Ro\+Clean\+Air\+Factor@{Get\+Ro\+Clean\+Air\+Factor}}
+\index{Get\+Ro\+Clean\+Air\+Factor@{Get\+Ro\+Clean\+Air\+Factor}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{Get\+Ro\+Clean\+Air\+Factor(void)}{GetRoCleanAirFactor(void)}}]{\setlength{\rightskip}{0pt plus 5cm}float const M\+Q\+Sensor\+::\+Get\+Ro\+Clean\+Air\+Factor (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_sensor_a48389f7f5b5757092f7ae7a0893fe33f}{}\label{class_m_q_sensor_a48389f7f5b5757092f7ae7a0893fe33f}
+
+
+Definition at line 67 of file M\+Q\+Sensor.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 6
+
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!M\+Q\+Calibration@{M\+Q\+Calibration}}
+\index{M\+Q\+Calibration@{M\+Q\+Calibration}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{M\+Q\+Calibration()}{MQCalibration()}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q\+Sensor\+::\+M\+Q\+Calibration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_m_q_sensor_aae67f9f2749712bd2afa90a2a97a29fd}{}\label{class_m_q_sensor_aae67f9f2749712bd2afa90a2a97a29fd}
+
+
+Definition at line 123 of file M\+Q\+Sensor.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+% FIG 7
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 8
+
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!M\+Q\+Get\+Percentage@{M\+Q\+Get\+Percentage}}
+\index{M\+Q\+Get\+Percentage@{M\+Q\+Get\+Percentage}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{M\+Q\+Get\+Percentage(const float rs\+\_\+ro\+\_\+ratio, const float $\ast$pcurve)}{MQGetPercentage(const float rs_ro_ratio, const float *pcurve)}}]{\setlength{\rightskip}{0pt plus 5cm}float const M\+Q\+Sensor\+::\+M\+Q\+Get\+Percentage (
+\begin{DoxyParamCaption}
+\item[{const float}]{rs\+\_\+ro\+\_\+ratio, }
+\item[{const float $\ast$}]{pcurve}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_m_q_sensor_a92ef594a160b257ca124481a21840a96}{}\label{class_m_q_sensor_a92ef594a160b257ca124481a21840a96}
+
+
+Definition at line 161 of file M\+Q\+Sensor.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 9
+
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!M\+Q\+Read@{M\+Q\+Read}}
+\index{M\+Q\+Read@{M\+Q\+Read}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{M\+Q\+Read()}{MQRead()}}]{\setlength{\rightskip}{0pt plus 5cm}float const M\+Q\+Sensor\+::\+M\+Q\+Read (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_m_q_sensor_ac769cc3eade7067313d185848f63f2cf}{}\label{class_m_q_sensor_ac769cc3eade7067313d185848f63f2cf}
+
+
+Definition at line 138 of file M\+Q\+Sensor.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+% FIG 10
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 11
+
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!M\+Q\+Resistance\+Calculation@{M\+Q\+Resistance\+Calculation}}
+\index{M\+Q\+Resistance\+Calculation@{M\+Q\+Resistance\+Calculation}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{M\+Q\+Resistance\+Calculation(const int raw\+\_\+adc)}{MQResistanceCalculation(const int raw_adc)}}]{\setlength{\rightskip}{0pt plus 5cm}float const M\+Q\+Sensor\+::\+M\+Q\+Resistance\+Calculation (
+\begin{DoxyParamCaption}
+\item[{const int}]{raw\+\_\+adc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_m_q_sensor_a1bb39a92869446ede5ba1c6854034e20}{}\label{class_m_q_sensor_a1bb39a92869446ede5ba1c6854034e20}
+
+
+Definition at line 92 of file M\+Q\+Sensor.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 12
+
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!New\+M\+Q\+Sensor@{New\+M\+Q\+Sensor}}
+\index{New\+M\+Q\+Sensor@{New\+M\+Q\+Sensor}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{New\+M\+Q\+Sensor(const uint8\+\_\+t mqpin, const uint8\+\_\+t mqtype)}{NewMQSensor(const uint8_t mqpin, const uint8_t mqtype)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+Q\+Sensor} M\+Q\+Sensor\+::\+New\+M\+Q\+Sensor (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t}]{mqpin, }
+\item[{const uint8\+\_\+t}]{mqtype}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_m_q_sensor_a7f29aed48ad89d8403f08a4e83b136b5}{}\label{class_m_q_sensor_a7f29aed48ad89d8403f08a4e83b136b5}
+
+
+Definition at line 7 of file M\+Q\+Sensor.\+cpp.
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!set\+Calibration\+Sample\+Interval@{set\+Calibration\+Sample\+Interval}}
+\index{set\+Calibration\+Sample\+Interval@{set\+Calibration\+Sample\+Interval}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{set\+Calibration\+Sample\+Interval(const uint8\+\_\+t csi)}{setCalibrationSampleInterval(const uint8_t csi)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+Q\+Sensor\+::set\+Calibration\+Sample\+Interval (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t}]{csi}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_sensor_ad14ad2558241aac29113e13b8a5137f7}{}\label{class_m_q_sensor_ad14ad2558241aac29113e13b8a5137f7}
+
+
+Definition at line 58 of file M\+Q\+Sensor.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 13
+
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!set\+Calibration\+Sample\+Times@{set\+Calibration\+Sample\+Times}}
+\index{set\+Calibration\+Sample\+Times@{set\+Calibration\+Sample\+Times}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{set\+Calibration\+Sample\+Times(const uint8\+\_\+t cst)}{setCalibrationSampleTimes(const uint8_t cst)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+Q\+Sensor\+::set\+Calibration\+Sample\+Times (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t}]{cst}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_sensor_ad93e118f8bce230241af72307a7c2b79}{}\label{class_m_q_sensor_ad93e118f8bce230241af72307a7c2b79}
+
+
+Definition at line 55 of file M\+Q\+Sensor.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 14
+
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!set\+Read\+Sample\+Interval@{set\+Read\+Sample\+Interval}}
+\index{set\+Read\+Sample\+Interval@{set\+Read\+Sample\+Interval}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{set\+Read\+Sample\+Interval(const uint8\+\_\+t rsi)}{setReadSampleInterval(const uint8_t rsi)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+Q\+Sensor\+::set\+Read\+Sample\+Interval (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t}]{rsi}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_sensor_acefcf4fca770e50814f32bac2c80459c}{}\label{class_m_q_sensor_acefcf4fca770e50814f32bac2c80459c}
+
+
+Definition at line 61 of file M\+Q\+Sensor.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 15
+
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!set\+Read\+Sample\+Times@{set\+Read\+Sample\+Times}}
+\index{set\+Read\+Sample\+Times@{set\+Read\+Sample\+Times}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{set\+Read\+Sample\+Times(const uint8\+\_\+t rst)}{setReadSampleTimes(const uint8_t rst)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+Q\+Sensor\+::set\+Read\+Sample\+Times (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t}]{rst}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_sensor_a8e4a65e66a55f8abbe4365400e27ab97}{}\label{class_m_q_sensor_a8e4a65e66a55f8abbe4365400e27ab97}
+
+
+Definition at line 64 of file M\+Q\+Sensor.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 16
+
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!set\+Rl\+Value@{set\+Rl\+Value}}
+\index{set\+Rl\+Value@{set\+Rl\+Value}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{set\+Rl\+Value(const uint8\+\_\+t rlvalue)}{setRlValue(const uint8_t rlvalue)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+Q\+Sensor\+::set\+Rl\+Value (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t}]{rlvalue}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_sensor_a54d01cd9465f177f431f070f7e96821d}{}\label{class_m_q_sensor_a54d01cd9465f177f431f070f7e96821d}
+
+
+Definition at line 52 of file M\+Q\+Sensor.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 17
+
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!Set\+Ro@{Set\+Ro}}
+\index{Set\+Ro@{Set\+Ro}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{Set\+Ro(const float ro\+\_\+factor)}{SetRo(const float ro_factor)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+Q\+Sensor\+::\+Set\+Ro (
+\begin{DoxyParamCaption}
+\item[{const float}]{ro\+\_\+factor}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_sensor_a03eb97a82d462ee54ed249bc11da916a}{}\label{class_m_q_sensor_a03eb97a82d462ee54ed249bc11da916a}
+
+
+Definition at line 46 of file M\+Q\+Sensor.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 18
+
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!Set\+Ro\+Clean\+Air\+Factor@{Set\+Ro\+Clean\+Air\+Factor}}
+\index{Set\+Ro\+Clean\+Air\+Factor@{Set\+Ro\+Clean\+Air\+Factor}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{Set\+Ro\+Clean\+Air\+Factor(const float ro\+\_\+clean\+\_\+air\+\_\+factor)}{SetRoCleanAirFactor(const float ro_clean_air_factor)}}]{\setlength{\rightskip}{0pt plus 5cm}void M\+Q\+Sensor\+::\+Set\+Ro\+Clean\+Air\+Factor (
+\begin{DoxyParamCaption}
+\item[{const float}]{ro\+\_\+clean\+\_\+air\+\_\+factor}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q_sensor_a870f6dacc4896cdea8cb114b3b508ea3}{}\label{class_m_q_sensor_a870f6dacc4896cdea8cb114b3b508ea3}
+
+
+Definition at line 49 of file M\+Q\+Sensor.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 19
+
+
+
+
+\subsection{Member Data Documentation}
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!\+\_\+\+C\+A\+L\+I\+B\+A\+R\+A\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES@{\+\_\+\+C\+A\+L\+I\+B\+A\+R\+A\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES}}
+\index{\+\_\+\+C\+A\+L\+I\+B\+A\+R\+A\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES@{\+\_\+\+C\+A\+L\+I\+B\+A\+R\+A\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{\+\_\+\+C\+A\+L\+I\+B\+A\+R\+A\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES}{_CALIBARAION_SAMPLE_TIMES}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+Q\+Sensor\+::\+\_\+\+C\+A\+L\+I\+B\+A\+R\+A\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES = 5\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_m_q_sensor_ae04756d16f8d90e492fdb48c5ac4e930}{}\label{class_m_q_sensor_ae04756d16f8d90e492fdb48c5ac4e930}
+
+
+Definition at line 67 of file M\+Q\+Sensor.\+hpp.
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL@{\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}
+\index{\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL@{\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL}{_CALIBRATION_SAMPLE_INTERVAL}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+Q\+Sensor\+::\+\_\+\+C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL = 50\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_m_q_sensor_a440f40e2d8109c9cda26ce2b3d8ff564}{}\label{class_m_q_sensor_a440f40e2d8109c9cda26ce2b3d8ff564}
+
+
+Definition at line 68 of file M\+Q\+Sensor.\+hpp.
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!\+\_\+\+L\+A\+S\+T\+\_\+\+R\+E\+A\+D\+\_\+\+T\+I\+ME@{\+\_\+\+L\+A\+S\+T\+\_\+\+R\+E\+A\+D\+\_\+\+T\+I\+ME}}
+\index{\+\_\+\+L\+A\+S\+T\+\_\+\+R\+E\+A\+D\+\_\+\+T\+I\+ME@{\+\_\+\+L\+A\+S\+T\+\_\+\+R\+E\+A\+D\+\_\+\+T\+I\+ME}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{\+\_\+\+L\+A\+S\+T\+\_\+\+R\+E\+A\+D\+\_\+\+T\+I\+ME}{_LAST_READ_TIME}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t M\+Q\+Sensor\+::\+\_\+\+L\+A\+S\+T\+\_\+\+R\+E\+A\+D\+\_\+\+T\+I\+ME = 0\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_m_q_sensor_a464b0db94d80b771efca70a0eb58f951}{}\label{class_m_q_sensor_a464b0db94d80b771efca70a0eb58f951}
+
+
+Definition at line 64 of file M\+Q\+Sensor.\+hpp.
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!\+\_\+\+M\+Q\+\_\+pin@{\+\_\+\+M\+Q\+\_\+pin}}
+\index{\+\_\+\+M\+Q\+\_\+pin@{\+\_\+\+M\+Q\+\_\+pin}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{\+\_\+\+M\+Q\+\_\+pin}{_MQ_pin}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+Q\+Sensor\+::\+\_\+\+M\+Q\+\_\+pin\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_m_q_sensor_aaa75c5a8dbb6b8bfba63a7b8749acd82}{}\label{class_m_q_sensor_aaa75c5a8dbb6b8bfba63a7b8749acd82}
+
+
+Definition at line 66 of file M\+Q\+Sensor.\+hpp.
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!\+\_\+\+R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL@{\+\_\+\+R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}
+\index{\+\_\+\+R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL@{\+\_\+\+R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{\+\_\+\+R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL}{_READ_SAMPLE_INTERVAL}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+Q\+Sensor\+::\+\_\+\+R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL = 50\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_m_q_sensor_a7dcb6e9f9ff88b498d7b47dd33b0809f}{}\label{class_m_q_sensor_a7dcb6e9f9ff88b498d7b47dd33b0809f}
+
+
+Definition at line 69 of file M\+Q\+Sensor.\+hpp.
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!\+\_\+\+R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES@{\+\_\+\+R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES}}
+\index{\+\_\+\+R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES@{\+\_\+\+R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{\+\_\+\+R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES}{_READ_SAMPLE_TIMES}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t M\+Q\+Sensor\+::\+\_\+\+R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES = 5\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_m_q_sensor_a3c6ba8a07087b67ee99941bced73e940}{}\label{class_m_q_sensor_a3c6ba8a07087b67ee99941bced73e940}
+
+
+Definition at line 70 of file M\+Q\+Sensor.\+hpp.
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!\+\_\+\+R\+E\+A\+D\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+I\+N\+T\+E\+R\+V\+AL@{\+\_\+\+R\+E\+A\+D\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}
+\index{\+\_\+\+R\+E\+A\+D\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+I\+N\+T\+E\+R\+V\+AL@{\+\_\+\+R\+E\+A\+D\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+I\+N\+T\+E\+R\+V\+AL}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{\+\_\+\+R\+E\+A\+D\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+I\+N\+T\+E\+R\+V\+AL}{_READ_SENSOR_INTERVAL}}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t M\+Q\+Sensor\+::\+\_\+\+R\+E\+A\+D\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+I\+N\+T\+E\+R\+V\+AL = 10000\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_m_q_sensor_a4a8e710f1bc61afb702d26ceb1366f11}{}\label{class_m_q_sensor_a4a8e710f1bc61afb702d26ceb1366f11}
+
+
+Definition at line 65 of file M\+Q\+Sensor.\+hpp.
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!\+\_\+\+R\+L\+\_\+\+V\+A\+L\+UE@{\+\_\+\+R\+L\+\_\+\+V\+A\+L\+UE}}
+\index{\+\_\+\+R\+L\+\_\+\+V\+A\+L\+UE@{\+\_\+\+R\+L\+\_\+\+V\+A\+L\+UE}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{\+\_\+\+R\+L\+\_\+\+V\+A\+L\+UE}{_RL_VALUE}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q\+Sensor\+::\+\_\+\+R\+L\+\_\+\+V\+A\+L\+UE = 5\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_m_q_sensor_a2cf9585b95f5beaac2dc8edbab7eff42}{}\label{class_m_q_sensor_a2cf9585b95f5beaac2dc8edbab7eff42}
+
+
+Definition at line 74 of file M\+Q\+Sensor.\+hpp.
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!\+\_\+\+Ro@{\+\_\+\+Ro}}
+\index{\+\_\+\+Ro@{\+\_\+\+Ro}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{\+\_\+\+Ro}{_Ro}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q\+Sensor\+::\+\_\+\+Ro = 10\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_m_q_sensor_ade2e483ebc557d1caf753d41a8b3afde}{}\label{class_m_q_sensor_ade2e483ebc557d1caf753d41a8b3afde}
+
+
+Definition at line 73 of file M\+Q\+Sensor.\+hpp.
+
+\index{M\+Q\+Sensor@{M\+Q\+Sensor}!\+\_\+\+R\+O\+\_\+\+C\+L\+E\+A\+N\+\_\+\+A\+I\+R\+\_\+\+F\+A\+C\+T\+OR@{\+\_\+\+R\+O\+\_\+\+C\+L\+E\+A\+N\+\_\+\+A\+I\+R\+\_\+\+F\+A\+C\+T\+OR}}
+\index{\+\_\+\+R\+O\+\_\+\+C\+L\+E\+A\+N\+\_\+\+A\+I\+R\+\_\+\+F\+A\+C\+T\+OR@{\+\_\+\+R\+O\+\_\+\+C\+L\+E\+A\+N\+\_\+\+A\+I\+R\+\_\+\+F\+A\+C\+T\+OR}!M\+Q\+Sensor@{M\+Q\+Sensor}}
+\subsubsection[{\texorpdfstring{\+\_\+\+R\+O\+\_\+\+C\+L\+E\+A\+N\+\_\+\+A\+I\+R\+\_\+\+F\+A\+C\+T\+OR}{_RO_CLEAN_AIR_FACTOR}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q\+Sensor\+::\+\_\+\+R\+O\+\_\+\+C\+L\+E\+A\+N\+\_\+\+A\+I\+R\+\_\+\+F\+A\+C\+T\+OR = 9.\+83\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_m_q_sensor_adc7e7af2139868a784d31d27d73b7df3}{}\label{class_m_q_sensor_adc7e7af2139868a784d31d27d73b7df3}
+
+
+Definition at line 72 of file M\+Q\+Sensor.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+M\+Q-\/\+Sensor/src/\hyperlink{_m_q_sensor_8hpp}{M\+Q\+Sensor.\+hpp}\item 
+lib/\+M\+Q-\/\+Sensor/src/\hyperlink{_m_q_sensor_8cpp}{M\+Q\+Sensor.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,15 @@
+digraph "MQResistanceCalculation"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="MQResistanceCalculation",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="MQCalibration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$misq2_8h.html#a2d47ada5dcaf51b7ab02ecc6a398a23e"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="setup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$misq2_8h.html#a4fc01d736fe50cf5b977f755b675f11d"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="MQRead",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$misq2_8h.html#a7ff8ec7679bab97a45b1036d288da051"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="loop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$misq2_8h.html#afe461d27b9c48d5921c00d521181f12f"];
+}

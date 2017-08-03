@@ -1,0 +1,299 @@
+\hypertarget{misq2_8h}{}\section{Backup/test/mq2misterio/misq2.h File Reference}
+\label{misq2_8h}\index{Backup/test/mq2misterio/misq2.\+h@{Backup/test/mq2misterio/misq2.\+h}}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{misq2_8h_a00ff7ba759960cbc730fd84bcc483f61}{M\+Q\+\_\+\+P\+IN}~(0)
+\item 
+\#define \hyperlink{misq2_8h_ad5556dc1c71cc372cebc0c5626927abd}{R\+L\+\_\+\+V\+A\+L\+UE}~(5)
+\item 
+\#define \hyperlink{misq2_8h_a8465aceea6ea793c19480fa4cc17771b}{R\+O\+\_\+\+C\+L\+E\+A\+N\+\_\+\+A\+I\+R\+\_\+\+F\+A\+C\+T\+OR}~(9.\+83)
+\item 
+\#define \hyperlink{misq2_8h_acdf364a8925cc6b8b82e5e97ebad4bef}{C\+A\+L\+I\+B\+A\+R\+A\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES}~(50)
+\item 
+\#define \hyperlink{misq2_8h_aa97de48a2e947c960c2d80a2a57adeb8}{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL}~(500)
+\item 
+\#define \hyperlink{misq2_8h_ad4499f7506f777fa96123c6f1006339e}{R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL}~(50)
+\item 
+\#define \hyperlink{misq2_8h_a663765dcef79a2d229a5c173c56e5839}{R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES}~(5)
+\item 
+\#define \hyperlink{misq2_8h_a0cc993e1b477840084dc9cdec4f6c53a}{G\+A\+S\+\_\+\+L\+PG}~(0)
+\item 
+\#define \hyperlink{misq2_8h_aabe44f40946e8564f6e69e7a1e78d174}{G\+A\+S\+\_\+\+CO}~(1)
+\item 
+\#define \hyperlink{misq2_8h_a9f570b72ce563d1e6e602d797ef5361d}{G\+A\+S\+\_\+\+S\+M\+O\+KE}~(2)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{misq2_8h_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
+\item 
+void \hyperlink{misq2_8h_afe461d27b9c48d5921c00d521181f12f}{loop} ()
+\item 
+float \hyperlink{misq2_8h_a5d65366acdc805c88dd6d13a1bb0fd39}{M\+Q\+Resistance\+Calculation} (int raw\+\_\+adc)
+\item 
+float \hyperlink{misq2_8h_a2d47ada5dcaf51b7ab02ecc6a398a23e}{M\+Q\+Calibration} (int mq\+\_\+pin)
+\item 
+float \hyperlink{misq2_8h_a7ff8ec7679bab97a45b1036d288da051}{M\+Q\+Read} (int mq\+\_\+pin)
+\item 
+int \hyperlink{misq2_8h_a6027df1dfc2df874a53a27b134aa3106}{M\+Q\+Get\+Gas\+Percentage} (float rs\+\_\+ro\+\_\+ratio, int gas\+\_\+id)
+\item 
+int \hyperlink{misq2_8h_a131fb9f4538e87979ca9236e1ef9372b}{M\+Q\+Get\+Percentage} (float rs\+\_\+ro\+\_\+ratio, float $\ast$pcurve)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{misq2_8h_a46c9cf655db9d3db76c6943e49090974}{L\+P\+G\+Curve} \mbox{[}3\mbox{]} = \{ 2.\+3, 0.\+21, -\/0.\+47 \}
+\item 
+float \hyperlink{misq2_8h_a34b4bcf4f8d3a3a4ed8aa52180bab588}{C\+O\+Curve} \mbox{[}3\mbox{]} = \{ 2.\+3, 0.\+72, -\/0.\+34 \}
+\item 
+float \hyperlink{misq2_8h_ab1f817bd8039d96553280a3a4491ec39}{Smoke\+Curve} \mbox{[}3\mbox{]} = \{ 2.\+3, 0.\+53, -\/0.\+44 \}
+\item 
+float \hyperlink{misq2_8h_aee9db5cb53b2ab367de49b514ab771f5}{Ro} = 10
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{misq2.\+h@{misq2.\+h}!C\+A\+L\+I\+B\+A\+R\+A\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES@{C\+A\+L\+I\+B\+A\+R\+A\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES}}
+\index{C\+A\+L\+I\+B\+A\+R\+A\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES@{C\+A\+L\+I\+B\+A\+R\+A\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+L\+I\+B\+A\+R\+A\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES}{CALIBARAION_SAMPLE_TIMES}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+L\+I\+B\+A\+R\+A\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES~(50)}\hypertarget{misq2_8h_acdf364a8925cc6b8b82e5e97ebad4bef}{}\label{misq2_8h_acdf364a8925cc6b8b82e5e97ebad4bef}
+
+
+Definition at line 19 of file misq2.\+h.
+
+\index{misq2.\+h@{misq2.\+h}!C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL@{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}
+\index{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL@{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL}{CALIBRATION_SAMPLE_INTERVAL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+A\+L\+I\+B\+R\+A\+T\+I\+O\+N\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL~(500)}\hypertarget{misq2_8h_aa97de48a2e947c960c2d80a2a57adeb8}{}\label{misq2_8h_aa97de48a2e947c960c2d80a2a57adeb8}
+
+
+Definition at line 20 of file misq2.\+h.
+
+\index{misq2.\+h@{misq2.\+h}!G\+A\+S\+\_\+\+CO@{G\+A\+S\+\_\+\+CO}}
+\index{G\+A\+S\+\_\+\+CO@{G\+A\+S\+\_\+\+CO}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{G\+A\+S\+\_\+\+CO}{GAS_CO}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+A\+S\+\_\+\+CO~(1)}\hypertarget{misq2_8h_aabe44f40946e8564f6e69e7a1e78d174}{}\label{misq2_8h_aabe44f40946e8564f6e69e7a1e78d174}
+
+
+Definition at line 28 of file misq2.\+h.
+
+\index{misq2.\+h@{misq2.\+h}!G\+A\+S\+\_\+\+L\+PG@{G\+A\+S\+\_\+\+L\+PG}}
+\index{G\+A\+S\+\_\+\+L\+PG@{G\+A\+S\+\_\+\+L\+PG}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{G\+A\+S\+\_\+\+L\+PG}{GAS_LPG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+A\+S\+\_\+\+L\+PG~(0)}\hypertarget{misq2_8h_a0cc993e1b477840084dc9cdec4f6c53a}{}\label{misq2_8h_a0cc993e1b477840084dc9cdec4f6c53a}
+
+
+Definition at line 27 of file misq2.\+h.
+
+\index{misq2.\+h@{misq2.\+h}!G\+A\+S\+\_\+\+S\+M\+O\+KE@{G\+A\+S\+\_\+\+S\+M\+O\+KE}}
+\index{G\+A\+S\+\_\+\+S\+M\+O\+KE@{G\+A\+S\+\_\+\+S\+M\+O\+KE}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{G\+A\+S\+\_\+\+S\+M\+O\+KE}{GAS_SMOKE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define G\+A\+S\+\_\+\+S\+M\+O\+KE~(2)}\hypertarget{misq2_8h_a9f570b72ce563d1e6e602d797ef5361d}{}\label{misq2_8h_a9f570b72ce563d1e6e602d797ef5361d}
+
+
+Definition at line 29 of file misq2.\+h.
+
+\index{misq2.\+h@{misq2.\+h}!M\+Q\+\_\+\+P\+IN@{M\+Q\+\_\+\+P\+IN}}
+\index{M\+Q\+\_\+\+P\+IN@{M\+Q\+\_\+\+P\+IN}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{M\+Q\+\_\+\+P\+IN}{MQ_PIN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+Q\+\_\+\+P\+IN~(0)}\hypertarget{misq2_8h_a00ff7ba759960cbc730fd84bcc483f61}{}\label{misq2_8h_a00ff7ba759960cbc730fd84bcc483f61}
+
+
+Definition at line 13 of file misq2.\+h.
+
+\index{misq2.\+h@{misq2.\+h}!R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL@{R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL}}
+\index{R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL@{R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL}{READ_SAMPLE_INTERVAL}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+I\+N\+T\+E\+R\+V\+AL~(50)}\hypertarget{misq2_8h_ad4499f7506f777fa96123c6f1006339e}{}\label{misq2_8h_ad4499f7506f777fa96123c6f1006339e}
+
+
+Definition at line 22 of file misq2.\+h.
+
+\index{misq2.\+h@{misq2.\+h}!R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES@{R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES}}
+\index{R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES@{R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES}{READ_SAMPLE_TIMES}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+E\+A\+D\+\_\+\+S\+A\+M\+P\+L\+E\+\_\+\+T\+I\+M\+ES~(5)}\hypertarget{misq2_8h_a663765dcef79a2d229a5c173c56e5839}{}\label{misq2_8h_a663765dcef79a2d229a5c173c56e5839}
+
+
+Definition at line 23 of file misq2.\+h.
+
+\index{misq2.\+h@{misq2.\+h}!R\+L\+\_\+\+V\+A\+L\+UE@{R\+L\+\_\+\+V\+A\+L\+UE}}
+\index{R\+L\+\_\+\+V\+A\+L\+UE@{R\+L\+\_\+\+V\+A\+L\+UE}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{R\+L\+\_\+\+V\+A\+L\+UE}{RL_VALUE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+L\+\_\+\+V\+A\+L\+UE~(5)}\hypertarget{misq2_8h_ad5556dc1c71cc372cebc0c5626927abd}{}\label{misq2_8h_ad5556dc1c71cc372cebc0c5626927abd}
+
+
+Definition at line 14 of file misq2.\+h.
+
+\index{misq2.\+h@{misq2.\+h}!R\+O\+\_\+\+C\+L\+E\+A\+N\+\_\+\+A\+I\+R\+\_\+\+F\+A\+C\+T\+OR@{R\+O\+\_\+\+C\+L\+E\+A\+N\+\_\+\+A\+I\+R\+\_\+\+F\+A\+C\+T\+OR}}
+\index{R\+O\+\_\+\+C\+L\+E\+A\+N\+\_\+\+A\+I\+R\+\_\+\+F\+A\+C\+T\+OR@{R\+O\+\_\+\+C\+L\+E\+A\+N\+\_\+\+A\+I\+R\+\_\+\+F\+A\+C\+T\+OR}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{R\+O\+\_\+\+C\+L\+E\+A\+N\+\_\+\+A\+I\+R\+\_\+\+F\+A\+C\+T\+OR}{RO_CLEAN_AIR_FACTOR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+O\+\_\+\+C\+L\+E\+A\+N\+\_\+\+A\+I\+R\+\_\+\+F\+A\+C\+T\+OR~(9.\+83)}\hypertarget{misq2_8h_a8465aceea6ea793c19480fa4cc17771b}{}\label{misq2_8h_a8465aceea6ea793c19480fa4cc17771b}
+
+
+Definition at line 15 of file misq2.\+h.
+
+
+
+\subsection{Function Documentation}
+\index{misq2.\+h@{misq2.\+h}!loop@{loop}}
+\index{loop@{loop}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{loop()}{loop()}}]{\setlength{\rightskip}{0pt plus 5cm}void loop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{misq2_8h_afe461d27b9c48d5921c00d521181f12f}{}\label{misq2_8h_afe461d27b9c48d5921c00d521181f12f}
+
+
+Definition at line 58 of file misq2.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 0
+
+
+\index{misq2.\+h@{misq2.\+h}!M\+Q\+Calibration@{M\+Q\+Calibration}}
+\index{M\+Q\+Calibration@{M\+Q\+Calibration}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{M\+Q\+Calibration(int mq\+\_\+pin)}{MQCalibration(int mq_pin)}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q\+Calibration (
+\begin{DoxyParamCaption}
+\item[{int}]{mq\+\_\+pin}
+\end{DoxyParamCaption}
+)}\hypertarget{misq2_8h_a2d47ada5dcaf51b7ab02ecc6a398a23e}{}\label{misq2_8h_a2d47ada5dcaf51b7ab02ecc6a398a23e}
+
+
+Definition at line 93 of file misq2.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 1
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+\index{misq2.\+h@{misq2.\+h}!M\+Q\+Get\+Gas\+Percentage@{M\+Q\+Get\+Gas\+Percentage}}
+\index{M\+Q\+Get\+Gas\+Percentage@{M\+Q\+Get\+Gas\+Percentage}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{M\+Q\+Get\+Gas\+Percentage(float rs\+\_\+ro\+\_\+ratio, int gas\+\_\+id)}{MQGetGasPercentage(float rs_ro_ratio, int gas_id)}}]{\setlength{\rightskip}{0pt plus 5cm}int M\+Q\+Get\+Gas\+Percentage (
+\begin{DoxyParamCaption}
+\item[{float}]{rs\+\_\+ro\+\_\+ratio, }
+\item[{int}]{gas\+\_\+id}
+\end{DoxyParamCaption}
+)}\hypertarget{misq2_8h_a6027df1dfc2df874a53a27b134aa3106}{}\label{misq2_8h_a6027df1dfc2df874a53a27b134aa3106}
+
+
+Definition at line 139 of file misq2.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 3
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 4
+
+
+\index{misq2.\+h@{misq2.\+h}!M\+Q\+Get\+Percentage@{M\+Q\+Get\+Percentage}}
+\index{M\+Q\+Get\+Percentage@{M\+Q\+Get\+Percentage}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{M\+Q\+Get\+Percentage(float rs\+\_\+ro\+\_\+ratio, float $\ast$pcurve)}{MQGetPercentage(float rs_ro_ratio, float *pcurve)}}]{\setlength{\rightskip}{0pt plus 5cm}int M\+Q\+Get\+Percentage (
+\begin{DoxyParamCaption}
+\item[{float}]{rs\+\_\+ro\+\_\+ratio, }
+\item[{float $\ast$}]{pcurve}
+\end{DoxyParamCaption}
+)}\hypertarget{misq2_8h_a131fb9f4538e87979ca9236e1ef9372b}{}\label{misq2_8h_a131fb9f4538e87979ca9236e1ef9372b}
+
+
+Definition at line 160 of file misq2.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 5
+
+
+\index{misq2.\+h@{misq2.\+h}!M\+Q\+Read@{M\+Q\+Read}}
+\index{M\+Q\+Read@{M\+Q\+Read}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{M\+Q\+Read(int mq\+\_\+pin)}{MQRead(int mq_pin)}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q\+Read (
+\begin{DoxyParamCaption}
+\item[{int}]{mq\+\_\+pin}
+\end{DoxyParamCaption}
+)}\hypertarget{misq2_8h_a7ff8ec7679bab97a45b1036d288da051}{}\label{misq2_8h_a7ff8ec7679bab97a45b1036d288da051}
+
+
+Definition at line 118 of file misq2.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 6
+
+
+
+
+Here is the caller graph for this function\+:
+% FIG 7
+
+
+\index{misq2.\+h@{misq2.\+h}!M\+Q\+Resistance\+Calculation@{M\+Q\+Resistance\+Calculation}}
+\index{M\+Q\+Resistance\+Calculation@{M\+Q\+Resistance\+Calculation}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{M\+Q\+Resistance\+Calculation(int raw\+\_\+adc)}{MQResistanceCalculation(int raw_adc)}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q\+Resistance\+Calculation (
+\begin{DoxyParamCaption}
+\item[{int}]{raw\+\_\+adc}
+\end{DoxyParamCaption}
+)}\hypertarget{misq2_8h_a5d65366acdc805c88dd6d13a1bb0fd39}{}\label{misq2_8h_a5d65366acdc805c88dd6d13a1bb0fd39}
+
+
+Definition at line 81 of file misq2.\+h.
+
+
+
+Here is the caller graph for this function\+:
+% FIG 8
+
+
+\index{misq2.\+h@{misq2.\+h}!setup@{setup}}
+\index{setup@{setup}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{setup()}{setup()}}]{\setlength{\rightskip}{0pt plus 5cm}void setup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{misq2_8h_a4fc01d736fe50cf5b977f755b675f11d}{}\label{misq2_8h_a4fc01d736fe50cf5b977f755b675f11d}
+
+
+Definition at line 46 of file misq2.\+h.
+
+
+
+Here is the call graph for this function\+:
+% FIG 9
+
+
+
+
+\subsection{Variable Documentation}
+\index{misq2.\+h@{misq2.\+h}!C\+O\+Curve@{C\+O\+Curve}}
+\index{C\+O\+Curve@{C\+O\+Curve}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{C\+O\+Curve}{COCurve}}]{\setlength{\rightskip}{0pt plus 5cm}float C\+O\+Curve\mbox{[}3\mbox{]} = \{ 2.\+3, 0.\+72, -\/0.\+34 \}}\hypertarget{misq2_8h_a34b4bcf4f8d3a3a4ed8aa52180bab588}{}\label{misq2_8h_a34b4bcf4f8d3a3a4ed8aa52180bab588}
+
+
+Definition at line 36 of file misq2.\+h.
+
+\index{misq2.\+h@{misq2.\+h}!L\+P\+G\+Curve@{L\+P\+G\+Curve}}
+\index{L\+P\+G\+Curve@{L\+P\+G\+Curve}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{L\+P\+G\+Curve}{LPGCurve}}]{\setlength{\rightskip}{0pt plus 5cm}float L\+P\+G\+Curve\mbox{[}3\mbox{]} = \{ 2.\+3, 0.\+21, -\/0.\+47 \}}\hypertarget{misq2_8h_a46c9cf655db9d3db76c6943e49090974}{}\label{misq2_8h_a46c9cf655db9d3db76c6943e49090974}
+
+
+Definition at line 32 of file misq2.\+h.
+
+\index{misq2.\+h@{misq2.\+h}!Ro@{Ro}}
+\index{Ro@{Ro}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{Ro}{Ro}}]{\setlength{\rightskip}{0pt plus 5cm}float Ro = 10}\hypertarget{misq2_8h_aee9db5cb53b2ab367de49b514ab771f5}{}\label{misq2_8h_aee9db5cb53b2ab367de49b514ab771f5}
+
+
+Definition at line 44 of file misq2.\+h.
+
+\index{misq2.\+h@{misq2.\+h}!Smoke\+Curve@{Smoke\+Curve}}
+\index{Smoke\+Curve@{Smoke\+Curve}!misq2.\+h@{misq2.\+h}}
+\subsubsection[{\texorpdfstring{Smoke\+Curve}{SmokeCurve}}]{\setlength{\rightskip}{0pt plus 5cm}float Smoke\+Curve\mbox{[}3\mbox{]} = \{ 2.\+3, 0.\+53, -\/0.\+44 \}}\hypertarget{misq2_8h_ab1f817bd8039d96553280a3a4491ec39}{}\label{misq2_8h_ab1f817bd8039d96553280a3a4491ec39}
+
+
+Definition at line 40 of file misq2.\+h.
+

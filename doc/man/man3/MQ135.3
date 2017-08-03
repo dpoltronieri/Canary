@@ -1,0 +1,189 @@
+.TH "MQ135" 3 "Wed Jul 5 2017" "Canary" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MQ135 \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MQ135\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMQ135\fP (uint8_t pin)"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "float \fBgetCorrectionFactor\fP (float t, float h)"
+.br
+.RI "\fIGet the correction factor to correct for temperature and humidity\&. \fP"
+.ti -1c
+.RI "float \fBgetResistance\fP ()"
+.br
+.RI "\fIGet the resistance of the sensor, ie\&. the measurement value\&. \fP"
+.ti -1c
+.RI "float \fBgetCorrectedResistance\fP (float t, float h)"
+.br
+.RI "\fIGet the resistance of the sensor, ie\&. the measurement value corrected for temp/hum\&. \fP"
+.ti -1c
+.RI "float \fBgetPPM\fP ()"
+.br
+.RI "\fIGet the ppm of CO2 sensed (assuming only CO2 in the air) \fP"
+.ti -1c
+.RI "float \fBgetCorrectedPPM\fP (float t, float h)"
+.br
+.RI "\fIGet the ppm of CO2 sensed (assuming only CO2 in the air), corrected for temp/hum\&. \fP"
+.ti -1c
+.RI "float \fBgetRZero\fP ()"
+.br
+.RI "\fIGet the resistance RZero of the sensor for calibration purposes\&. \fP"
+.ti -1c
+.RI "float \fBgetCorrectedRZero\fP (float t, float h)"
+.br
+.RI "\fIGet the corrected resistance RZero of the sensor for calibration purposes\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 41 of file MQ135\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MQ135::MQ135 (uint8_t pin)"
+
+.PP
+Default constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpin\fP The analog input pin for the readout of the sensor 
+.RE
+.PP
+
+.PP
+Definition at line 27 of file MQ135\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "float MQ135::getCorrectedPPM (float t, float h)"
+
+.PP
+Get the ppm of CO2 sensed (assuming only CO2 in the air), corrected for temp/hum\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIt\fP The ambient air temperature 
+.br
+\fIh\fP The relative humidity
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The ppm of CO2 in the air 
+.RE
+.PP
+
+.PP
+Definition at line 95 of file MQ135\&.cpp\&.
+.SS "float MQ135::getCorrectedResistance (float t, float h)"
+
+.PP
+Get the resistance of the sensor, ie\&. the measurement value corrected for temp/hum\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIt\fP The ambient air temperature 
+.br
+\fIh\fP The relative humidity
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The corrected sensor resistance kOhm 
+.RE
+.PP
+
+.PP
+Definition at line 69 of file MQ135\&.cpp\&.
+.SS "float MQ135::getCorrectedRZero (float t, float h)"
+
+.PP
+Get the corrected resistance RZero of the sensor for calibration purposes\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIt\fP The ambient air temperature 
+.br
+\fIh\fP The relative humidity
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The corrected sensor resistance RZero in kOhm 
+.RE
+.PP
+
+.PP
+Definition at line 121 of file MQ135\&.cpp\&.
+.SS "float MQ135::getCorrectionFactor (float t, float h)"
+
+.PP
+Get the correction factor to correct for temperature and humidity\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIt\fP The ambient air temperature 
+.br
+\fIh\fP The relative humidity
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The calculated correction factor 
+.RE
+.PP
+
+.PP
+Definition at line 42 of file MQ135\&.cpp\&.
+.SS "float MQ135::getPPM ()"
+
+.PP
+Get the ppm of CO2 sensed (assuming only CO2 in the air) 
+.PP
+\fBReturns:\fP
+.RS 4
+The ppm of CO2 in the air 
+.RE
+.PP
+
+.PP
+Definition at line 80 of file MQ135\&.cpp\&.
+.SS "float MQ135::getResistance ()"
+
+.PP
+Get the resistance of the sensor, ie\&. the measurement value\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The sensor resistance in kOhm 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file MQ135\&.cpp\&.
+.SS "float MQ135::getRZero ()"
+
+.PP
+Get the resistance RZero of the sensor for calibration purposes\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The sensor resistance RZero in kOhm 
+.RE
+.PP
+
+.PP
+Definition at line 106 of file MQ135\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Canary from the source code\&.

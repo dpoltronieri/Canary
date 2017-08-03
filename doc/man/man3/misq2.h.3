@@ -1,0 +1,176 @@
+.TH "Backup/test/mq2misterio/misq2.h" 3 "Wed Jul 5 2017" "Canary" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Backup/test/mq2misterio/misq2.h \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMQ_PIN\fP   (0)"
+.br
+.ti -1c
+.RI "#define \fBRL_VALUE\fP   (5)"
+.br
+.ti -1c
+.RI "#define \fBRO_CLEAN_AIR_FACTOR\fP   (9\&.83)"
+.br
+.ti -1c
+.RI "#define \fBCALIBARAION_SAMPLE_TIMES\fP   (50)"
+.br
+.ti -1c
+.RI "#define \fBCALIBRATION_SAMPLE_INTERVAL\fP   (500)"
+.br
+.ti -1c
+.RI "#define \fBREAD_SAMPLE_INTERVAL\fP   (50)"
+.br
+.ti -1c
+.RI "#define \fBREAD_SAMPLE_TIMES\fP   (5)"
+.br
+.ti -1c
+.RI "#define \fBGAS_LPG\fP   (0)"
+.br
+.ti -1c
+.RI "#define \fBGAS_CO\fP   (1)"
+.br
+.ti -1c
+.RI "#define \fBGAS_SMOKE\fP   (2)"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetup\fP ()"
+.br
+.ti -1c
+.RI "void \fBloop\fP ()"
+.br
+.ti -1c
+.RI "float \fBMQResistanceCalculation\fP (int raw_adc)"
+.br
+.ti -1c
+.RI "float \fBMQCalibration\fP (int mq_pin)"
+.br
+.ti -1c
+.RI "float \fBMQRead\fP (int mq_pin)"
+.br
+.ti -1c
+.RI "int \fBMQGetGasPercentage\fP (float rs_ro_ratio, int gas_id)"
+.br
+.ti -1c
+.RI "int \fBMQGetPercentage\fP (float rs_ro_ratio, float *pcurve)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "float \fBLPGCurve\fP [3] = { 2\&.3, 0\&.21, \-0\&.47 }"
+.br
+.ti -1c
+.RI "float \fBCOCurve\fP [3] = { 2\&.3, 0\&.72, \-0\&.34 }"
+.br
+.ti -1c
+.RI "float \fBSmokeCurve\fP [3] = { 2\&.3, 0\&.53, \-0\&.44 }"
+.br
+.ti -1c
+.RI "float \fBRo\fP = 10"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define CALIBARAION_SAMPLE_TIMES   (50)"
+
+.PP
+Definition at line 19 of file misq2\&.h\&.
+.SS "#define CALIBRATION_SAMPLE_INTERVAL   (500)"
+
+.PP
+Definition at line 20 of file misq2\&.h\&.
+.SS "#define GAS_CO   (1)"
+
+.PP
+Definition at line 28 of file misq2\&.h\&.
+.SS "#define GAS_LPG   (0)"
+
+.PP
+Definition at line 27 of file misq2\&.h\&.
+.SS "#define GAS_SMOKE   (2)"
+
+.PP
+Definition at line 29 of file misq2\&.h\&.
+.SS "#define MQ_PIN   (0)"
+
+.PP
+Definition at line 13 of file misq2\&.h\&.
+.SS "#define READ_SAMPLE_INTERVAL   (50)"
+
+.PP
+Definition at line 22 of file misq2\&.h\&.
+.SS "#define READ_SAMPLE_TIMES   (5)"
+
+.PP
+Definition at line 23 of file misq2\&.h\&.
+.SS "#define RL_VALUE   (5)"
+
+.PP
+Definition at line 14 of file misq2\&.h\&.
+.SS "#define RO_CLEAN_AIR_FACTOR   (9\&.83)"
+
+.PP
+Definition at line 15 of file misq2\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void loop ()"
+
+.PP
+Definition at line 58 of file misq2\&.h\&.
+.SS "float MQCalibration (int mq_pin)"
+
+.PP
+Definition at line 93 of file misq2\&.h\&.
+.SS "int MQGetGasPercentage (float rs_ro_ratio, int gas_id)"
+
+.PP
+Definition at line 139 of file misq2\&.h\&.
+.SS "int MQGetPercentage (float rs_ro_ratio, float * pcurve)"
+
+.PP
+Definition at line 160 of file misq2\&.h\&.
+.SS "float MQRead (int mq_pin)"
+
+.PP
+Definition at line 118 of file misq2\&.h\&.
+.SS "float MQResistanceCalculation (int raw_adc)"
+
+.PP
+Definition at line 81 of file misq2\&.h\&.
+.SS "void setup ()"
+
+.PP
+Definition at line 46 of file misq2\&.h\&.
+.SH "Variable Documentation"
+.PP 
+.SS "float COCurve[3] = { 2\&.3, 0\&.72, \-0\&.34 }"
+
+.PP
+Definition at line 36 of file misq2\&.h\&.
+.SS "float LPGCurve[3] = { 2\&.3, 0\&.21, \-0\&.47 }"
+
+.PP
+Definition at line 32 of file misq2\&.h\&.
+.SS "float Ro = 10"
+
+.PP
+Definition at line 44 of file misq2\&.h\&.
+.SS "float SmokeCurve[3] = { 2\&.3, 0\&.53, \-0\&.44 }"
+
+.PP
+Definition at line 40 of file misq2\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Canary from the source code\&.

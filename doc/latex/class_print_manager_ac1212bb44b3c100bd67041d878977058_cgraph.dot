@@ -1,0 +1,15 @@
+digraph "PrintManager::PrintManager"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="PrintManager::PrintManager",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="PrintManager::sendData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_print_manager.html#a65b6e94eb17c08725d307293c26922c6"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="PrintManager::fastValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_print_manager.html#aef5dd6437e06e84de5a98c1466f5f074"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="PrintManager::addValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_print_manager.html#a27ea0c1977a54e1291d0be0fc0754f48"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="PrintManager::addValueSC",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_print_manager.html#a553c37331e9a50e193c4f6e6b1e67f73"];
+}

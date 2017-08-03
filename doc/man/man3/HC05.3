@@ -1,0 +1,141 @@
+.TH "HC05" 3 "Wed Jul 5 2017" "Canary" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+HC05 \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <HC05\&.h>\fP
+.PP
+Inherits Stream\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBHC05\fP (int cmdPin, int statePin)"
+.br
+.ti -1c
+.RI "\fBHC05\fP (int cmdPin, int statePin, uint8_t rx, uint8_t tx)"
+.br
+.ti -1c
+.RI "unsigned long \fBfindBaud\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetBaud\fP (unsigned long baud)"
+.br
+.ti -1c
+.RI "void \fBsetBaud\fP (unsigned long baud, unsigned long stopbits, unsigned long parity)"
+.br
+.ti -1c
+.RI "int \fBcmd\fP (const char *cmd, unsigned long timeout=100)"
+.br
+.ti -1c
+.RI "void \fBcmdMode2Start\fP (int pwrPin)"
+.br
+.ti -1c
+.RI "void \fBcmdMode2End\fP (void)"
+.br
+.ti -1c
+.RI "bool \fBconnected\fP (void)"
+.br
+.ti -1c
+.RI "virtual int \fBavailable\fP (void)"
+.br
+.ti -1c
+.RI "virtual void \fBbegin\fP (unsigned long)"
+.br
+.ti -1c
+.RI "virtual int \fBpeek\fP (void)"
+.br
+.ti -1c
+.RI "virtual int \fBread\fP (void)"
+.br
+.ti -1c
+.RI "virtual void \fBflush\fP (void)"
+.br
+.ti -1c
+.RI "virtual size_t \fBwrite\fP (uint8_t)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "SoftwareSerial \fB_btSerial\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 71 of file HC05\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "HC05::HC05 (int cmdPin, int statePin)"
+
+.PP
+Definition at line 12 of file HC05\&.cpp\&.
+.SS "HC05::HC05 (int cmdPin, int statePin, uint8_t rx, uint8_t tx)"
+
+.SH "Member Function Documentation"
+.PP 
+.SS "int HC05::available (void)\fC [virtual]\fP"
+
+.PP
+Definition at line 154 of file HC05\&.cpp\&.
+.SS "void HC05::begin (unsigned long baud)\fC [virtual]\fP"
+
+.PP
+Definition at line 170 of file HC05\&.cpp\&.
+.SS "int HC05::cmd (const char * cmd, unsigned long timeout = \fC100\fP)"
+
+.PP
+Definition at line 63 of file HC05\&.cpp\&.
+.SS "void HC05::cmdMode2End (void)"
+
+.PP
+Definition at line 215 of file HC05\&.cpp\&.
+.SS "void HC05::cmdMode2Start (int pwrPin)"
+
+.PP
+Definition at line 204 of file HC05\&.cpp\&.
+.SS "bool HC05::connected (void)"
+
+.SS "unsigned long HC05::findBaud ()"
+
+.PP
+Definition at line 28 of file HC05\&.cpp\&.
+.SS "void HC05::flush (void)\fC [virtual]\fP"
+
+.PP
+Definition at line 162 of file HC05\&.cpp\&.
+.SS "int HC05::peek (void)\fC [virtual]\fP"
+
+.PP
+Definition at line 158 of file HC05\&.cpp\&.
+.SS "int HC05::read (void)\fC [virtual]\fP"
+
+.PP
+Definition at line 166 of file HC05\&.cpp\&.
+.SS "void HC05::setBaud (unsigned long baud)"
+
+.PP
+Definition at line 150 of file HC05\&.cpp\&.
+.SS "void HC05::setBaud (unsigned long baud, unsigned long stopbits, unsigned long parity)"
+
+.PP
+Definition at line 111 of file HC05\&.cpp\&.
+.SS "size_t HC05::write (uint8_t byte)\fC [virtual]\fP"
+
+.PP
+Definition at line 189 of file HC05\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "SoftwareSerial HC05::_btSerial"
+
+.PP
+Definition at line 105 of file HC05\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Canary from the source code\&.

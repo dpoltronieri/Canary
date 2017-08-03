@@ -54,7 +54,7 @@ public:
 
 protected:
     // unsigned char * const _message; // The pointer cant be changed // Descobrir se char nao seria melhor
-    String _message;
+    String _message = "#";
     uint8_t _serialPortType;
     double _tempValue; // talvez double
     HardwareSerial * _serialPortHW;

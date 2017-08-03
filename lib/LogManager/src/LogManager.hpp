@@ -24,14 +24,14 @@ public:
      * call to SD.begin()
      */
     // cspin normalmente é 4
-    LogManager(uint8_t cspin, uint8_t verbose = QUIET, const char * fileName = "WEATHER.txt")
+    LogManager(uint8_t cspin, uint8_t verbose = QUIET, const char * fileName = "data.csv")
         : _CSpin { cspin },
     _VERBOSE { verbose },
     _fileName { fileName } { };
 
     // Funtion called in the Setup()
     uint8_t startLogManager();
-    uint16_t println(String message);
+    uint16_t println(const String message);
     String readln();
     void gotoTop();
     void gotoEnd();

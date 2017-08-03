@@ -52,7 +52,6 @@ void PrintManager::fastValue(const char fmt, const double value){
 };
 
 uint8_t PrintManager::sendData(){
-    // TODO: Programar a mensagem em Software
     _message += "~";
     if (_sdLogManager) {
         _sdLogManager->println(_message);

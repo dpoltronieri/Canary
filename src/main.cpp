@@ -1,6 +1,6 @@
 #include "Arduino.h"
 #include "main.hpp"
-#include "dht.h"
+#include <../lib/DHT/src/dht.h>
 #include <ldr.hpp>
 #include <../lib/MQ-Sensor/src/MQSensor.hpp>
 #include <../lib/PrintManager/src/PrintManager.hpp>
@@ -10,14 +10,17 @@
 SoftwareSerial Serial1(10, 11); // RX, TX
 #endif
 
-#define DHT11_PIN 5
-#define LDR_PIN   A0
+const uint8_t DHT11_PIN = 5;
+const uint8_t DHTTYPE   = DHT11;
+const uint8_t LDR_PIN   = A0;
 
 // Sensores
-dht DHTSensor;
-ldr LDRSensor          = ldr(LDR_PIN);
-MQSensor Dummy         = MQSensor::NewMQSensor(1, MQ_SENSOR_DUMMY);
-PrintManager BT_Serial = PrintManager(&Serial1); // Explicit pointer conversion
+DHT dht(DHT11_PIN, DHTTYPE);
+ldr LDRSensor  = ldr(LDR_PIN);
+MQSensor Dummy = MQSensor::NewMQSensor(1, MQ_SENSOR_DUMMY);
+// CSPIN inplementado no pino SS, definido pelo sistema
+LogManager SD_Loger        = LogManager(SS, VERBOSE, "weather.log");
+PrintManager Print_Manager = PrintManager(&Serial1, &SD_Loger); // Explicit pointer conversion
 
 /* MONTAGEM
  * LDR/pot pino 4
@@ -28,50 +31,54 @@ PrintManager BT_Serial = PrintManager(&Serial1); // Explicit pointer conversion
  * //*/
 
 // Variáveis de Ambiente
-double TemperatureHumidity[10];
+double temporaryData[10];
 
 // Build
 void setup(){
-    pinMode(DHT11_PIN, INPUT);
+    pinMode(DHT11_PIN, INPUT_PULLUP);
     pinMode(LDR_PIN, INPUT);
+    SD_Loger.startLogManager();
+    SD_Loger.gotoEnd();
+    dht.begin();
 
     Serial.begin(115200);
-    // Por enquanto
-    Serial.println("DHT TEST PROGRAM ");
-    Serial.print("LIBRARY VERSION: ");
-    Serial.println(DHT_LIB_VERSION);
-    Serial.println();
-    Serial.println("Type,\tstatus,\tHumidity (%),\tTemperature (C)");
 
     // #ifdef RH_PLATFORM_MEGA
     Serial1.begin(115200);
     // #endif
-
-    Serial1.println("DHT TEST PROGRAM ");
-    Serial1.print("LIBRARY VERSION: ");
-    Serial1.println(DHT_LIB_VERSION);
-    Serial1.println();
-    Serial1.println("Type,\tstatus,\tHumidity (%),\tTemperature (C)");
 }
 
 void loop(){
-    // Serial1.println("Hello");
     // TODO: reescrever isso
-    dhtDebug(DHTSensor, DHT11_PIN);
-    TemperatureHumidity[0] = DHTSensor.read11(DHT11_PIN);
-    TemperatureHumidity[1] = DHTSensor.temperature;
-    TemperatureHumidity[2] = DHTSensor.humidity;
-    TemperatureHumidity[3] = LDRSensor.check();
 
-    BT_Serial.addValue("th", DHTSensor.temperature, DHTSensor.humidity);
+    {
+        temporaryData[1] = dht.readTemperature();
+        temporaryData[2] = dht.readHumidity();
+        // Check if any reads failed and exit early (to try again).
+        if (isnan(temporaryData[1]) || isnan(temporaryData[2])) {
+            Serial.println("Failed to read from DHT sensor!");
+            Serial1.println("Failed to read from DHT sensor!");
+        }
+    }
+    // TODO: decidir se é um dado relevante
+    // float hic = dht.computeHeatIndex(t, h, false);
 
-    TemperatureHumidity[6] = analogRead(LDR_PIN);
-    BT_Serial.addValue("l", TemperatureHumidity[6]);
+    temporaryData[3] = 1024 - LDRSensor.check();
 
-    TemperatureHumidity[5] = (double) Dummy.check();
-    BT_Serial.addValue("M", TemperatureHumidity[5]);
+    Print_Manager.addValue("th", temporaryData[1], temporaryData[2]);
+    Print_Manager.addValue("l", temporaryData[3]);
 
-    BT_Serial.sendData();
+    // Dummy
+    temporaryData[4] = (double) Dummy.check();
+    Print_Manager.addValue("M", temporaryData[4]);
+
+    Print_Manager.sendData();
+
+    for (int i = 0; i < 10; i++) {
+        Serial.print(temporaryData[i]);
+        Serial.print(" , ");
+    }
+    Serial.println(";");
 
     delay(2000);
 } // loop

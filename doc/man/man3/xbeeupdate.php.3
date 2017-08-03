@@ -1,0 +1,73 @@
+.TH "Backup/CitzenProject/Citizen-Sensor/stationary/XBeeScripts/xbeeupdate.php" 3 "Wed Jul 5 2017" "Canary" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Backup/CitzenProject/Citizen-Sensor/stationary/XBeeScripts/xbeeupdate.php \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fB$api_key\fP = 'mFgy2cgsyv4GKhw4G4EzNcpgpfhQJkg4JvCrNpOskwo'"
+.br
+.ti -1c
+.RI "\fB$pachube\fP = new \fBPachube\fP($api_key)"
+.br
+.ti -1c
+.RI "\fB$url\fP = 'http://www\&.pachube\&.com/api/25375\&.csv'"
+.br
+.ti -1c
+.RI "\fB$data\fP = $_GET['value']"
+.br
+.ti -1c
+.RI "\fB$myFile\fP = 'phptest\&.txt'"
+.br
+.ti -1c
+.RI "\fB$fh\fP = fopen($myFile, 'w') or die('0')"
+.br
+.ti -1c
+.RI "\fBehco\fP"
+.br
+.ti -1c
+.RI "\fB$update_status\fP = $pachube\->updatePachube ( $url, $data )"
+.br
+.in -1c
+.SH "Variable Documentation"
+.PP 
+.SS "$api_key = 'mFgy2cgsyv4GKhw4G4EzNcpgpfhQJkg4JvCrNpOskwo'"
+
+.PP
+Definition at line 12 of file xbeeupdate\&.php\&.
+.SS "$data = $_GET['value']"
+
+.PP
+Definition at line 21 of file xbeeupdate\&.php\&.
+.SS "$fh = fopen($myFile, 'w') or die('0')"
+
+.PP
+Definition at line 23 of file xbeeupdate\&.php\&.
+.SS "$myFile = 'phptest\&.txt'"
+
+.PP
+Definition at line 22 of file xbeeupdate\&.php\&.
+.SS "$pachube = new \fBPachube\fP($api_key)"
+
+.PP
+Definition at line 16 of file xbeeupdate\&.php\&.
+.SS "$update_status = $pachube\->updatePachube ( $url, $data )"
+
+.PP
+Definition at line 31 of file xbeeupdate\&.php\&.
+.SS "$url = 'http://www\&.pachube\&.com/api/25375\&.csv'"
+
+.PP
+Definition at line 20 of file xbeeupdate\&.php\&.
+.SS "ehco"
+
+.PP
+Definition at line 26 of file xbeeupdate\&.php\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Canary from the source code\&.
