@@ -26,11 +26,37 @@ void PrintManager::addValue(const char * fmt, ...){
             _tempValue = va_arg(args, double);
             _message  += "+l";
             // _message += d;
-        } else if (*fmt == 'M') {
+        } else if (*fmt == 'q') {
             // sensor MQ
             uint16_t d = va_arg(args, double);
-            _message += "+M";
+            _message += "+q";
             _message += d;
+
+            /*
+             * Date and Time Varibles
+             */
+        } else if (*fmt == 'S') {
+            _tempValue = va_arg(args, double);
+            _message  += "+S";
+        } else if (*fmt == 'M') {
+            _tempValue = va_arg(args, double);
+            _message  += "+M";
+        } else if (*fmt == 'H') {
+            _tempValue = va_arg(args, double);
+            _message  += "+H";
+        } else if (*fmt == 'D') {
+            _tempValue = va_arg(args, double);
+            _message  += "+D";
+        } else if (*fmt == 'O') {
+            _tempValue = va_arg(args, double);
+            _message  += "+O";
+        } else if (*fmt == 'Y') {
+            _tempValue = va_arg(args, double);
+            _message  += "+Y";
+
+            /*
+             * Date and Time Varibles End
+             */
         } else {
             // return;
             break;
@@ -112,9 +138,9 @@ void PrintManager::addValueSC(const char * fmt, ...){
         //         _tempValue = va_arg(args, float);
         //         _message  += "+l";
         //         break;
-        //     case 'M': // Temperature
+        //     case 'q': // Temperature
         //         _tempValue = va_arg(args, float);
-        //         _message  += "+M";
+        //         _message  += "+q";
         //         break;
         //     default: // TODO: arrumar esse tratamento
         //         break;
@@ -136,10 +162,10 @@ void PrintManager::addValueSC(const char * fmt, ...){
             uint16_t d = va_arg(args, uint16_t);
             _message += "+l";
             _message += d;
-        } else if (*fmt == 'M') {
+        } else if (*fmt == 'q') {
             // sensor MQ
             uint16_t d = va_arg(args, uint16_t);
-            _message += "+M";
+            _message += "+q";
             _message += d;
         } else {
             // return;

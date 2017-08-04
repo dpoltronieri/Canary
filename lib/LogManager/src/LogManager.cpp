@@ -18,7 +18,7 @@ uint8_t LogManager::startLogManager(){
     } else {
         _LOG.close();
         Serial.println("File NOT OK");
-        return 1;
+        return 2;
     }
 }
 
