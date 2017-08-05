@@ -6,7 +6,12 @@
 #include <../lib/PrintManager/src/PrintManager.hpp>
 #include <Wire.h> // must be included here so that Arduino library object file references work
 #include <RtcDS1307.h>
+#include <TinyGPS++.h>
 
+#include <SPI.h>
+#include <SD.h>
+
+File myFile;
 
 #ifdef RH_PLATFORM_NANO
 # include <SoftwareSerial.h>
@@ -21,6 +26,7 @@ const uint8_t LDR_PIN   = A0;
 DHT dht(DHT11_PIN, DHTTYPE);
 ldr LDRSensor = ldr(LDR_PIN);
 RtcDS1307<TwoWire> Rtc(Wire);
+TinyGPSPlus GPS_Module;
 MQSensor Dummy = MQSensor::NewMQSensor(1, MQ_SENSOR_DUMMY);
 // CSPIN inplementado no pino SS, definido pelo sistema
 LogManager SD_Loger        = LogManager(SS, VERBOSE, "weater.log");
@@ -36,8 +42,49 @@ PrintManager Print_Manager = PrintManager(&Serial1, &SD_Loger); // Explicit poin
 
 // Variáveis de Ambiente
 // TODO: Considerar std::vector<int> array
-double temporaryData[10];
+double temporaryData[15];
 RtcDateTime clockTime;
+
+void displayInfo(){
+    Serial.print(F("Location: "));
+    if (GPS_Module.location.isValid()) {
+        Serial.print(GPS_Module.location.lat(), 6);
+        Serial.print(F(","));
+        Serial.print(GPS_Module.location.lng(), 6);
+    } else {
+        Serial.print(F("INVALID"));
+    }
+
+    Serial.print(F("  Date/Time: "));
+    if (GPS_Module.date.isValid()) {
+        Serial.print(GPS_Module.date.month());
+        Serial.print(F("/"));
+        Serial.print(GPS_Module.date.day());
+        Serial.print(F("/"));
+        Serial.print(GPS_Module.date.year());
+    } else {
+        Serial.print(F("INVALID"));
+    }
+
+    Serial.print(F(" "));
+    if (GPS_Module.time.isValid()) {
+        if (GPS_Module.time.hour() < 10) Serial.print(F("0"));
+        Serial.print(GPS_Module.time.hour());
+        Serial.print(F(":"));
+        if (GPS_Module.time.minute() < 10) Serial.print(F("0"));
+        Serial.print(GPS_Module.time.minute());
+        Serial.print(F(":"));
+        if (GPS_Module.time.second() < 10) Serial.print(F("0"));
+        Serial.print(GPS_Module.time.second());
+        Serial.print(F("."));
+        if (GPS_Module.time.centisecond() < 10) Serial.print(F("0"));
+        Serial.print(GPS_Module.time.centisecond());
+    } else {
+        Serial.print(F("INVALID"));
+    }
+
+    Serial.println();
+} // displayInfo
 
 // Build
 void setup(){
@@ -55,14 +102,18 @@ void setup(){
     Serial1.begin(115200);
     // #endif
 
+    // GPS_Module
+    Serial2.begin(9600);
+
     Serial.print("compiled: ");
     Serial.print(__DATE__);
     Serial.println(__TIME__);
     Rtc.Begin();
 
+
     // TODO: decidir quanto ao settime
-    // RtcDateTime compiled = RtcDateTime(__DATE__, __TIME__);
-    // Rtc.SetDateTime(compiled);
+    RtcDateTime compiled = RtcDateTime(__DATE__, __TIME__);
+    Rtc.SetDateTime(compiled);
     // printDateTime(compiled);
     // never assume the Rtc was last configured by you, so
     // just clear them to your needed state
@@ -108,15 +159,23 @@ void loop(){
       temporaryData[6],
       temporaryData[5]);
 
-
     Print_Manager.sendData();
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 15; i++) {
         Serial.print(temporaryData[i]);
         Serial.print(" , ");
     }
     Serial.println(";");
 
-
     delay(2000);
+
+    // This sketch displays information every time a new sentence is correctly encoded.
+    while (Serial2.available() > 0)
+        if (GPS_Module.encode(Serial2.read()))
+            displayInfo();
+
+    if (millis() > 5000 && GPS_Module.charsProcessed() < 10) {
+        Serial.println(F("No GPS detected: check wiring."));
+        while (true) ;
+    }
 } // loop

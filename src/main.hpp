@@ -3,7 +3,5 @@
 #include "Arduino.h"
 #include "dht.h"
 
-// Variáveis de ambiente
-
 
 #endif // ifndef MAIN_H
