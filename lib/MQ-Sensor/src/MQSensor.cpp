@@ -5,32 +5,37 @@
 // ///////////////////// MQ Sensor ///////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////
 MQSensor MQSensor::NewMQSensor(const uint8_t mqpin, const uint8_t mqtype){
-	switch (mqtype) {
-	case MQ_SENSOR_DUMMY:
-		return MQDummy(mqpin); // Observar se não precisa do new
+    switch (mqtype) {
+        case MQ_SENSOR_DUMMY:
+            return MQDummy(mqpin); // Observar se não precisa do new
 
-		break;
+            break;
 
-	case MQ_SENSOR_POTENTIOMETER:
-		return MQPotentiometer(mqpin);
+        case MQ_SENSOR_POTENTIOMETER:
+            return MQPotentiometer(mqpin);
 
-		break;
+            break;
 
-	case MQ_SENSOR_2:
-		return MQ2(mqpin);
+        case MQ_SENSOR_2:
+            return MQ2(mqpin);
 
-		break;
+            break;
 
-	default:
-		return 0;
-	}
+        case MQ_SENSOR_7:
+            return MQ7(mqpin);
+
+            break;
+
+        default:
+            return 0;
+    }
 }
 
 MQSensor::MQSensor(const uint8_t mqpin)
-	: _MQ_pin {
-	mqpin
+    : _MQ_pin {
+    mqpin
 } {
-	pinMode(_MQ_pin, INPUT);
+    pinMode(_MQ_pin, INPUT);
 }
 
 /*
@@ -46,41 +51,41 @@ MQSensor::MQSensor(const uint8_t mqpin)
  * }
  * //*/
 void MQSensor::SetRo(const float ro_factor){
-	_Ro = ro_factor;
+    _Ro = ro_factor;
 };
 void MQSensor::SetRoCleanAirFactor(const float ro_clean_air_factor){
-	_RO_CLEAN_AIR_FACTOR = ro_clean_air_factor;
+    _RO_CLEAN_AIR_FACTOR = ro_clean_air_factor;
 };
 void MQSensor::setRlValue(const uint8_t rlvalue){
-	_RL_VALUE = rlvalue;
+    _RL_VALUE = rlvalue;
 };
 void MQSensor::setCalibrationSampleTimes(const uint8_t cst){
-	_CALIBARAION_SAMPLE_TIMES = cst;
+    _CALIBARAION_SAMPLE_TIMES = cst;
 };
 void MQSensor::setCalibrationSampleInterval(const uint8_t csi){
-	_CALIBRATION_SAMPLE_INTERVAL = csi;
+    _CALIBRATION_SAMPLE_INTERVAL = csi;
 };
 void MQSensor::setReadSampleInterval(const uint8_t rsi){
-	_READ_SAMPLE_INTERVAL = rsi;
+    _READ_SAMPLE_INTERVAL = rsi;
 };
 void MQSensor::setReadSampleTimes(const uint8_t rst){
-	_READ_SAMPLE_TIMES = rst;
+    _READ_SAMPLE_TIMES = rst;
 };
 float const MQSensor::GetRoCleanAirFactor(void){
-	return _RO_CLEAN_AIR_FACTOR;
+    return _RO_CLEAN_AIR_FACTOR;
 };
 float const MQSensor::GetRo(void){
-	return _Ro;
+    return _Ro;
 };
 
 // TODO: verificar se isso é uma bia idéia
 void MQSensor::begin(){
-	_Ro = MQCalibration();
-	if (Serial.available()) {
-		Serial.print("Ro: ");
-		Serial.print(_Ro);
-		Serial.println(" kohm");
-	}
+    _Ro = MQCalibration();
+    if (Serial.available()) {
+        Serial.print("Ro: ");
+        Serial.print(_Ro);
+        Serial.println(" kohm");
+    }
 }
 
 /****************** MQResistanceCalculation ****************************************
@@ -91,8 +96,12 @@ void MQSensor::begin(){
  *       could be derived.
  ************************************************************************************/
 // utilizando divisor de tensão e resolvendo para R1
-float const inline MQSensor::MQResistanceCalculation(int raw_adc){
-	return (((float) _RL_VALUE * (1023 - raw_adc) / raw_adc));
+float const inline MQSensor::MQResistanceCalculation(float raw_adc){
+    // return (((float) _RL_VALUE * (1023 - raw_adc) / raw_adc));
+    // Serial.print("Resistencia: ");
+    // Serial.println(_RL_VALUE * ((1024 / raw_adc)) - 1);
+    // TODO: Voltar aqui
+    return (_RL_VALUE * ((1024 / raw_adc)) - 1);
 }
 
 /***************************** MQCalibration ****************************************
@@ -123,32 +132,32 @@ float const inline MQSensor::MQResistanceCalculation(int raw_adc){
  * }
  * //*/
 float MQSensor::MQCalibration(){
-	float _temp_ro = 0;
+    float _temp_ro = 0;
 
-	for (int i = 0; i < _CALIBARAION_SAMPLE_TIMES; i++) {
-		// take multiple samples
-		_temp_ro += MQResistanceCalculation(analogRead(_MQ_pin));
-		delay(_CALIBRATION_SAMPLE_INTERVAL);
-	}
-	_temp_ro = _temp_ro / _CALIBARAION_SAMPLE_TIMES; // calculate the average value
+    for (int i = 0; i < _CALIBARAION_SAMPLE_TIMES; i++) {
+        // take multiple samples
+        _temp_ro += MQResistanceCalculation(analogRead(_MQ_pin));
+        delay(_CALIBRATION_SAMPLE_INTERVAL);
+    }
+    _temp_ro = _temp_ro / _CALIBARAION_SAMPLE_TIMES; // calculate the average value
 
-	_temp_ro = _temp_ro / _RO_CLEAN_AIR_FACTOR; // divided by RO_CLEAN_AIR_FACTOR yields the Ro
-	// according to the chart in the datasheet
-	return _temp_ro;
+    _temp_ro = _temp_ro / _RO_CLEAN_AIR_FACTOR; // divided by RO_CLEAN_AIR_FACTOR yields the Ro
+    // according to the chart in the datasheet
+    return _temp_ro;
 }
 
 float const MQSensor::MQRead(){
-	float _read_sample = 0;
-	int _temp_resistance;
+    float _read_sample = 0;
+    float _temp_resistance;
 
-	for (int i = 0; i < _READ_SAMPLE_TIMES; i++) {
-		_temp_resistance = analogRead(_MQ_pin);
-		_read_sample    += MQResistanceCalculation(_temp_resistance);
-		delay(_READ_SAMPLE_INTERVAL);
-	}
+    for (int i = 0; i < _READ_SAMPLE_TIMES; i++) {
+        _temp_resistance = analogRead(_MQ_pin);
+        _read_sample    += MQResistanceCalculation(_temp_resistance);
+        delay(_READ_SAMPLE_INTERVAL);
+    }
 
-	_read_sample = _read_sample / _READ_SAMPLE_TIMES;
-	return _read_sample;
+    _read_sample = _read_sample / _READ_SAMPLE_TIMES;
+    return _read_sample;
 }
 
 /*****************************  MQGetPercentage **********************************
@@ -161,7 +170,15 @@ float const MQSensor::MQRead(){
  *       value.
  ************************************************************************************/
 float const MQSensor::MQGetPercentage(const float rs_ro_ratio, const float * pcurve){
-	return (pow(10, (((log(rs_ro_ratio) - pcurve[1]) / pcurve[2]) + pcurve[0])));
+    // TODO: VOltar aqui
+    Serial.print("RsRo ratio: ");
+    Serial.println(rs_ro_ratio);
+    // float temp = pow(10, (((log(rs_ro_ratio) - pcurve[1]) / pcurve[2]) + pcurve[0]));
+    // Resolvendo x = ay + b
+    float temp = rs_ro_ratio * pcurve[1] + pcurve[2];
+    Serial.print("Percentage: ");
+    Serial.println(temp);
+    return (temp);
 }
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -169,8 +186,8 @@ float const MQSensor::MQGetPercentage(const float rs_ro_ratio, const float * pcu
 // /////////////////////////////////////////////////////////////////////////
 
 MQDummy::MQDummy(const uint8_t mqpin) : MQSensor(mqpin){
-	// pinMode(_MQ_pin, INPUT);
-	_current_value = 150;
+    // pinMode(_MQ_pin, INPUT);
+    _current_value = 150;
 };
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -178,7 +195,7 @@ MQDummy::MQDummy(const uint8_t mqpin) : MQSensor(mqpin){
 // /////////////////////////////////////////////////////////////////////////
 
 MQPotentiometer::MQPotentiometer (const uint8_t mqpin) : MQSensor(mqpin){
-	// pinMode(_MQ_pin, INPUT);
+    // pinMode(_MQ_pin, INPUT);
 };
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -186,7 +203,7 @@ MQPotentiometer::MQPotentiometer (const uint8_t mqpin) : MQSensor(mqpin){
 // /////////////////////////////////////////////////////////////////////////
 
 MQ2::MQ2(const uint8_t mqpin) : MQSensor(mqpin){
-	// pinMode(_MQ_pin, INPUT);
+    // pinMode(_MQ_pin, INPUT);
 };
 
 /*
@@ -202,44 +219,44 @@ MQ2::MQ2(const uint8_t mqpin) : MQSensor(mqpin){
  * }
  * //*/
 float const MQ2::MQGetGasPercentage(const float rs_ro_ratio, const uint8_t gas_id){
-	switch (gas_id) {
-	case GAS_LPG:
-		return MQGetPercentage(rs_ro_ratio, _LPGCurve);
+    switch (gas_id) {
+        case GAS_LPG:
+            return MQGetPercentage(rs_ro_ratio, _LPGCurve);
 
-	case GAS_CO:
-		return MQGetPercentage(rs_ro_ratio, _COCurve);
+        case GAS_CO:
+            return MQGetPercentage(rs_ro_ratio, _COCurve);
 
-	case GAS_SMOKE:
-		return MQGetPercentage(rs_ro_ratio, _SmokeCurve);
+        case GAS_SMOKE:
+            return MQGetPercentage(rs_ro_ratio, _SmokeCurve);
 
-	default:
-		return 0;
-	}
+        default:
+            return 0;
+    }
 }
 
 // Conjunto de funções de fácil legibilidade
 float MQ2::readLPG(){
-	if (millis() < (_LAST_READ_TIME + _READ_SENSOR_INTERVAL) && _LPG != 0) {
-		return _LPG;
-	} else {
-		return _LPG = MQGetGasPercentage(MQRead() / _Ro, GAS_LPG);
-	}
+    if (millis() < (_LAST_READ_TIME + _READ_SENSOR_INTERVAL) && _LPG != 0) {
+        return _LPG;
+    } else {
+        return _LPG = MQGetGasPercentage(MQRead() / _Ro, GAS_LPG);
+    }
 }
 
 float MQ2::readCO(){
-	if (millis() < (_LAST_READ_TIME + _READ_SENSOR_INTERVAL) && _CO != 0) {
-		return _CO;
-	} else {
-		return _CO = MQGetGasPercentage(MQRead() / _Ro, GAS_CO);
-	}
+    if (millis() < (_LAST_READ_TIME + _READ_SENSOR_INTERVAL) && _CO != 0) {
+        return _CO;
+    } else {
+        return _CO = MQGetGasPercentage(MQRead() / _Ro, GAS_CO);
+    }
 }
 
 float MQ2::readSmoke(){
-	if (millis() < (_LAST_READ_TIME + _READ_SENSOR_INTERVAL) && _Smoke != 0) {
-		return _Smoke;
-	} else {
-		return _Smoke = MQGetGasPercentage(MQRead() / _Ro, GAS_SMOKE);
-	}
+    if (millis() < (_LAST_READ_TIME + _READ_SENSOR_INTERVAL) && _Smoke != 0) {
+        return _Smoke;
+    } else {
+        return _Smoke = MQGetGasPercentage(MQRead() / _Ro, GAS_SMOKE);
+    }
 }
 
 // /////////////////////////////////////////////////////////////////////////////
@@ -247,20 +264,72 @@ float MQ2::readSmoke(){
 // /////////////////////////////////////////////////////////////////////////
 
 MQ3::MQ3(const uint8_t mqpin) : MQSensor(mqpin){
-	// pinMode(_MQ_pin, INPUT);
+    // pinMode(_MQ_pin, INPUT);
 };
 
 float const MQ3::MQGetGasPercentage(const float rs_ro_ratio, const uint8_t gas_id){
-	return MQGetPercentage(rs_ro_ratio, _C2H5OHCurve);
+    return MQGetPercentage(rs_ro_ratio, _C2H5OHCurve);
 }
 
 // Conjunto de funções de fácil legibilidade
 float MQ3::readC2H5OH(){
-	if (millis() < (_LAST_READ_TIME + _READ_SENSOR_INTERVAL) && _C2H5OH != 0) {
-		return _C2H5OH;
-	} else {
-		// return _C2H5OH = MQGetGasPercentage(MQRead() / _Ro, GAS_C2H5OH);
-		// One less function call
-		return MQGetPercentage(MQRead() / _Ro, _C2H5OHCurve);
-	}
+    if (millis() < (_LAST_READ_TIME + _READ_SENSOR_INTERVAL) && _C2H5OH != 0) {
+        return _C2H5OH;
+    } else {
+        // return _C2H5OH = MQGetGasPercentage(MQRead() / _Ro, GAS_C2H5OH);
+        // One less function call
+        return MQGetPercentage(MQRead() / _Ro, _C2H5OHCurve);
+    }
+}
+
+// /////////////////////////////////////////////////////////////////////////////
+// ///////////////////// MQ 7 ////////////////////////////////////////////////
+// /////////////////////////////////////////////////////////////////////////
+
+MQ7::MQ7(const uint8_t mqpin) : MQSensor(mqpin){
+    // pinMode(_MQ_pin, INPUT);
+};
+
+/*
+ * float const MQ2::MQGetGasPercentage(const float rs_ro_ratio, const uint8_t gas_id){
+ *  if (gas_id == GAS_LPG) {
+ *      return MQGetPercentage(rs_ro_ratio, _LPGCurve);
+ *  } else if (gas_id == GAS_CO) {
+ *      return MQGetPercentage(rs_ro_ratio, _COCurve);
+ *  } else if (gas_id == GAS_SMOKE) {
+ *      return MQGetPercentage(rs_ro_ratio, _SmokeCurve);
+ *  }
+ *  return 0;
+ * }
+ * //*/
+float const MQ7::MQGetGasPercentage(const float rs_ro_ratio, const uint8_t gas_id){
+    switch (gas_id) {
+        case GAS_H2:
+            return MQGetPercentage(rs_ro_ratio, _H2Curve);
+
+        case GAS_MONOXIDE:
+            return MQGetPercentage(rs_ro_ratio, _CarbonMonoxideCurve);
+
+        default:
+            return 0;
+    }
+}
+
+// Conjunto de funções de fácil legibilidade
+float MQ7::readH2(){
+    if (millis() < (_LAST_READ_TIME + _READ_SENSOR_INTERVAL) && _H2 != 0) {
+        return _H2;
+    } else {
+        return _H2 = MQGetGasPercentage(MQRead() / _Ro, GAS_H2);
+    }
+}
+
+float MQ7::readCarbonMonoxide(){
+    if (millis() < (_LAST_READ_TIME + _READ_SENSOR_INTERVAL) && _CarbonMonoxide != 0) {
+        return _CarbonMonoxide;
+    } else {
+        _CarbonMonoxide = MQGetGasPercentage((MQRead() / _Ro), GAS_MONOXIDE);
+        Serial.println(_CarbonMonoxide);
+        return _CarbonMonoxide;
+    }
 }

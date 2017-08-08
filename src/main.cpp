@@ -1,98 +1,32 @@
 #include "Arduino.h"
 #include "main.hpp"
-#include <../lib/DHT/src/dht.h>
-#include <ldr.hpp>
-#include <../lib/MQ-Sensor/src/MQSensor.hpp>
-#include <../lib/PrintManager/src/PrintManager.hpp>
-#include <Wire.h> // must be included here so that Arduino library object file references work
-#include <RtcDS1307.h>
-#include <TinyGPS++.h>
 
-#include <SPI.h>
-#include <SD.h>
-
-File myFile;
+/*
+ * #include <../lib/DHT/src/dht.h>
+ * #include <ldr.hpp>
+ * #include <../lib/MQ-Sensor/src/MQSensor.hpp>
+ * #include <../lib/PrintManager/src/PrintManager.hpp>
+ * #include <Wire.h>
+ * #include <RtcDS1307.h>
+ * #include <TinyGPS++.h>
+ * #include <SPI.h>
+ * #include <SD.h>
+ * //*/
 
 #ifdef RH_PLATFORM_NANO
 # include <SoftwareSerial.h>
 SoftwareSerial Serial1(10, 11); // RX, TX
 #endif
 
-const uint8_t DHT11_PIN = 5;
-const uint8_t DHTTYPE   = DHT11;
-const uint8_t LDR_PIN   = A0;
-
-// Sensores
-DHT dht(DHT11_PIN, DHTTYPE);
-ldr LDRSensor = ldr(LDR_PIN);
-RtcDS1307<TwoWire> Rtc(Wire);
-TinyGPSPlus GPS_Module;
-MQSensor Dummy = MQSensor::NewMQSensor(1, MQ_SENSOR_DUMMY);
-// CSPIN inplementado no pino SS, definido pelo sistema
-LogManager SD_Loger        = LogManager(SS, VERBOSE, "weater.log");
-PrintManager Print_Manager = PrintManager(&Serial1, &SD_Loger); // Explicit pointer conversion
-
-/* MONTAGEM
- * LDR/pot pino 4
- * DHT pino 5
- * VAZIO pino 1
- * BLUETOOTH Serial1
- *
- * //*/
-
-// Variáveis de Ambiente
-// TODO: Considerar std::vector<int> array
-double temporaryData[15];
-RtcDateTime clockTime;
-
-void displayInfo(){
-    Serial.print(F("Location: "));
-    if (GPS_Module.location.isValid()) {
-        Serial.print(GPS_Module.location.lat(), 6);
-        Serial.print(F(","));
-        Serial.print(GPS_Module.location.lng(), 6);
-    } else {
-        Serial.print(F("INVALID"));
-    }
-
-    Serial.print(F("  Date/Time: "));
-    if (GPS_Module.date.isValid()) {
-        Serial.print(GPS_Module.date.month());
-        Serial.print(F("/"));
-        Serial.print(GPS_Module.date.day());
-        Serial.print(F("/"));
-        Serial.print(GPS_Module.date.year());
-    } else {
-        Serial.print(F("INVALID"));
-    }
-
-    Serial.print(F(" "));
-    if (GPS_Module.time.isValid()) {
-        if (GPS_Module.time.hour() < 10) Serial.print(F("0"));
-        Serial.print(GPS_Module.time.hour());
-        Serial.print(F(":"));
-        if (GPS_Module.time.minute() < 10) Serial.print(F("0"));
-        Serial.print(GPS_Module.time.minute());
-        Serial.print(F(":"));
-        if (GPS_Module.time.second() < 10) Serial.print(F("0"));
-        Serial.print(GPS_Module.time.second());
-        Serial.print(F("."));
-        if (GPS_Module.time.centisecond() < 10) Serial.print(F("0"));
-        Serial.print(GPS_Module.time.centisecond());
-    } else {
-        Serial.print(F("INVALID"));
-    }
-
-    Serial.println();
-} // displayInfo
 
 // Build
 void setup(){
+    pinMode(52, OUTPUT);
+    pinMode(SS, OUTPUT);
+
     pinMode(DHT11_PIN, INPUT_PULLUP);
     pinMode(LDR_PIN, INPUT);
-    temporaryData[0] = SD_Loger.startLogManager();
-    Serial.println(temporaryData[0]);
-    SD_Loger.gotoEnd();
+
     dht.begin();
 
 
@@ -105,15 +39,26 @@ void setup(){
     // GPS_Module
     Serial2.begin(9600);
 
+
+    temporaryData[0] = SD_Loger.startLogManager();
+    Serial.println(temporaryData[0]);
+    SD_Loger.gotoEnd();
+
     Serial.print("compiled: ");
     Serial.print(__DATE__);
     Serial.println(__TIME__);
     Rtc.Begin();
 
+    // EEPROM_writeAnything(HOME_LAT, temporaryData[11]);
+    // EEPROM_writeAnything(HOME_LON, temporaryData[12]);
+    EEPROM_readAnything(HOME_LAT, temporaryData[11]);
+    EEPROM_readAnything(HOME_LON, temporaryData[12]);
+
 
     // TODO: decidir quanto ao settime
-    RtcDateTime compiled = RtcDateTime(__DATE__, __TIME__);
-    Rtc.SetDateTime(compiled);
+    // TODO: sincronizar com o GPS_Module
+    // RtcDateTime compiled = RtcDateTime(__DATE__, __TIME__);
+    // Rtc.SetDateTime(compiled);
     // printDateTime(compiled);
     // never assume the Rtc was last configured by you, so
     // just clear them to your needed state
@@ -121,6 +66,19 @@ void setup(){
 } // setup
 
 void loop(){
+    if (GPS_Module.time.isValid() && clockUpdate) {
+        clockTime = RtcDateTime(
+          GPS_Module.date.year(),
+          GPS_Module.date.month(),
+          GPS_Module.date.day(),
+          GPS_Module.time.hour() - 3,
+          GPS_Module.time.minute(),
+          GPS_Module.time.second()
+          );
+        Rtc.SetDateTime(clockTime);
+        clockUpdate = false;
+    }
+
     // TODO: reescrever isso
 
     {
@@ -135,13 +93,15 @@ void loop(){
     // TODO: decidir se é um dado relevante
     // float hic = dht.computeHeatIndex(t, h, false);
 
-    temporaryData[3] = 1024 - LDRSensor.check();
+    temporaryData[3] = LDRSensor.check();
 
     Print_Manager.addValue("th", temporaryData[1], temporaryData[2]);
     Print_Manager.addValue("l", temporaryData[3]);
 
-    // Dummy
-    temporaryData[4] = (double) Dummy.check();
+    // MQ7_Sensor
+    // temporaryData[4] = MQ7_Sensor.check();
+    Serial.println(analogRead(A1));
+    temporaryData[4] = MQ7_Sensor.readCarbonMonoxide();
     Print_Manager.addValue("q", temporaryData[4]);
 
     clockTime         = Rtc.GetDateTime();
@@ -159,23 +119,32 @@ void loop(){
       temporaryData[6],
       temporaryData[5]);
 
+    // This sketch displays information every time a new sentence is correctly encoded.
+    while (Serial2.available() > 0) {
+        if (GPS_Module.encode(Serial2.read()))
+            displayInfo();
+    }
+
+    if (GPS_Module.location.isValid()) {
+        temporaryData[11] = GPS_Module.location.lat();
+        temporaryData[12] = GPS_Module.location.lng();
+        // EEPROM_writeAnything(HOME_LAT, temporaryData[11]);
+        // EEPROM_writeAnything(HOME_LON, temporaryData[12]);
+    }
+
     Print_Manager.sendData();
 
-    for (int i = 0; i < 15; i++) {
-        Serial.print(temporaryData[i]);
-        Serial.print(" , ");
-    }
-    Serial.println(";");
+    // for (int i = 0; i < 15; i++) {
+    //     Serial.print(temporaryData[i]);
+    //     Serial.print(" , ");
+    // }
+    // Serial.println(";");
 
     delay(2000);
 
-    // This sketch displays information every time a new sentence is correctly encoded.
-    while (Serial2.available() > 0)
-        if (GPS_Module.encode(Serial2.read()))
-            displayInfo();
-
-    if (millis() > 5000 && GPS_Module.charsProcessed() < 10) {
-        Serial.println(F("No GPS detected: check wiring."));
-        while (true) ;
-    }
+    // TODO: Colocar essa verificação no setup
+    // if (millis() > 5000 && GPS_Module.charsProcessed() < 10) {
+    //     Serial.println(F("No GPS detected: check wiring."));
+    //     while (true) ;
+    // }
 } // loop

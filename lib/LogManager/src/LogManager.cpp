@@ -2,7 +2,7 @@
 #include "LogManager.hpp"
 
 uint8_t LogManager::startLogManager(){
-    if (!SD.begin(_CSpin)) {
+    if (!SD.begin(_CSpin, SPI_HALF_SPEED)) {
         // TODO: atualizar isso para PrintManager
         Serial.println("initialization failed!");
         return 1;
@@ -10,7 +10,7 @@ uint8_t LogManager::startLogManager(){
     Serial.println("initialization done.");
 
     // TODO: decidir se o teste fica
-    _LOG = SD.open(_fileName, FILE_READ);
+    _LOG = SD.open(_fileName, FILE_WRITE);
     if (_LOG) {
         _LOG.close();
         Serial.println("File OK");
@@ -20,7 +20,7 @@ uint8_t LogManager::startLogManager(){
         Serial.println("File NOT OK");
         return 2;
     }
-}
+} // startLogManager
 
 /*
  * uint16_t LogManager::println(String message){
@@ -43,7 +43,7 @@ uint16_t LogManager::println(const String message){
         if (_LOG) {
             temp = _LOG.println(message);
             _LOG.close(); // close the file
-            Serial.println(temp);
+            // Serial.println(temp);
         }
     } else {
         Serial.println("Error writing to file !");

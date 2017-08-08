@@ -30,7 +30,9 @@ enum GAS_TYPE : const uint8_t {
     GAS_LPG,
     GAS_CO,
     GAS_SMOKE,
-    GAS_C2H5OH
+    GAS_C2H5OH,
+    GAS_H2,
+    GAS_MONOXIDE
 };
 }
 
@@ -42,8 +44,8 @@ public:
     // lembrar o nome dessa estrutura
     static MQSensor NewMQSensor(const uint8_t mqpin, const uint8_t mqtype);
     // This prevents instanciating a MQSensor and helps with inheritance
-    inline uint16_t check(void){
-        int16_t temp = analogRead(_MQ_pin);
+    inline double check(void){
+        double temp = analogRead(_MQ_pin);
 
         return temp;
     };
@@ -72,15 +74,15 @@ protected:
       _READ_SAMPLE_TIMES = 5;
     // TODO: Observar se é universal
     float _RO_CLEAN_AIR_FACTOR = 9.83;
-    float _Ro       = 10;
-    float _RL_VALUE = 5; // define the load resistance on the board, in kilo ohms
+    float _Ro       = 25; // o chute inicial era 10
+    float _RL_VALUE = 10; // define the load resistance on the board, in kilo ohms
 
     MQSensor(const uint8_t mqpin);
     // MQSensor(const uint8_t mqpin, const float ro_clean_air_factor, const float ro_factor);
     float const MQRead();
     float const MQGetPercentage(const float rs_ro_ratio, const float * pcurve);
     float MQCalibration();
-    float const inline MQResistanceCalculation(const int raw_adc);
+    float const inline MQResistanceCalculation(const float raw_adc);
 };
 
 class MQDummy : public MQSensor {
@@ -219,6 +221,36 @@ private:
     float _Methane = 0,
       _Alcohol     = 0,
       _C3H8        = 0;
+};
+
+class MQ7 : public MQSensor {
+public:
+
+    MQ7(const uint8_t mqpin);
+
+    // TODO: decidir se read(bool print) vai ser eliminado
+    float * read(bool print);
+    // Easier access function
+    float const MQGetGasPercentage(const float rs_ro_ratio, const uint8_t gas_id);
+    float readH2();
+    float readCarbonMonoxide();
+
+
+private:
+    float _H2Curve[3] = { 1.5, 0.15, -0.014 },
+    // _CarbonMonoxideCurve[3] = { 1.8, 0.2, -0.016 };
+    // TODO: y = ax + b => x = y/a - b/a
+      _CarbonMonoxideCurve[3] = { 1, -50, 150 };
+    // two points are taken from the curve.
+    // with these two points, a line is formed which is "approximately equivalent"
+    // to the original curve.
+    // data format:{ x, y, slope}; point1: (lg200, 0.21), point2: (lg10000, -0.59)
+
+    // _RO_CLEAN_AIR_FACTOR = 9.83,
+    // _Ro = 10; // praticamente um chute
+
+    float _H2         = 0,
+      _CarbonMonoxide = 0;
 };
 
 #endif // ifndef mq_h

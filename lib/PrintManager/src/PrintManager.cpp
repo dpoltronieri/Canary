@@ -28,9 +28,9 @@ void PrintManager::addValue(const char * fmt, ...){
             // _message += d;
         } else if (*fmt == 'q') {
             // sensor MQ
-            uint16_t d = va_arg(args, double);
-            _message += "+q";
-            _message += d;
+            _tempValue = va_arg(args, double);
+            _message  += "+q";
+            // _message += d;
 
             /*
              * Date and Time Varibles
