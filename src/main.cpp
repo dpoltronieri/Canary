@@ -131,6 +131,10 @@ void loop(){
         // EEPROM_writeAnything(HOME_LAT, temporaryData[11]);
         // EEPROM_writeAnything(HOME_LON, temporaryData[12]);
     }
+    Print_Manager.addValue("AO",
+      temporaryData[11],
+      temporaryData[12]);
+
 
     Print_Manager.sendData();
 

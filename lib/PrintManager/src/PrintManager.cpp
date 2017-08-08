@@ -53,6 +53,12 @@ void PrintManager::addValue(const char * fmt, ...){
         } else if (*fmt == 'Y') {
             _tempValue = va_arg(args, double);
             _message  += "+Y";
+        } else if (*fmt == 'A') {
+            _tempValue = va_arg(args, double);
+            _message  += "+A";
+        } else if (*fmt == 'O') {
+            _tempValue = va_arg(args, double);
+            _message  += "+O";
 
             /*
              * Date and Time Varibles End

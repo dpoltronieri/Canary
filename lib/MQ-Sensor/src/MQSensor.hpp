@@ -240,7 +240,7 @@ private:
     float _H2Curve[3] = { 1.5, 0.15, -0.014 },
     // _CarbonMonoxideCurve[3] = { 1.8, 0.2, -0.016 };
     // TODO: y = ax + b => x = y/a - b/a
-      _CarbonMonoxideCurve[3] = { 1, -50, 150 };
+      _CarbonMonoxideCurve[3] = { 1, -50, 180 };
     // two points are taken from the curve.
     // with these two points, a line is formed which is "approximately equivalent"
     // to the original curve.
