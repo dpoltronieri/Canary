@@ -253,4 +253,34 @@ private:
       _CarbonMonoxide = 0;
 };
 
+class MQ7PLUS : public MQSensor {
+public:
+
+    MQ7PLUS(const uint8_t mqpin);
+
+    // TODO: decidir se read(bool print) vai ser eliminado
+    float * read(bool print);
+    // Easier access function
+    float const MQGetGasPercentage(const float rs_ro_ratio, const uint8_t gas_id);
+    float readH2();
+    float readCarbonMonoxide();
+
+
+private:
+    float _H2Curve[3] = { 1.5, 0.15, -0.014 },
+    // _CarbonMonoxideCurve[3] = { 1.8, 0.2, -0.016 };
+    // TODO: y = ax + b => x = y/a - b/a
+      _CarbonMonoxideCurve[3] = { 1, -50, 180 };
+    // two points are taken from the curve.
+    // with these two points, a line is formed which is "approximately equivalent"
+    // to the original curve.
+    // data format:{ x, y, slope}; point1: (lg200, 0.21), point2: (lg10000, -0.59)
+
+    // _RO_CLEAN_AIR_FACTOR = 9.83,
+    // _Ro = 10; // praticamente um chute
+
+    float _H2         = 0,
+      _CarbonMonoxide = 0;
+};
+
 #endif // ifndef mq_h
