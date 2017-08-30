@@ -5,7 +5,7 @@
 #include <ldr.hpp>
 #include <../lib/MQ-Sensor/src/MQSensor.hpp>
 #include <../lib/PrintManager/src/PrintManager.hpp>
-#include <../lib/Rtc/src/RtcDS1307.h>
+#include <../lib/RTC/src/RtcDS1307.h>
 #include <Wire.h>
 #include <TinyGPS++.h>
 #include <SPI.h>
