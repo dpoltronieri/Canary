@@ -49,9 +49,6 @@ public:
 
         return temp;
     };
-    // Inicia o sensor com calibragem
-    // TODO: decidir se isso fica
-    void begin();
 
     void setRlValue(const uint8_t rlvalue);
     void setCalibrationSampleTimes(const uint8_t cst);
@@ -72,17 +69,18 @@ protected:
       _CALIBRATION_SAMPLE_INTERVAL = 50,
       _READ_SAMPLE_INTERVAL        = 50,
       _READ_SAMPLE_TIMES = 5;
-    // TODO: Observar se é universal
-    float _RO_CLEAN_AIR_FACTOR = 9.83;
-    float _Ro       = 25; // o chute inicial era 10
-    float _RL_VALUE = 10; // define the load resistance on the board, in kilo ohms
+    // TODO: Decidir se _RO_CLEAN_AIR_FACTOR é relevante
+    float _RO_CLEAN_AIR_FACTOR = 9.83; // Esse é um chute
+    float _Ro       = 10;              // Segundo o datasheet, deve ser igual à _RL_VALUE, e quer dizer a resistência do sensor em determinada PPM do gás principal
+    float _RL_VALUE = 10;              // define the load resistance on the board, in kilo ohms
 
     MQSensor(const uint8_t mqpin);
-    // MQSensor(const uint8_t mqpin, const float ro_clean_air_factor, const float ro_factor);
     float const MQRead();
-    float const MQGetPercentage(const float rs_ro_ratio, const float * pcurve);
+    float const MQGetPPM(const float sensor_tension, const float * gas_curve);
     float MQCalibration();
+    float cleanAirCallibrate();
     float const inline MQResistanceCalculation(const float raw_adc);
+    float MQTension(const float raw_adc);
 };
 
 class MQDummy : public MQSensor {
@@ -108,56 +106,7 @@ public:
 
     MQPotentiometer(const uint8_t mqpin);
 
-    /*
-     * //Unnecessary
-     *  inline uint16_t check(void){
-     *      int16_t temp = analogRead(_MQ_pin);
-     *
-     *      return temp;
-     *  };
-     *  //*/
-
 protected:
-};
-
-class MQ2 : public MQSensor {
-public:
-    // TODO: atualizar o constructor
-    MQ2(const uint8_t mqpin);
-
-    /*
-     * //Foi pra superclasse
-     * void SetRo(const float ro_factor);
-     * void SetRoCleanAirFactor(const float ro_clean_air_factor);
-     * float const GetRoCleanAirFactor(void);
-     * float const GetRo(void);
-     * //*/
-
-    // DECIDIDO: decidir se read(bool print) vai ser eliminado
-    // float * read(bool print);
-    // Easier access function
-    float const MQGetGasPercentage(const float rs_ro_ratio, const uint8_t gas_id);
-    float readLPG();
-    float readCO();
-    float readSmoke();
-
-
-private:
-    // TODO: Averiguar essas curvas
-    float _LPGCurve[3] = { 2.3, 0.21, -0.47 },
-      _COCurve[3]      = { 2.3, 0.72, -0.34 },
-      _SmokeCurve[3]   = { 2.3, 0.53, -0.44 };
-    // two points are taken from the curve.
-    // with these two points, a line is formed which is "approximately equivalent"
-    // to the original curve.
-    // data format:{ x, y, slope}; point1: (lg200, 0.21), point2: (lg10000, -0.59)
-
-    // _RO_CLEAN_AIR_FACTOR = 9.83,
-    // _Ro = 10; // praticamente um chute
-
-    float _LPG = 0,
-      _CO      = 0,
-      _Smoke   = 0;
 };
 
 class MQ3 : public MQSensor {
@@ -173,81 +122,26 @@ public:
 
 
 private:
-    // TODO: Averiguar essas curvas
-    float _C2H5OHCurve[3] = { 0.18, 0.02, -0.16 };
-    // TODO: Essa pode ser a fórmila correta
-    // float _C2H5OHCurve[3] = { 0.18, 0.02, -0.00035555555555556 };
-    // two points are taken from the curve.
-    // with these two points, a line is formed which is "approximately equivalent"
-    // to the original curve.
-    // data format:{ x, y, slope}; point1: (lg200, 0.21), point2: (lg10000, -0.59)
+    float _C2H5OHCurve[2] = { 4.389099, 2.8093614 };
 
 
     float _C2H5OH = 0;
 };
 
-class MQ4 : public MQSensor {
-public:
-
-    MQ4(const uint8_t mqpin);
-
-    // TODO: decidir se read(bool print) vai ser eliminado
-    float * read(bool print);
-    // Easier access function
-    float const MQGetGasPercentage(const float rs_ro_ratio, const uint8_t gas_id);
-    float readMethane();
-    float readCH4(){
-        return readMethane();
-    }
-
-    float readAlcohol();
-    float readC3H8();
-
-
-private:
-    // TODO: Averiguar essas curvas
-    float _MethaneCurve[3] = { 0.25, 0.1, -0.00021428571428571 },
-    // TODO: Configurar essas curvas
-      _AlcoholCurve[3] = { 2.3, 0.72, -0.34 },
-      _C3H8Curve[3]    = { 2.3, 0.53, -0.44 };
-    // two points are taken from the curve.
-    // with these two points, a line is formed which is "approximately equivalent"
-    // to the original curve.
-    // data format:{ x, y, slope}; point1: (lg200, 0.21), point2: (lg10000, -0.59)
-
-    // _RO_CLEAN_AIR_FACTOR = 9.83,
-    // _Ro = 10; // praticamente um chute
-
-    float _Methane = 0,
-      _Alcohol     = 0,
-      _C3H8        = 0;
-};
-
 class MQ7 : public MQSensor {
 public:
 
+
     MQ7(const uint8_t mqpin);
 
-    // TODO: decidir se read(bool print) vai ser eliminado
-    float * read(bool print);
-    // Easier access function
-    float const MQGetGasPercentage(const float rs_ro_ratio, const uint8_t gas_id);
     float readH2();
     float readCarbonMonoxide();
 
 
 private:
-    float _H2Curve[3] = { 1.5, 0.15, -0.014 },
-    // _CarbonMonoxideCurve[3] = { 1.8, 0.2, -0.016 };
-    // TODO: y = ax + b => x = y/a - b/a
-      _CarbonMonoxideCurve[3] = { 1, -50, 180 };
-    // two points are taken from the curve.
-    // with these two points, a line is formed which is "approximately equivalent"
-    // to the original curve.
-    // data format:{ x, y, slope}; point1: (lg200, 0.21), point2: (lg10000, -0.59)
+    float _H2Curve[3],
+      _CarbonMonoxideCurve[2] = { 2.3459358, 3.1224636 };
 
-    // _RO_CLEAN_AIR_FACTOR = 9.83,
-    // _Ro = 10; // praticamente um chute
 
     float _H2         = 0,
       _CarbonMonoxide = 0;
