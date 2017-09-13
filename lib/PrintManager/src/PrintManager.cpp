@@ -31,6 +31,11 @@ void PrintManager::addValue(const char * fmt, ...){
             _tempValue = va_arg(args, double);
             _message  += "+q";
             // _message += d;
+        } else if (*fmt == 'a') {
+            // TODO: mover todos os MQ para um case
+            _tempValue = va_arg(args, double);
+            _message  += "+a"; \
+
 
             /*
              * Date and Time Varibles

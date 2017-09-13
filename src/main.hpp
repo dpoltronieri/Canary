@@ -14,7 +14,7 @@
 
 const uint8_t DHT11_PIN = 5;
 const uint8_t DHTTYPE   = DHT11;
-const uint8_t LDR_PIN   = A0;
+const uint8_t LDR_PIN   = A7;
 const uint8_t HOME_LAT  = 0 * sizeof(double), HOME_LON = 1 * sizeof(double);
 
 // TODO: utilizar isso para definir temporaryData
@@ -40,6 +40,7 @@ RtcDS1307<TwoWire> Rtc(Wire);
 TinyGPSPlus GPS_Module;
 // MQSensor MQ7_Sensor = MQSensor::NewMQSensor(A1, MQ_SENSOR_7);
 MQ7 MQ7_Sensor = MQ7(A1);
+MQ3 MQ3_Sensor = MQ3(A2);
 // CSPIN inplementado no pino SS, definido pelo sistema
 LogManager SD_Loger        = LogManager(52, VERBOSE, "weater.log");
 PrintManager Print_Manager = PrintManager(&Serial1, &SD_Loger); // Explicit pointer conversion

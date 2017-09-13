@@ -100,9 +100,23 @@ void loop(){
 
     // MQ7_Sensor
     // temporaryData[4] = MQ7_Sensor.check();
+    Serial.print("Leitura de monóxido de carbono(tensão, cru): ");
+    Serial.print(MQ7_Sensor.MQTension(analogRead(A1)));
+    Serial.print("  ");
     Serial.println(analogRead(A1));
-    temporaryData[4] = MQ7_Sensor.readCarbonMonoxide();
-    Print_Manager.addValue("q", temporaryData[4]);
+    temporaryData[14] = MQ7_Sensor.readCarbonMonoxide();
+    Print_Manager.addValue("q", temporaryData[14]);
+    Serial.print("Leitura de monóxido de carbono(PPM): ");
+    Serial.println(temporaryData[14]);
+
+    Serial.print("Leitura de Alcool(tensão, cru): ");
+    Serial.print(MQ3_Sensor.MQTension(analogRead(A1)));
+    Serial.print("  ");
+    Serial.println(analogRead(A2));
+    temporaryData[15] = MQ3_Sensor.readC2H5OH();
+    Print_Manager.addValue("a", temporaryData[15]);
+    Serial.print("Leitura de álcool(PPM): ");
+    Serial.println(temporaryData[15]);
 
     clockTime         = Rtc.GetDateTime();
     temporaryData[5]  = clockTime.Second();

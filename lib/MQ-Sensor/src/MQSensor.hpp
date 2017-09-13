@@ -60,6 +60,8 @@ public:
     float const GetRoCleanAirFactor(void);
     float const GetRo(void);
 
+    // TODO: devolver MQTension para protected
+    float MQTension(const float raw_adc);
 
 protected:
     size_t _LAST_READ_TIME  = 0,
@@ -80,7 +82,6 @@ protected:
     float MQCalibration();
     float cleanAirCallibrate();
     float const inline MQResistanceCalculation(const float raw_adc);
-    float MQTension(const float raw_adc);
 };
 
 class MQDummy : public MQSensor {
