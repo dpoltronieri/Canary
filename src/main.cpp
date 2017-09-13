@@ -13,11 +13,6 @@
  * #include <SD.h>
  * //*/
 
-#ifdef RH_PLATFORM_NANO
-# include <SoftwareSerial.h>
-SoftwareSerial Serial1(10, 11); // RX, TX
-#endif
-
 
 // Build
 void setup(){
@@ -49,10 +44,16 @@ void setup(){
     Serial.println(__TIME__);
     Rtc.Begin();
 
-    // EEPROM_writeAnything(HOME_LAT, temporaryData[11]);
-    // EEPROM_writeAnything(HOME_LON, temporaryData[12]);
-    EEPROM_readAnything(HOME_LAT, temporaryData[11]);
-    EEPROM_readAnything(HOME_LON, temporaryData[12]);
+    // TODO: Colocar essa verificação no setup
+    // if (millis() > 5000 && GPS_Module.charsProcessed() < 10) {
+    //     Serial.println(F("No GPS detected: check wiring."));
+    //     while (true) ;
+    // }
+
+    // EEPROM_writeAnything(HOME_LAT, temporaryData[LATITUDE]);
+    // EEPROM_writeAnything(HOME_LON, temporaryData[LONGITUDE]);
+    EEPROM_readAnything(HOME_LAT, temporaryData[LATITUDE]);
+    EEPROM_readAnything(HOME_LON, temporaryData[LONGITUDE]);
 
 
     // TODO: decidir quanto ao settime
@@ -82,10 +83,10 @@ void loop(){
     // TODO: reescrever isso
 
     {
-        temporaryData[1] = dht.readTemperature();
-        temporaryData[2] = dht.readHumidity();
+        temporaryData[TEMPERATURE] = dht.readTemperature();
+        temporaryData[HUMIDITY]    = dht.readHumidity();
         // Check if any reads failed and exit early (to try again).
-        if (isnan(temporaryData[1]) || isnan(temporaryData[2])) {
+        if (isnan(temporaryData[TEMPERATURE]) || isnan(temporaryData[HUMIDITY])) {
             Serial.println("Failed to read from DHT sensor!");
             Serial1.println("Failed to read from DHT sensor!");
         }
@@ -93,10 +94,10 @@ void loop(){
     // TODO: decidir se é um dado relevante
     // float hic = dht.computeHeatIndex(t, h, false);
 
-    temporaryData[3] = LDRSensor.check();
+    temporaryData[LUMINOSITY] = LDRSensor.check();
 
-    Print_Manager.addValue("th", temporaryData[1], temporaryData[2]);
-    Print_Manager.addValue("l", temporaryData[3]);
+    Print_Manager.addValue("th", temporaryData[TEMPERATURE], temporaryData[HUMIDITY]);
+    Print_Manager.addValue("l", temporaryData[LUMINOSITY]);
 
     // MQ7_Sensor
     // temporaryData[4] = MQ7_Sensor.check();
@@ -104,34 +105,34 @@ void loop(){
     Serial.print(MQ7_Sensor.MQTension(analogRead(A1)));
     Serial.print("  ");
     Serial.println(analogRead(A1));
-    temporaryData[14] = MQ7_Sensor.readCarbonMonoxide();
-    Print_Manager.addValue("q", temporaryData[14]);
+    temporaryData[CARBON_MONOXIDE] = MQ7_Sensor.readCarbonMonoxide();
+    Print_Manager.addValue("q", temporaryData[CARBON_MONOXIDE]);
     Serial.print("Leitura de monóxido de carbono(PPM): ");
-    Serial.println(temporaryData[14]);
+    Serial.println(temporaryData[CARBON_MONOXIDE]);
 
     Serial.print("Leitura de Alcool(tensão, cru): ");
     Serial.print(MQ3_Sensor.MQTension(analogRead(A1)));
     Serial.print("  ");
     Serial.println(analogRead(A2));
-    temporaryData[15] = MQ3_Sensor.readC2H5OH();
-    Print_Manager.addValue("a", temporaryData[15]);
+    temporaryData[C2H5OH] = MQ3_Sensor.readC2H5OH();
+    Print_Manager.addValue("a", temporaryData[C2H5OH]);
     Serial.print("Leitura de álcool(PPM): ");
-    Serial.println(temporaryData[15]);
+    Serial.println(temporaryData[C2H5OH]);
 
-    clockTime         = Rtc.GetDateTime();
-    temporaryData[5]  = clockTime.Second();
-    temporaryData[6]  = clockTime.Minute();
-    temporaryData[7]  = clockTime.Hour();
-    temporaryData[8]  = clockTime.Day();
-    temporaryData[9]  = clockTime.Month();
-    temporaryData[10] = clockTime.Year();
+    clockTime = Rtc.GetDateTime();
+    temporaryData[SECOND] = clockTime.Second();
+    temporaryData[MINUTE] = clockTime.Minute();
+    temporaryData[HOUR]   = clockTime.Hour();
+    temporaryData[DAY]    = clockTime.Day();
+    temporaryData[MONTH]  = clockTime.Month();
+    temporaryData[YEAR]   = clockTime.Year();
     Print_Manager.addValue("YODHMS",
-      temporaryData[10],
-      temporaryData[9],
-      temporaryData[8],
-      temporaryData[7],
-      temporaryData[6],
-      temporaryData[5]);
+      temporaryData[YEAR],
+      temporaryData[MONTH],
+      temporaryData[DAY],
+      temporaryData[HOUR],
+      temporaryData[MINUTE],
+      temporaryData[SECOND]);
 
     // This sketch displays information every time a new sentence is correctly encoded.
     while (Serial2.available() > 0) {
@@ -140,14 +141,14 @@ void loop(){
     }
 
     if (GPS_Module.location.isValid()) {
-        temporaryData[11] = GPS_Module.location.lat();
-        temporaryData[12] = GPS_Module.location.lng();
-        // EEPROM_writeAnything(HOME_LAT, temporaryData[11]);
-        // EEPROM_writeAnything(HOME_LON, temporaryData[12]);
+        temporaryData[LATITUDE]  = GPS_Module.location.lat();
+        temporaryData[LONGITUDE] = GPS_Module.location.lng();
+        // EEPROM_writeAnything(HOME_LAT, temporaryData[LATITUDE]);
+        // EEPROM_writeAnything(HOME_LON, temporaryData[LONGITUDE]);
     }
     Print_Manager.addValue("AO",
-      temporaryData[11],
-      temporaryData[12]);
+      temporaryData[LATITUDE],
+      temporaryData[LONGITUDE]);
 
 
     Print_Manager.sendData();
@@ -159,10 +160,4 @@ void loop(){
     // Serial.println(";");
 
     delay(2000);
-
-    // TODO: Colocar essa verificação no setup
-    // if (millis() > 5000 && GPS_Module.charsProcessed() < 10) {
-    //     Serial.println(F("No GPS detected: check wiring."));
-    //     while (true) ;
-    // }
 } // loop

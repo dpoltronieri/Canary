@@ -12,10 +12,19 @@
 #include <SD.h>
 #include <EEPROM.h>
 
+#ifdef RH_PLATFORM_NANO
+# include <SoftwareSerial.h>
+SoftwareSerial Serial1(10, 11); // RX, TX
+SoftwareSerial Serial2(10, 11); // RX, TX
+#endif
+
+// Variáveis de porta
 const uint8_t DHT11_PIN = 5;
 const uint8_t DHTTYPE   = DHT11;
 const uint8_t LDR_PIN   = A7;
 const uint8_t HOME_LAT  = 0 * sizeof(double), HOME_LON = 1 * sizeof(double);
+const uint8_t MQ7_PIN   = A1;
+const uint8_t MQ3_PIN   = A2;
 
 // TODO: utilizar isso para definir temporaryData
 namespace {
@@ -23,12 +32,17 @@ enum dataLocation : const uint8_t {
     TEMPERATURE = 1,
     HUMIDITY,
     LUMINOSITY,
-    MQMQ7_Sensor,
+    CARBON_MONOXIDE,
+    C2H5OH,
     YEAR,
+    MONTH,
     DAY,
     HOUR,
     MINUTE,
     SECOND,
+    LATITUDE,
+    LONGITUDE,
+    BUFFER,
     DATA_SIZE
 };
 }
@@ -38,24 +52,19 @@ DHT dht(DHT11_PIN, DHTTYPE);
 ldr LDRSensor = ldr(LDR_PIN);
 RtcDS1307<TwoWire> Rtc(Wire);
 TinyGPSPlus GPS_Module;
-// MQSensor MQ7_Sensor = MQSensor::NewMQSensor(A1, MQ_SENSOR_7);
-MQ7 MQ7_Sensor = MQ7(A1);
-MQ3 MQ3_Sensor = MQ3(A2);
-// CSPIN inplementado no pino SS, definido pelo sistema
-LogManager SD_Loger        = LogManager(52, VERBOSE, "weater.log");
-PrintManager Print_Manager = PrintManager(&Serial1, &SD_Loger); // Explicit pointer conversion
+MQ7 MQ7_Sensor = MQ7(MQ7_PIN);
+MQ3 MQ3_Sensor = MQ3(MQ3_PIN);
+#ifdef RH_PLATFORM_NANO
+LogManager SD_Loger = LogManager(10, VERBOSE, "weater.log");
+#else
+LogManager SD_Loger = LogManager(52, VERBOSE, "weater.log");
+#endif
 
-/* MONTAGEM
- * LDR/pot pino 4
- * DHT pino 5
- * VAZIO pino 1
- * BLUETOOTH Serial1
- *
- * //*/
+PrintManager Print_Manager = PrintManager(&Serial1, &SD_Loger); // Explicit pointer conversion
 
 // Variáveis de Ambiente
 // TODO: Considerar std::vector<int> array
-double temporaryData[15];
+double temporaryData[DATA_SIZE];
 RtcDateTime clockTime;
 bool clockUpdate = true;
 File myFile;

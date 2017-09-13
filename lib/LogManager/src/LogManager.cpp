@@ -14,7 +14,7 @@ uint8_t LogManager::startLogManager(){
     if (_LOG) {
         _LOG.close();
         Serial.println("File OK");
-        Serial1.println("File OK");
+        // Serial1.println("File OK");
         return 0;
     } else {
         _LOG.close();
@@ -48,7 +48,7 @@ uint16_t LogManager::println(const String message){
         }
     } else {
         Serial.println("Error writing to file !");
-        Serial1.println("Error writing to file !");
+        // Serial1.println("Error writing to file !");
     }
     return temp;
 };
