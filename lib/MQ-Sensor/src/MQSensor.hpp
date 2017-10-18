@@ -73,8 +73,9 @@ protected:
       _READ_SAMPLE_TIMES = 5;
     // TODO: Decidir se _RO_CLEAN_AIR_FACTOR é relevante
     float _RO_CLEAN_AIR_FACTOR = 9.83; // Esse é um chute
-    float _Ro       = 10;              // Segundo o datasheet, deve ser igual à _RL_VALUE, e quer dizer a resistência do sensor em determinada PPM do gás principal
-    float _RL_VALUE = 10;              // define the load resistance on the board, in kilo ohms
+    float _Ro = 10;                    // Segundo o datasheet, deve ser igual à _RL_VALUE, e quer dizer a resistência do sensor em determinada PPM do gás principal
+    // float _RL_VALUE = 10;              // define the load resistance on the board, in kilo ohms
+    float _RL_VALUE = 1; // define the load resistance on the board, in kilo ohms
 
     MQSensor(const uint8_t mqpin);
     float const MQRead();
