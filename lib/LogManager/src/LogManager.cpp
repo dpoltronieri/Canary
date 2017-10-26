@@ -2,6 +2,7 @@
 #include "LogManager.hpp"
 
 uint8_t LogManager::startLogManager(){
+    Serial.println(_CSpin);
     if (!SD.begin(_CSpin, SPI_HALF_SPEED)) {
         // TODO: atualizar isso para PrintManager
         Serial.println("initialization failed!");

@@ -58,9 +58,10 @@ void setup(){
 
     // TODO: decidir quanto ao settime
     // TODO: sincronizar com o GPS_Module
-    // RtcDateTime compiled = RtcDateTime(__DATE__, __TIME__);
-    // Rtc.SetDateTime(compiled);
-    // printDateTime(compiled);
+    RtcDateTime compiled = RtcDateTime(__DATE__, __TIME__);
+    Rtc.SetDateTime(compiled);
+    Serial.println(compiled);
+    //  printDateTime(compiled);
     // never assume the Rtc was last configured by you, so
     // just clear them to your needed state
     // Rtc.SetSquareWavePin(DS1307SquareWaveOut_Low);
@@ -120,19 +121,27 @@ void loop(){
     Serial.println(temporaryData[C2H5OH]);
 
     clockTime = Rtc.GetDateTime();
-    temporaryData[SECOND] = clockTime.Second();
-    temporaryData[MINUTE] = clockTime.Minute();
-    temporaryData[HOUR]   = clockTime.Hour();
-    temporaryData[DAY]    = clockTime.Day();
-    temporaryData[MONTH]  = clockTime.Month();
-    temporaryData[YEAR]   = clockTime.Year();
-    Print_Manager.addValue("YODHMS",
-      temporaryData[YEAR],
-      temporaryData[MONTH],
-      temporaryData[DAY],
-      temporaryData[HOUR],
-      temporaryData[MINUTE],
-      temporaryData[SECOND]);
+    // temporaryData[EPOCH32] = clockTime.Epoch32Time();
+    // Print_Manager.addValue("g", temporaryData[EPOCH32]);
+    size_t tempTime2 = clockTime.Epoch32Time();
+    Print_Manager.addValue("g", tempTime2);
+    // Mudou para Epoch32
+
+    /*
+     * temporaryData[SECOND] = clockTime.Second();
+     * temporaryData[MINUTE] = clockTime.Minute();
+     * temporaryData[HOUR]   = clockTime.Hour();
+     * temporaryData[DAY]    = clockTime.Day();
+     * temporaryData[MONTH]  = clockTime.Month();
+     * temporaryData[YEAR]   = clockTime.Year();
+     * Print_Manager.addValue("YODHMS",
+     * temporaryData[YEAR],
+     * temporaryData[MONTH],
+     * temporaryData[DAY],
+     * temporaryData[HOUR],
+     * temporaryData[MINUTE],
+     * temporaryData[SECOND]);
+     * //*/
 
     // This sketch displays information every time a new sentence is correctly encoded.
     while (Serial2.available() > 0) {

@@ -34,6 +34,7 @@ enum dataLocation : const uint8_t {
     LUMINOSITY,
     CARBON_MONOXIDE,
     C2H5OH,
+    EPOCH32,
     YEAR,
     MONTH,
     DAY,
