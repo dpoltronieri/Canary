@@ -1,14 +1,15 @@
 var searchData=
 [
-  ['mq2',['MQ2',['../class_m_q2.html#a8dd14262a1858b11d74ca6564ffe0e00',1,'MQ2']]],
-  ['mq3',['MQ3',['../class_m_q3.html#a6d7d7060e08b946cbb85a5938064d0ae',1,'MQ3']]],
-  ['mq4',['MQ4',['../class_m_q4.html#adfe1eadd2867a8a69384f2a553df101c',1,'MQ4']]],
-  ['mqcalibration',['MQCalibration',['../class_m_q_sensor.html#aae67f9f2749712bd2afa90a2a97a29fd',1,'MQSensor']]],
-  ['mqdummy',['MQDummy',['../class_m_q_dummy.html#acd45bbb9678e3578b0600ecaa74f0120',1,'MQDummy']]],
-  ['mqgetgaspercentage',['MQGetGasPercentage',['../class_m_q2.html#af15a9dcbc276c5450bb9a724f63dcab0',1,'MQ2::MQGetGasPercentage()'],['../class_m_q3.html#abadddbaa140943a12375741adbce67fe',1,'MQ3::MQGetGasPercentage()'],['../class_m_q4.html#a6ee7197454cdc8ff64405c77631c744e',1,'MQ4::MQGetGasPercentage()']]],
-  ['mqgetpercentage',['MQGetPercentage',['../class_m_q_sensor.html#a92ef594a160b257ca124481a21840a96',1,'MQSensor']]],
-  ['mqpotentiometer',['MQPotentiometer',['../class_m_q_potentiometer.html#a9a890ae1eee63b533f2865fcc82a5e66',1,'MQPotentiometer']]],
-  ['mqread',['MQRead',['../class_m_q_sensor.html#ac769cc3eade7067313d185848f63f2cf',1,'MQSensor']]],
-  ['mqresistancecalculation',['MQResistanceCalculation',['../class_m_q_sensor.html#a1bb39a92869446ede5ba1c6854034e20',1,'MQSensor']]],
-  ['mqsensor',['MQSensor',['../class_m_q_sensor.html#a58bc8dbc8dc2e97584a34f1a545f93e1',1,'MQSensor']]]
+  ['getagingoffset',['GetAgingOffset',['../class_rtc_d_s3231.html#a2ee7a2efbfc4a3d3be4fb4fc0617205f',1,'RtcDS3231']]],
+  ['getalarmone',['GetAlarmOne',['../class_rtc_d_s3231.html#a1432d525a7c9476016e79011c9c6deac',1,'RtcDS3231']]],
+  ['getalarmtwo',['GetAlarmTwo',['../class_rtc_d_s3231.html#a990fe562a1c3c54218d0e3f6df2ad038',1,'RtcDS3231']]],
+  ['getdatetime',['GetDateTime',['../class_rtc_d_s1307.html#ae8005e50deb2e86d623005dda35695e2',1,'RtcDS1307::GetDateTime()'],['../class_rtc_d_s3231.html#a4e71a193291a996b9ccace5ce28cde59',1,'RtcDS3231::GetDateTime()']]],
+  ['getfractional',['GetFractional',['../class_rtc_temperature.html#a43db6721d211076dcd27f2aa4aa3a55a',1,'RtcTemperature']]],
+  ['getisrunning',['GetIsRunning',['../class_rtc_d_s1307.html#abef3ed4e0898645e62d293a5d8e3c8db',1,'RtcDS1307::GetIsRunning()'],['../class_rtc_d_s3231.html#a86c5819d995bbc266600e1029678d072',1,'RtcDS3231::GetIsRunning()']]],
+  ['getmemory',['GetMemory',['../class_rtc_d_s1307.html#a551c58ba184626780b1f806cc9eb124d',1,'RtcDS1307::GetMemory(uint8_t memoryAddress)'],['../class_rtc_d_s1307.html#a784a1fbf6367c4a73a95748cf9f94e23',1,'RtcDS1307::GetMemory(uint8_t memoryAddress, uint8_t *pValue, uint8_t countBytes)']]],
+  ['getro',['GetRo',['../class_m_q_sensor.html#a7292dbbdb30f7dac813f16009b6cd282',1,'MQSensor']]],
+  ['getrocleanairfactor',['GetRoCleanAirFactor',['../class_m_q_sensor.html#a48389f7f5b5757092f7ae7a0893fe33f',1,'MQSensor']]],
+  ['gettemperature',['GetTemperature',['../class_rtc_d_s3231.html#a534ddb82645de3407a6ffb8a2c92b3d0',1,'RtcDS3231']]],
+  ['gotoend',['gotoEnd',['../class_log_manager.html#a9850b464896d7a2fec0b03dbabbfbb93',1,'LogManager']]],
+  ['gototop',['gotoTop',['../class_log_manager.html#ac888b10c83f7f2e898846cd2089cc5e2',1,'LogManager']]]
 ];

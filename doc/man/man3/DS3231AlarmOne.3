@@ -1,0 +1,122 @@
+.TH "DS3231AlarmOne" 3 "Fri Oct 27 2017" "Canary" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DS3231AlarmOne \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RtcDS3231\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDS3231AlarmOne\fP (uint8_t dayOf, uint8_t hour, uint8_t minute, uint8_t second, \fBDS3231AlarmOneControl\fP controlFlags)"
+.br
+.ti -1c
+.RI "uint8_t \fBDayOf\fP () const "
+.br
+.ti -1c
+.RI "uint8_t \fBHour\fP () const "
+.br
+.ti -1c
+.RI "uint8_t \fBMinute\fP () const "
+.br
+.ti -1c
+.RI "uint8_t \fBSecond\fP () const "
+.br
+.ti -1c
+.RI "\fBDS3231AlarmOneControl\fP \fBControlFlags\fP () const "
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBDS3231AlarmOne\fP &other) const "
+.br
+.ti -1c
+.RI "bool \fBoperator!=\fP (const \fBDS3231AlarmOne\fP &other) const "
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBDS3231AlarmOneControl\fP \fB_flags\fP"
+.br
+.ti -1c
+.RI "uint8_t \fB_dayOf\fP"
+.br
+.ti -1c
+.RI "uint8_t \fB_hour\fP"
+.br
+.ti -1c
+.RI "uint8_t \fB_minute\fP"
+.br
+.ti -1c
+.RI "uint8_t \fB_second\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 67 of file RtcDS3231\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DS3231AlarmOne::DS3231AlarmOne (uint8_t dayOf, uint8_t hour, uint8_t minute, uint8_t second, \fBDS3231AlarmOneControl\fP controlFlags)\fC [inline]\fP"
+
+.PP
+Definition at line 70 of file RtcDS3231\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBDS3231AlarmOneControl\fP DS3231AlarmOne::ControlFlags () const\fC [inline]\fP"
+
+.PP
+Definition at line 103 of file RtcDS3231\&.h\&.
+.SS "uint8_t DS3231AlarmOne::DayOf () const\fC [inline]\fP"
+
+.PP
+Definition at line 83 of file RtcDS3231\&.h\&.
+.SS "uint8_t DS3231AlarmOne::Hour () const\fC [inline]\fP"
+
+.PP
+Definition at line 88 of file RtcDS3231\&.h\&.
+.SS "uint8_t DS3231AlarmOne::Minute () const\fC [inline]\fP"
+
+.PP
+Definition at line 93 of file RtcDS3231\&.h\&.
+.SS "bool DS3231AlarmOne::operator!= (const \fBDS3231AlarmOne\fP & other) const\fC [inline]\fP"
+
+.PP
+Definition at line 117 of file RtcDS3231\&.h\&.
+.SS "bool DS3231AlarmOne::operator== (const \fBDS3231AlarmOne\fP & other) const\fC [inline]\fP"
+
+.PP
+Definition at line 108 of file RtcDS3231\&.h\&.
+.SS "uint8_t DS3231AlarmOne::Second () const\fC [inline]\fP"
+
+.PP
+Definition at line 98 of file RtcDS3231\&.h\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "uint8_t DS3231AlarmOne::_dayOf\fC [protected]\fP"
+
+.PP
+Definition at line 125 of file RtcDS3231\&.h\&.
+.SS "\fBDS3231AlarmOneControl\fP DS3231AlarmOne::_flags\fC [protected]\fP"
+
+.PP
+Definition at line 123 of file RtcDS3231\&.h\&.
+.SS "uint8_t DS3231AlarmOne::_hour\fC [protected]\fP"
+
+.PP
+Definition at line 126 of file RtcDS3231\&.h\&.
+.SS "uint8_t DS3231AlarmOne::_minute\fC [protected]\fP"
+
+.PP
+Definition at line 127 of file RtcDS3231\&.h\&.
+.SS "uint8_t DS3231AlarmOne::_second\fC [protected]\fP"
+
+.PP
+Definition at line 128 of file RtcDS3231\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Canary from the source code\&.

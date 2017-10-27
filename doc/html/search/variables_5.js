@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['temperature',['temperature',['../classdht.html#aa3316caeac26d1f47d0fc393db60c916',1,'dht']]],
-  ['temperaturehumidity',['TemperatureHumidity',['../main_8cpp.html#ad552816238335da6d338deadfd59a7b2',1,'main.cpp']]]
+  ['gps_5fmodule',['GPS_Module',['../main_8hpp.html#a7213d82a458fe413f7e55ee01024d122',1,'main.hpp']]]
 ];

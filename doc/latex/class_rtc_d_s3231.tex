@@ -1,0 +1,277 @@
+\hypertarget{class_rtc_d_s3231}{}\section{Rtc\+D\+S3231$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ Class Template Reference}
+\label{class_rtc_d_s3231}\index{Rtc\+D\+S3231$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+O\+D $>$@{Rtc\+D\+S3231$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+O\+D $>$}}
+
+
+{\ttfamily \#include $<$Rtc\+D\+S3231.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_rtc_d_s3231_ad0c02c5ff38211356ca99811fd66c635}{Rtc\+D\+S3231} (T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD \&wire)
+\item 
+void \hyperlink{class_rtc_d_s3231_a6e73ff9b1b19547bda25edcd3334f516}{Begin} ()
+\item 
+bool \hyperlink{class_rtc_d_s3231_a9f1e6af640d8d04c940d5d8dda50518a}{Is\+Date\+Time\+Valid} ()
+\item 
+bool \hyperlink{class_rtc_d_s3231_a86c5819d995bbc266600e1029678d072}{Get\+Is\+Running} ()
+\item 
+void \hyperlink{class_rtc_d_s3231_a77c1e1702c02bc7ba153a61b2ed53f6d}{Set\+Is\+Running} (bool is\+Running)
+\item 
+void \hyperlink{class_rtc_d_s3231_ae09f481a1826b6ed4dd1295db39ea656}{Set\+Date\+Time} (const \hyperlink{class_rtc_date_time}{Rtc\+Date\+Time} \&dt)
+\item 
+\hyperlink{class_rtc_date_time}{Rtc\+Date\+Time} \hyperlink{class_rtc_d_s3231_a4e71a193291a996b9ccace5ce28cde59}{Get\+Date\+Time} ()
+\item 
+\hyperlink{class_rtc_temperature}{Rtc\+Temperature} \hyperlink{class_rtc_d_s3231_a534ddb82645de3407a6ffb8a2c92b3d0}{Get\+Temperature} ()
+\item 
+void \hyperlink{class_rtc_d_s3231_a81a90021b65a50a92ec6176bd1a5860c}{Enable32k\+Hz\+Pin} (bool enable)
+\item 
+void \hyperlink{class_rtc_d_s3231_a3a2f094b81eac446ba0a02354213eebb}{Set\+Square\+Wave\+Pin} (\hyperlink{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eee}{D\+S3231\+Square\+Wave\+Pin\+Mode} pin\+Mode)
+\item 
+void \hyperlink{class_rtc_d_s3231_af2a88ca0e3aa1f85ee8dfba2f5ea00bd}{Set\+Square\+Wave\+Pin\+Clock\+Frequency} (\hyperlink{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35}{D\+S3231\+Square\+Wave\+Clock} freq)
+\item 
+void \hyperlink{class_rtc_d_s3231_ac0c0bb0b87644d46124bb390bbdcd8a6}{Set\+Alarm\+One} (const \hyperlink{class_d_s3231_alarm_one}{D\+S3231\+Alarm\+One} \&alarm)
+\item 
+void \hyperlink{class_rtc_d_s3231_a4e8bcde1ec694bb4a7403d1af1820709}{Set\+Alarm\+Two} (const \hyperlink{class_d_s3231_alarm_two}{D\+S3231\+Alarm\+Two} \&alarm)
+\item 
+\hyperlink{class_d_s3231_alarm_one}{D\+S3231\+Alarm\+One} \hyperlink{class_rtc_d_s3231_a1432d525a7c9476016e79011c9c6deac}{Get\+Alarm\+One} ()
+\item 
+\hyperlink{class_d_s3231_alarm_two}{D\+S3231\+Alarm\+Two} \hyperlink{class_rtc_d_s3231_a990fe562a1c3c54218d0e3f6df2ad038}{Get\+Alarm\+Two} ()
+\item 
+\hyperlink{_rtc_d_s3231_8h_a14ff88e820f55bcdd9763e4c8a18cfec}{D\+S3231\+Alarm\+Flag} \hyperlink{class_rtc_d_s3231_a7bb14e7c7259122bcbaa7ab87f4a3f41}{Latch\+Alarms\+Triggered\+Flags} ()
+\item 
+void \hyperlink{class_rtc_d_s3231_ab4c23c09699a670869b988917dfccafb}{Force\+Temperature\+Compensation\+Update} (bool block)
+\item 
+int8\+\_\+t \hyperlink{class_rtc_d_s3231_a2ee7a2efbfc4a3d3be4fb4fc0617205f}{Get\+Aging\+Offset} ()
+\item 
+void \hyperlink{class_rtc_d_s3231_aa225e3c0047fb679992eca8026920e43}{Set\+Aging\+Offset} (int8\+\_\+t value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD$>$\\*
+class Rtc\+D\+S3231$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+O\+D $>$}
+
+
+
+Definition at line 223 of file Rtc\+D\+S3231.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Rtc\+D\+S3231(\+T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+O\+D \&wire)}{RtcDS3231(T_WIRE_METHOD &wire)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::{\bf Rtc\+D\+S3231} (
+\begin{DoxyParamCaption}
+\item[{T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD \&}]{wire}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_ad0c02c5ff38211356ca99811fd66c635}{}\label{class_rtc_d_s3231_ad0c02c5ff38211356ca99811fd66c635}
+
+
+Definition at line 226 of file Rtc\+D\+S3231.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Begin@{Begin}}
+\index{Begin@{Begin}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Begin()}{Begin()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ void {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_a6e73ff9b1b19547bda25edcd3334f516}{}\label{class_rtc_d_s3231_a6e73ff9b1b19547bda25edcd3334f516}
+
+
+Definition at line 231 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Enable32k\+Hz\+Pin@{Enable32k\+Hz\+Pin}}
+\index{Enable32k\+Hz\+Pin@{Enable32k\+Hz\+Pin}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Enable32k\+Hz\+Pin(bool enable)}{Enable32kHzPin(bool enable)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ void {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Enable32k\+Hz\+Pin (
+\begin{DoxyParamCaption}
+\item[{bool}]{enable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_a81a90021b65a50a92ec6176bd1a5860c}{}\label{class_rtc_d_s3231_a81a90021b65a50a92ec6176bd1a5860c}
+
+
+Definition at line 334 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Force\+Temperature\+Compensation\+Update@{Force\+Temperature\+Compensation\+Update}}
+\index{Force\+Temperature\+Compensation\+Update@{Force\+Temperature\+Compensation\+Update}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Force\+Temperature\+Compensation\+Update(bool block)}{ForceTemperatureCompensationUpdate(bool block)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ void {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Force\+Temperature\+Compensation\+Update (
+\begin{DoxyParamCaption}
+\item[{bool}]{block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_ab4c23c09699a670869b988917dfccafb}{}\label{class_rtc_d_s3231_ab4c23c09699a670869b988917dfccafb}
+
+
+Definition at line 482 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Get\+Aging\+Offset@{Get\+Aging\+Offset}}
+\index{Get\+Aging\+Offset@{Get\+Aging\+Offset}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Get\+Aging\+Offset()}{GetAgingOffset()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ int8\+\_\+t {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Get\+Aging\+Offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_a2ee7a2efbfc4a3d3be4fb4fc0617205f}{}\label{class_rtc_d_s3231_a2ee7a2efbfc4a3d3be4fb4fc0617205f}
+
+
+Definition at line 495 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Get\+Alarm\+One@{Get\+Alarm\+One}}
+\index{Get\+Alarm\+One@{Get\+Alarm\+One}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Get\+Alarm\+One()}{GetAlarmOne()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ {\bf D\+S3231\+Alarm\+One} {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Get\+Alarm\+One (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_a1432d525a7c9476016e79011c9c6deac}{}\label{class_rtc_d_s3231_a1432d525a7c9476016e79011c9c6deac}
+
+
+Definition at line 423 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Get\+Alarm\+Two@{Get\+Alarm\+Two}}
+\index{Get\+Alarm\+Two@{Get\+Alarm\+Two}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Get\+Alarm\+Two()}{GetAlarmTwo()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ {\bf D\+S3231\+Alarm\+Two} {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Get\+Alarm\+Two (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_a990fe562a1c3c54218d0e3f6df2ad038}{}\label{class_rtc_d_s3231_a990fe562a1c3c54218d0e3f6df2ad038}
+
+
+Definition at line 449 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Get\+Date\+Time@{Get\+Date\+Time}}
+\index{Get\+Date\+Time@{Get\+Date\+Time}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Get\+Date\+Time()}{GetDateTime()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ {\bf Rtc\+Date\+Time} {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Get\+Date\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_a4e71a193291a996b9ccace5ce28cde59}{}\label{class_rtc_d_s3231_a4e71a193291a996b9ccace5ce28cde59}
+
+
+Definition at line 292 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Get\+Is\+Running@{Get\+Is\+Running}}
+\index{Get\+Is\+Running@{Get\+Is\+Running}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Get\+Is\+Running()}{GetIsRunning()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ bool {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Get\+Is\+Running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_a86c5819d995bbc266600e1029678d072}{}\label{class_rtc_d_s3231_a86c5819d995bbc266600e1029678d072}
+
+
+Definition at line 242 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Get\+Temperature@{Get\+Temperature}}
+\index{Get\+Temperature@{Get\+Temperature}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Get\+Temperature()}{GetTemperature()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ {\bf Rtc\+Temperature} {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Get\+Temperature (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_a534ddb82645de3407a6ffb8a2c92b3d0}{}\label{class_rtc_d_s3231_a534ddb82645de3407a6ffb8a2c92b3d0}
+
+
+Definition at line 319 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Is\+Date\+Time\+Valid@{Is\+Date\+Time\+Valid}}
+\index{Is\+Date\+Time\+Valid@{Is\+Date\+Time\+Valid}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Is\+Date\+Time\+Valid()}{IsDateTimeValid()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ bool {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Is\+Date\+Time\+Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_a9f1e6af640d8d04c940d5d8dda50518a}{}\label{class_rtc_d_s3231_a9f1e6af640d8d04c940d5d8dda50518a}
+
+
+Definition at line 236 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Latch\+Alarms\+Triggered\+Flags@{Latch\+Alarms\+Triggered\+Flags}}
+\index{Latch\+Alarms\+Triggered\+Flags@{Latch\+Alarms\+Triggered\+Flags}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Latch\+Alarms\+Triggered\+Flags()}{LatchAlarmsTriggeredFlags()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ {\bf D\+S3231\+Alarm\+Flag} {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Latch\+Alarms\+Triggered\+Flags (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_a7bb14e7c7259122bcbaa7ab87f4a3f41}{}\label{class_rtc_d_s3231_a7bb14e7c7259122bcbaa7ab87f4a3f41}
+
+
+Definition at line 473 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Set\+Aging\+Offset@{Set\+Aging\+Offset}}
+\index{Set\+Aging\+Offset@{Set\+Aging\+Offset}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Set\+Aging\+Offset(int8\+\_\+t value)}{SetAgingOffset(int8_t value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ void {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Set\+Aging\+Offset (
+\begin{DoxyParamCaption}
+\item[{int8\+\_\+t}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_aa225e3c0047fb679992eca8026920e43}{}\label{class_rtc_d_s3231_aa225e3c0047fb679992eca8026920e43}
+
+
+Definition at line 499 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Set\+Alarm\+One@{Set\+Alarm\+One}}
+\index{Set\+Alarm\+One@{Set\+Alarm\+One}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Set\+Alarm\+One(const D\+S3231\+Alarm\+One \&alarm)}{SetAlarmOne(const DS3231AlarmOne &alarm)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ void {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Set\+Alarm\+One (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+S3231\+Alarm\+One} \&}]{alarm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_ac0c0bb0b87644d46124bb390bbdcd8a6}{}\label{class_rtc_d_s3231_ac0c0bb0b87644d46124bb390bbdcd8a6}
+
+
+Definition at line 398 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Set\+Alarm\+Two@{Set\+Alarm\+Two}}
+\index{Set\+Alarm\+Two@{Set\+Alarm\+Two}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Set\+Alarm\+Two(const D\+S3231\+Alarm\+Two \&alarm)}{SetAlarmTwo(const DS3231AlarmTwo &alarm)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ void {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Set\+Alarm\+Two (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\+S3231\+Alarm\+Two} \&}]{alarm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_a4e8bcde1ec694bb4a7403d1af1820709}{}\label{class_rtc_d_s3231_a4e8bcde1ec694bb4a7403d1af1820709}
+
+
+Definition at line 411 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Set\+Date\+Time@{Set\+Date\+Time}}
+\index{Set\+Date\+Time@{Set\+Date\+Time}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Set\+Date\+Time(const Rtc\+Date\+Time \&dt)}{SetDateTime(const RtcDateTime &dt)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ void {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Set\+Date\+Time (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rtc\+Date\+Time} \&}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_ae09f481a1826b6ed4dd1295db39ea656}{}\label{class_rtc_d_s3231_ae09f481a1826b6ed4dd1295db39ea656}
+
+
+Definition at line 261 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Set\+Is\+Running@{Set\+Is\+Running}}
+\index{Set\+Is\+Running@{Set\+Is\+Running}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Set\+Is\+Running(bool is\+Running)}{SetIsRunning(bool isRunning)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ void {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Set\+Is\+Running (
+\begin{DoxyParamCaption}
+\item[{bool}]{is\+Running}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_a77c1e1702c02bc7ba153a61b2ed53f6d}{}\label{class_rtc_d_s3231_a77c1e1702c02bc7ba153a61b2ed53f6d}
+
+
+Definition at line 247 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Set\+Square\+Wave\+Pin@{Set\+Square\+Wave\+Pin}}
+\index{Set\+Square\+Wave\+Pin@{Set\+Square\+Wave\+Pin}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Set\+Square\+Wave\+Pin(\+D\+S3231\+Square\+Wave\+Pin\+Mode pin\+Mode)}{SetSquareWavePin(DS3231SquareWavePinMode pinMode)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ void {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Set\+Square\+Wave\+Pin (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+S3231\+Square\+Wave\+Pin\+Mode}}]{pin\+Mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_a3a2f094b81eac446ba0a02354213eebb}{}\label{class_rtc_d_s3231_a3a2f094b81eac446ba0a02354213eebb}
+
+
+Definition at line 349 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231@{Rtc\+D\+S3231}!Set\+Square\+Wave\+Pin\+Clock\+Frequency@{Set\+Square\+Wave\+Pin\+Clock\+Frequency}}
+\index{Set\+Square\+Wave\+Pin\+Clock\+Frequency@{Set\+Square\+Wave\+Pin\+Clock\+Frequency}!Rtc\+D\+S3231@{Rtc\+D\+S3231}}
+\subsubsection[{\texorpdfstring{Set\+Square\+Wave\+Pin\+Clock\+Frequency(\+D\+S3231\+Square\+Wave\+Clock freq)}{SetSquareWavePinClockFrequency(DS3231SquareWaveClock freq)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ void {\bf Rtc\+D\+S3231}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Set\+Square\+Wave\+Pin\+Clock\+Frequency (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+S3231\+Square\+Wave\+Clock}}]{freq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s3231_af2a88ca0e3aa1f85ee8dfba2f5ea00bd}{}\label{class_rtc_d_s3231_af2a88ca0e3aa1f85ee8dfba2f5ea00bd}
+
+
+Definition at line 387 of file Rtc\+D\+S3231.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+R\+T\+C/src/\hyperlink{_rtc_d_s3231_8h}{Rtc\+D\+S3231.\+h}\end{DoxyCompactItemize}

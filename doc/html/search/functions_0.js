@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['addvalue',['addValue',['../class_print_manager.html#a27ea0c1977a54e1291d0be0fc0754f48',1,'PrintManager']]],
-  ['addvaluesc',['addValueSC',['../class_print_manager.html#a553c37331e9a50e193c4f6e6b1e67f73',1,'PrintManager']]]
+  ['_5f_5fcxa_5fpure_5fvirtual',['__cxa_pure_virtual',['../_8_d_s3231___alarms_8vsarduino_8h.html#a6be7d9ce80c86f5178635fa86c2dd5e7',1,'.DS3231_Alarms.vsarduino.h']]],
+  ['_5finitwithsecondsfrom2000',['_initWithSecondsFrom2000',['../class_rtc_date_time.html#a60b21b4d2186c7daf8ed94a750e10f3a',1,'RtcDateTime']]]
 ];

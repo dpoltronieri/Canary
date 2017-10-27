@@ -1,4 +1,4 @@
-.TH "lib/MQ-Sensor/src/MQSensor.cpp" 3 "Wed Jul 5 2017" "Canary" \" -*- nroff -*-
+.TH "lib/MQ-Sensor/src/MQSensor.cpp" 3 "Fri Oct 27 2017" "Canary" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -11,6 +11,39 @@ lib/MQ-Sensor/src/MQSensor.cpp \-
 \fC#include 'MQSensor\&.hpp'\fP
 .br
 
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "template<typename T > T \fBmap\fP (T x, T in_min, T in_max, T out_min, T out_max)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "template<typename T > T map (T x, T in_min, T in_max, T out_min, T out_max)"
+Re-maps a number from one range to another\&. That is, a value of in_min would get mapped to out_min, a value of in_max to out_max, values in-between to values in-between, etc\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP The value to be mapped\&. 
+.br
+\fIin_min\fP The lower bond of the value's current range\&. 
+.br
+\fIin_max\fP The upper bond of the value's current range\&. 
+.br
+\fIout_min\fP The lower bond of the value's target range\&. 
+.br
+\fIout_max\fP The upper bond of the value's target range\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The mapped value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 26 of file MQSensor\&.cpp\&.
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for Canary from the source code\&.

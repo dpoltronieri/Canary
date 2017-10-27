@@ -6,12 +6,22 @@
 
 
 
-Inheritance diagram for M\+Q3\+:
-% FIG 0
+Inheritance diagram for M\+Q3\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{class_m_q3__inherit__graph}
+\end{center}
+\end{figure}
 
 
-Collaboration diagram for M\+Q3\+:
-% FIG 1
+Collaboration diagram for M\+Q3\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{class_m_q3__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,9 +37,17 @@ float \hyperlink{class_m_q3_ab186b1fdf6217d4a175c88c26422138a}{read\+C2\+H5\+OH}
 
 
 \subsection{Detailed Description}
+The class of the \hyperlink{class_m_q3}{M\+Q3} sensor, with it\textquotesingle{}s relevant data.
+
+\begin{DoxyAuthor}{Author}
+Daniel Pereira Poltronieri 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+October, 2017 Contact\+: \href{mailto:danppoltronieri@gmail.com}{\tt danppoltronieri@gmail.\+com} 
+\end{DoxyDate}
 
 
-Definition at line 159 of file M\+Q\+Sensor.\+hpp.
+Definition at line 168 of file M\+Q\+Sensor.\+hpp.
 
 
 
@@ -41,9 +59,14 @@ Definition at line 159 of file M\+Q\+Sensor.\+hpp.
 \item[{const uint8\+\_\+t}]{mqpin}
 \end{DoxyParamCaption}
 )}\hypertarget{class_m_q3_a6d7d7060e08b946cbb85a5938064d0ae}{}\label{class_m_q3_a6d7d7060e08b946cbb85a5938064d0ae}
+Contructor, creates a \hyperlink{class_m_q3}{M\+Q3} object. 
+\begin{DoxyParams}{Parameters}
+{\em mqpin} & The arduino pin to which the sensor is connected. \\
+\hline
+\end{DoxyParams}
 
 
-Definition at line 247 of file M\+Q\+Sensor.\+cpp.
+Definition at line 284 of file M\+Q\+Sensor.\+cpp.
 
 
 
@@ -56,16 +79,6 @@ Definition at line 247 of file M\+Q\+Sensor.\+cpp.
 \item[{const uint8\+\_\+t}]{gas\+\_\+id}
 \end{DoxyParamCaption}
 )}\hypertarget{class_m_q3_abadddbaa140943a12375741adbce67fe}{}\label{class_m_q3_abadddbaa140943a12375741adbce67fe}
-
-
-Definition at line 251 of file M\+Q\+Sensor.\+cpp.
-
-
-
-Here is the call graph for this function\+:
-% FIG 2
-
-
 \index{M\+Q3@{M\+Q3}!read@{read}}
 \index{read@{read}!M\+Q3@{M\+Q3}}
 \subsubsection[{\texorpdfstring{read(bool print)}{read(bool print)}}]{\setlength{\rightskip}{0pt plus 5cm}float$\ast$ M\+Q3\+::read (
@@ -80,15 +93,12 @@ Here is the call graph for this function\+:
 {}
 \end{DoxyParamCaption}
 )}\hypertarget{class_m_q3_ab186b1fdf6217d4a175c88c26422138a}{}\label{class_m_q3_ab186b1fdf6217d4a175c88c26422138a}
+Checks if the current data is old, then proceeds to either checking the sensor for the current value or returns the stored value. \begin{DoxyReturn}{Returns}
+The most recent C2\+H5\+OH data point. 
+\end{DoxyReturn}
 
 
-Definition at line 256 of file M\+Q\+Sensor.\+cpp.
-
-
-
-Here is the call graph for this function\+:
-% FIG 3
-
+Definition at line 291 of file M\+Q\+Sensor.\+cpp.
 
 
 

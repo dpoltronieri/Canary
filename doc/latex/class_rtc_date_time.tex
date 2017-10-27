@@ -1,0 +1,344 @@
+\hypertarget{class_rtc_date_time}{}\section{Rtc\+Date\+Time Class Reference}
+\label{class_rtc_date_time}\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+
+
+{\ttfamily \#include $<$Rtc\+Date\+Time.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_rtc_date_time_ae874891e1f436469ed4087483447c882}{Rtc\+Date\+Time} (uint32\+\_\+t seconds\+From2000=0)
+\item 
+\hyperlink{class_rtc_date_time_a547de741c4dc29d7097ed6c58b7c7cd3}{Rtc\+Date\+Time} (uint16\+\_\+t year, uint8\+\_\+t month, uint8\+\_\+t day\+Of\+Month, uint8\+\_\+t hour, uint8\+\_\+t minute, uint8\+\_\+t second)
+\item 
+\hyperlink{class_rtc_date_time_a7f00c81c8dbb3572062018357f17b0e4}{Rtc\+Date\+Time} (const char $\ast$date, const char $\ast$time)
+\item 
+uint16\+\_\+t \hyperlink{class_rtc_date_time_a9e09852c29989b3d5e1301138be34a59}{Year} () const 
+\item 
+uint8\+\_\+t \hyperlink{class_rtc_date_time_a581aafb10357287a936d3d8be95c7035}{Month} () const 
+\item 
+uint8\+\_\+t \hyperlink{class_rtc_date_time_a179b27f370273e72037fbb425733ae13}{Day} () const 
+\item 
+uint8\+\_\+t \hyperlink{class_rtc_date_time_a6d06a178cfd394f5c4701a45e0d903ef}{Hour} () const 
+\item 
+uint8\+\_\+t \hyperlink{class_rtc_date_time_abd88320abfda5eb9962ef1bbdcb294bc}{Minute} () const 
+\item 
+uint8\+\_\+t \hyperlink{class_rtc_date_time_a7323ffadc8c2539ed296c62e1dbd6767}{Second} () const 
+\item 
+uint8\+\_\+t \hyperlink{class_rtc_date_time_a39c9b97eab71d7da5dc1fb2df308e756}{Day\+Of\+Week} () const 
+\item 
+uint32\+\_\+t \hyperlink{class_rtc_date_time_a51cc5ad5b4667fbce601289004c0a477}{Total\+Seconds} () const 
+\item 
+uint64\+\_\+t \hyperlink{class_rtc_date_time_a513bd36f76c7f4a6715c2d74a94e868a}{Total\+Seconds64} () const 
+\item 
+void \hyperlink{class_rtc_date_time_a6c43d51a9bd1a004e4d2a3eb1a8da84e}{operator+=} (uint32\+\_\+t seconds)
+\item 
+\hyperlink{class_rtc_date_time_af12e82c0f9cbe28d81ddb78e6316e0ee}{operator uint32\+\_\+t} () const 
+\item 
+uint32\+\_\+t \hyperlink{class_rtc_date_time_a77286613a3bbdda951a479158d53e53b}{Epoch32\+Time} () const 
+\item 
+void \hyperlink{class_rtc_date_time_afeb3551f82aa838fdb6347dc73c1f8e4}{Init\+With\+Epoch32\+Time} (uint32\+\_\+t time)
+\item 
+uint64\+\_\+t \hyperlink{class_rtc_date_time_a2ebb0cba0b82274a166daa618b4213cb}{Epoch64\+Time} () const 
+\item 
+void \hyperlink{class_rtc_date_time_a23fa488b500d4968a4619093005e5212}{Init\+With\+Epoch64\+Time} (uint64\+\_\+t time)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{class_rtc_date_time_a60b21b4d2186c7daf8ed94a750e10f3a}{\+\_\+init\+With\+Seconds\+From2000} (T seconds\+From2000)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{class_rtc_date_time_a782f920fa91c813d1f34116f8ef58e17}{\+\_\+year\+From2000}
+\item 
+uint8\+\_\+t \hyperlink{class_rtc_date_time_ac330113b94c1bc110ad7dbc3a263f03a}{\+\_\+month}
+\item 
+uint8\+\_\+t \hyperlink{class_rtc_date_time_a12da2c12bb874dd069e092f9998c0e0c}{\+\_\+day\+Of\+Month}
+\item 
+uint8\+\_\+t \hyperlink{class_rtc_date_time_a93fcc560a087734a015cf63477708a78}{\+\_\+hour}
+\item 
+uint8\+\_\+t \hyperlink{class_rtc_date_time_a9f29cd580a5c8a60212cb96a553865cf}{\+\_\+minute}
+\item 
+uint8\+\_\+t \hyperlink{class_rtc_date_time_ad3c0899907fa14a51be81be3122d0a80}{\+\_\+second}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 10 of file Rtc\+Date\+Time.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Rtc\+Date\+Time(uint32\+\_\+t seconds\+From2000=0)}{RtcDateTime(uint32_t secondsFrom2000=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Rtc\+Date\+Time\+::\+Rtc\+Date\+Time (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{seconds\+From2000 = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_rtc_date_time_ae874891e1f436469ed4087483447c882}{}\label{class_rtc_date_time_ae874891e1f436469ed4087483447c882}
+
+
+Definition at line 14 of file Rtc\+Date\+Time.\+cpp.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Rtc\+Date\+Time(uint16\+\_\+t year, uint8\+\_\+t month, uint8\+\_\+t day\+Of\+Month, uint8\+\_\+t hour, uint8\+\_\+t minute, uint8\+\_\+t second)}{RtcDateTime(uint16_t year, uint8_t month, uint8_t dayOfMonth, uint8_t hour, uint8_t minute, uint8_t second)}}]{\setlength{\rightskip}{0pt plus 5cm}Rtc\+Date\+Time\+::\+Rtc\+Date\+Time (
+\begin{DoxyParamCaption}
+\item[{uint16\+\_\+t}]{year, }
+\item[{uint8\+\_\+t}]{month, }
+\item[{uint8\+\_\+t}]{day\+Of\+Month, }
+\item[{uint8\+\_\+t}]{hour, }
+\item[{uint8\+\_\+t}]{minute, }
+\item[{uint8\+\_\+t}]{second}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_date_time_a547de741c4dc29d7097ed6c58b7c7cd3}{}\label{class_rtc_date_time_a547de741c4dc29d7097ed6c58b7c7cd3}
+
+
+Definition at line 14 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Rtc\+Date\+Time(const char $\ast$date, const char $\ast$time)}{RtcDateTime(const char *date, const char *time)}}]{\setlength{\rightskip}{0pt plus 5cm}Rtc\+Date\+Time\+::\+Rtc\+Date\+Time (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{date, }
+\item[{const char $\ast$}]{time}
+\end{DoxyParamCaption}
+)}\hypertarget{class_rtc_date_time_a7f00c81c8dbb3572062018357f17b0e4}{}\label{class_rtc_date_time_a7f00c81c8dbb3572062018357f17b0e4}
+
+
+Definition at line 40 of file Rtc\+Date\+Time.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!\+\_\+init\+With\+Seconds\+From2000@{\+\_\+init\+With\+Seconds\+From2000}}
+\index{\+\_\+init\+With\+Seconds\+From2000@{\+\_\+init\+With\+Seconds\+From2000}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{\+\_\+init\+With\+Seconds\+From2000(\+T seconds\+From2000)}{_initWithSecondsFrom2000(T secondsFrom2000)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void Rtc\+Date\+Time\+::\+\_\+init\+With\+Seconds\+From2000 (
+\begin{DoxyParamCaption}
+\item[{T}]{seconds\+From2000}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\hypertarget{class_rtc_date_time_a60b21b4d2186c7daf8ed94a750e10f3a}{}\label{class_rtc_date_time_a60b21b4d2186c7daf8ed94a750e10f3a}
+
+
+Definition at line 103 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Day@{Day}}
+\index{Day@{Day}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Day() const }{Day() const }}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Rtc\+Date\+Time\+::\+Day (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_date_time_a179b27f370273e72037fbb425733ae13}{}\label{class_rtc_date_time_a179b27f370273e72037fbb425733ae13}
+
+
+Definition at line 40 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Day\+Of\+Week@{Day\+Of\+Week}}
+\index{Day\+Of\+Week@{Day\+Of\+Week}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Day\+Of\+Week() const }{DayOfWeek() const }}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Rtc\+Date\+Time\+::\+Day\+Of\+Week (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_rtc_date_time_a39c9b97eab71d7da5dc1fb2df308e756}{}\label{class_rtc_date_time_a39c9b97eab71d7da5dc1fb2df308e756}
+
+
+Definition at line 102 of file Rtc\+Date\+Time.\+cpp.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Epoch32\+Time@{Epoch32\+Time}}
+\index{Epoch32\+Time@{Epoch32\+Time}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Epoch32\+Time() const }{Epoch32Time() const }}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Rtc\+Date\+Time\+::\+Epoch32\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_date_time_a77286613a3bbdda951a479158d53e53b}{}\label{class_rtc_date_time_a77286613a3bbdda951a479158d53e53b}
+
+
+Definition at line 76 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Epoch64\+Time@{Epoch64\+Time}}
+\index{Epoch64\+Time@{Epoch64\+Time}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Epoch64\+Time() const }{Epoch64Time() const }}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t Rtc\+Date\+Time\+::\+Epoch64\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_date_time_a2ebb0cba0b82274a166daa618b4213cb}{}\label{class_rtc_date_time_a2ebb0cba0b82274a166daa618b4213cb}
+
+
+Definition at line 86 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Hour@{Hour}}
+\index{Hour@{Hour}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Hour() const }{Hour() const }}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Rtc\+Date\+Time\+::\+Hour (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_date_time_a6d06a178cfd394f5c4701a45e0d903ef}{}\label{class_rtc_date_time_a6d06a178cfd394f5c4701a45e0d903ef}
+
+
+Definition at line 44 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Init\+With\+Epoch32\+Time@{Init\+With\+Epoch32\+Time}}
+\index{Init\+With\+Epoch32\+Time@{Init\+With\+Epoch32\+Time}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Init\+With\+Epoch32\+Time(uint32\+\_\+t time)}{InitWithEpoch32Time(uint32_t time)}}]{\setlength{\rightskip}{0pt plus 5cm}void Rtc\+Date\+Time\+::\+Init\+With\+Epoch32\+Time (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_date_time_afeb3551f82aa838fdb6347dc73c1f8e4}{}\label{class_rtc_date_time_afeb3551f82aa838fdb6347dc73c1f8e4}
+
+
+Definition at line 80 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Init\+With\+Epoch64\+Time@{Init\+With\+Epoch64\+Time}}
+\index{Init\+With\+Epoch64\+Time@{Init\+With\+Epoch64\+Time}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Init\+With\+Epoch64\+Time(uint64\+\_\+t time)}{InitWithEpoch64Time(uint64_t time)}}]{\setlength{\rightskip}{0pt plus 5cm}void Rtc\+Date\+Time\+::\+Init\+With\+Epoch64\+Time (
+\begin{DoxyParamCaption}
+\item[{uint64\+\_\+t}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_date_time_a23fa488b500d4968a4619093005e5212}{}\label{class_rtc_date_time_a23fa488b500d4968a4619093005e5212}
+
+
+Definition at line 90 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Minute@{Minute}}
+\index{Minute@{Minute}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Minute() const }{Minute() const }}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Rtc\+Date\+Time\+::\+Minute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_date_time_abd88320abfda5eb9962ef1bbdcb294bc}{}\label{class_rtc_date_time_abd88320abfda5eb9962ef1bbdcb294bc}
+
+
+Definition at line 48 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Month@{Month}}
+\index{Month@{Month}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Month() const }{Month() const }}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Rtc\+Date\+Time\+::\+Month (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_date_time_a581aafb10357287a936d3d8be95c7035}{}\label{class_rtc_date_time_a581aafb10357287a936d3d8be95c7035}
+
+
+Definition at line 36 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!operator uint32\+\_\+t@{operator uint32\+\_\+t}}
+\index{operator uint32\+\_\+t@{operator uint32\+\_\+t}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{operator uint32\+\_\+t() const }{operator uint32_t() const }}]{\setlength{\rightskip}{0pt plus 5cm}Rtc\+Date\+Time\+::operator uint32\+\_\+t (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_date_time_af12e82c0f9cbe28d81ddb78e6316e0ee}{}\label{class_rtc_date_time_af12e82c0f9cbe28d81ddb78e6316e0ee}
+
+
+Definition at line 70 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{operator+=(uint32\+\_\+t seconds)}{operator+=(uint32_t seconds)}}]{\setlength{\rightskip}{0pt plus 5cm}void Rtc\+Date\+Time\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{seconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_date_time_a6c43d51a9bd1a004e4d2a3eb1a8da84e}{}\label{class_rtc_date_time_a6c43d51a9bd1a004e4d2a3eb1a8da84e}
+
+
+Definition at line 63 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Second@{Second}}
+\index{Second@{Second}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Second() const }{Second() const }}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Rtc\+Date\+Time\+::\+Second (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_date_time_a7323ffadc8c2539ed296c62e1dbd6767}{}\label{class_rtc_date_time_a7323ffadc8c2539ed296c62e1dbd6767}
+
+
+Definition at line 52 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Total\+Seconds@{Total\+Seconds}}
+\index{Total\+Seconds@{Total\+Seconds}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Total\+Seconds() const }{TotalSeconds() const }}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Rtc\+Date\+Time\+::\+Total\+Seconds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_rtc_date_time_a51cc5ad5b4667fbce601289004c0a477}{}\label{class_rtc_date_time_a51cc5ad5b4667fbce601289004c0a477}
+
+
+Definition at line 108 of file Rtc\+Date\+Time.\+cpp.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Total\+Seconds64@{Total\+Seconds64}}
+\index{Total\+Seconds64@{Total\+Seconds64}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Total\+Seconds64() const }{TotalSeconds64() const }}]{\setlength{\rightskip}{0pt plus 5cm}uint64\+\_\+t Rtc\+Date\+Time\+::\+Total\+Seconds64 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_rtc_date_time_a513bd36f76c7f4a6715c2d74a94e868a}{}\label{class_rtc_date_time_a513bd36f76c7f4a6715c2d74a94e868a}
+
+
+Definition at line 114 of file Rtc\+Date\+Time.\+cpp.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!Year@{Year}}
+\index{Year@{Year}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{Year() const }{Year() const }}]{\setlength{\rightskip}{0pt plus 5cm}uint16\+\_\+t Rtc\+Date\+Time\+::\+Year (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_date_time_a9e09852c29989b3d5e1301138be34a59}{}\label{class_rtc_date_time_a9e09852c29989b3d5e1301138be34a59}
+
+
+Definition at line 32 of file Rtc\+Date\+Time.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!\+\_\+day\+Of\+Month@{\+\_\+day\+Of\+Month}}
+\index{\+\_\+day\+Of\+Month@{\+\_\+day\+Of\+Month}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{\+\_\+day\+Of\+Month}{_dayOfMonth}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Rtc\+Date\+Time\+::\+\_\+day\+Of\+Month\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_rtc_date_time_a12da2c12bb874dd069e092f9998c0e0c}{}\label{class_rtc_date_time_a12da2c12bb874dd069e092f9998c0e0c}
+
+
+Definition at line 98 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!\+\_\+hour@{\+\_\+hour}}
+\index{\+\_\+hour@{\+\_\+hour}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{\+\_\+hour}{_hour}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Rtc\+Date\+Time\+::\+\_\+hour\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_rtc_date_time_a93fcc560a087734a015cf63477708a78}{}\label{class_rtc_date_time_a93fcc560a087734a015cf63477708a78}
+
+
+Definition at line 99 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!\+\_\+minute@{\+\_\+minute}}
+\index{\+\_\+minute@{\+\_\+minute}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{\+\_\+minute}{_minute}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Rtc\+Date\+Time\+::\+\_\+minute\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_rtc_date_time_a9f29cd580a5c8a60212cb96a553865cf}{}\label{class_rtc_date_time_a9f29cd580a5c8a60212cb96a553865cf}
+
+
+Definition at line 100 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!\+\_\+month@{\+\_\+month}}
+\index{\+\_\+month@{\+\_\+month}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{\+\_\+month}{_month}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Rtc\+Date\+Time\+::\+\_\+month\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_rtc_date_time_ac330113b94c1bc110ad7dbc3a263f03a}{}\label{class_rtc_date_time_ac330113b94c1bc110ad7dbc3a263f03a}
+
+
+Definition at line 97 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!\+\_\+second@{\+\_\+second}}
+\index{\+\_\+second@{\+\_\+second}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{\+\_\+second}{_second}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Rtc\+Date\+Time\+::\+\_\+second\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_rtc_date_time_ad3c0899907fa14a51be81be3122d0a80}{}\label{class_rtc_date_time_ad3c0899907fa14a51be81be3122d0a80}
+
+
+Definition at line 101 of file Rtc\+Date\+Time.\+h.
+
+\index{Rtc\+Date\+Time@{Rtc\+Date\+Time}!\+\_\+year\+From2000@{\+\_\+year\+From2000}}
+\index{\+\_\+year\+From2000@{\+\_\+year\+From2000}!Rtc\+Date\+Time@{Rtc\+Date\+Time}}
+\subsubsection[{\texorpdfstring{\+\_\+year\+From2000}{_yearFrom2000}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Rtc\+Date\+Time\+::\+\_\+year\+From2000\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_rtc_date_time_a782f920fa91c813d1f34116f8ef58e17}{}\label{class_rtc_date_time_a782f920fa91c813d1f34116f8ef58e17}
+
+
+Definition at line 96 of file Rtc\+Date\+Time.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+R\+T\+C/src/\hyperlink{_rtc_date_time_8h}{Rtc\+Date\+Time.\+h}\item 
+lib/\+R\+T\+C/src/\hyperlink{_rtc_date_time_8cpp}{Rtc\+Date\+Time.\+cpp}\end{DoxyCompactItemize}

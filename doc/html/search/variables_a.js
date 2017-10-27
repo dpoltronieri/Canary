@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ro',['Ro',['../misq2_8h.html#aee9db5cb53b2ab367de49b514ab771f5',1,'misq2.h']]]
+  ['negative',['negative',['../struct_raw_degrees.html#a39c31d2d0332155a4d2c975cec0a796f',1,'RawDegrees']]]
 ];

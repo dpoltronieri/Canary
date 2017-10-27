@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['ldr',['ldr',['../classldr.html',1,'ldr'],['../classldr.html#a8e32c2a13084587d3cd689f684b9c5f3',1,'ldr::ldr()']]],
-  ['ldr_2ecpp',['ldr.cpp',['../ldr_8cpp.html',1,'']]],
-  ['ldr_2ehpp',['ldr.hpp',['../ldr_8hpp.html',1,'']]],
-  ['ldr_5fpin',['LDR_PIN',['../main_8cpp.html#a51fd859df7f54aaa2ef64c36c97b548a',1,'main.cpp']]],
-  ['ldrsensor',['LDRSensor',['../main_8cpp.html#af1d8643b0106d98cb7314e0a1996eae5',1,'main.cpp']]],
-  ['loop',['loop',['../main_8cpp.html#afe461d27b9c48d5921c00d521181f12f',1,'main.cpp']]]
+  ['hdop',['hdop',['../class_tiny_g_p_s_plus.html#a3a21b3ae7085bb278b35d703bf135632',1,'TinyGPSPlus']]],
+  ['home_5flat',['HOME_LAT',['../main_8hpp.html#a04c405d89110faa23ac5f4f9f9f2da56',1,'main.hpp']]],
+  ['home_5flon',['HOME_LON',['../main_8hpp.html#a3e26d6e054cb2ffd5a4bfe8190be4b18',1,'main.hpp']]],
+  ['hour',['Hour',['../class_rtc_date_time.html#a6d06a178cfd394f5c4701a45e0d903ef',1,'RtcDateTime::Hour()'],['../class_d_s3231_alarm_one.html#a354241c06270f7d5a719ee1d80d03d0b',1,'DS3231AlarmOne::Hour()'],['../class_d_s3231_alarm_two.html#addc641dc477c282f1a87a9558d173671',1,'DS3231AlarmTwo::Hour()'],['../struct_tiny_g_p_s_time.html#a37fdb629b6ed0e31134214c7d07df2b1',1,'TinyGPSTime::hour()']]]
 ];

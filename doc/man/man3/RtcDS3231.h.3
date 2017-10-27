@@ -1,0 +1,339 @@
+.TH "lib/RTC/src/RtcDS3231.h" 3 "Fri Oct 27 2017" "Canary" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+lib/RTC/src/RtcDS3231.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <Arduino\&.h>\fP
+.br
+\fC#include <RtcDateTime\&.h>\fP
+.br
+\fC#include <RtcTemperature\&.h>\fP
+.br
+\fC#include 'RtcUtility\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBDS3231AlarmOne\fP"
+.br
+.ti -1c
+.RI "class \fBDS3231AlarmTwo\fP"
+.br
+.ti -1c
+.RI "class \fBRtcDS3231< T_WIRE_METHOD >\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBDS3231AlarmOneControl\fP { \fBDS3231AlarmOneControl_HoursMinutesSecondsDayOfMonthMatch\fP = 0x00, \fBDS3231AlarmOneControl_OncePerSecond\fP = 0x17, \fBDS3231AlarmOneControl_SecondsMatch\fP = 0x16, \fBDS3231AlarmOneControl_MinutesSecondsMatch\fP = 0x14, \fBDS3231AlarmOneControl_HoursMinutesSecondsMatch\fP = 0x10, \fBDS3231AlarmOneControl_HoursMinutesSecondsDayOfWeekMatch\fP = 0x08 }"
+.br
+.ti -1c
+.RI "enum \fBDS3231AlarmTwoControl\fP { \fBDS3231AlarmTwoControl_HoursMinutesDayOfMonthMatch\fP = 0x00, \fBDS3231AlarmTwoControl_OncePerMinute\fP = 0x0b, \fBDS3231AlarmTwoControl_MinutesMatch\fP = 0x0a, \fBDS3231AlarmTwoControl_HoursMinutesMatch\fP = 0x08, \fBDS3231AlarmTwoControl_HoursMinutesDayOfWeekMatch\fP = 0x04 }"
+.br
+.ti -1c
+.RI "enum \fBDS3231SquareWaveClock\fP { \fBDS3231SquareWaveClock_1Hz\fP = 0b00000000, \fBDS3231SquareWaveClock_1kHz\fP = 0b00001000, \fBDS3231SquareWaveClock_4kHz\fP = 0b00010000, \fBDS3231SquareWaveClock_8kHz\fP = 0b00011000 }"
+.br
+.ti -1c
+.RI "enum \fBDS3231SquareWavePinMode\fP { \fBDS3231SquareWavePin_ModeNone\fP, \fBDS3231SquareWavePin_ModeBatteryBackup\fP, \fBDS3231SquareWavePin_ModeClock\fP, \fBDS3231SquareWavePin_ModeAlarmOne\fP, \fBDS3231SquareWavePin_ModeAlarmTwo\fP, \fBDS3231SquareWavePin_ModeAlarmBoth\fP }"
+.br
+.ti -1c
+.RI "enum \fBDS3231AlarmFlag\fP { \fBDS3231AlarmFlag_Alarm1\fP = 0x01, \fBDS3231AlarmFlag_Alarm2\fP = 0x02, \fBDS3231AlarmFlag_AlarmBoth\fP = 0x03 }"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "const uint8_t \fBDS3231_ADDRESS\fP = 0x68"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_REG_TIMEDATE\fP = 0x00"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_REG_ALARMONE\fP = 0x07"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_REG_ALARMTWO\fP = 0x0B"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_REG_CONTROL\fP = 0x0E"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_REG_STATUS\fP = 0x0F"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_REG_AGING\fP = 0x10"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_REG_TEMP\fP = 0x11"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_REG_TIMEDATE_SIZE\fP = 7"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_REG_ALARMONE_SIZE\fP = 4"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_REG_ALARMTWO_SIZE\fP = 3"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_REG_TEMP_SIZE\fP = 2"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_A1IE\fP = 0"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_A2IE\fP = 1"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_INTCN\fP = 2"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_RS1\fP = 3"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_RS2\fP = 4"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_CONV\fP = 5"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_BBSQW\fP = 6"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_EOSC\fP = 7"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_AIEMASK\fP = (\fB_BV\fP(\fBDS3231_A1IE\fP) | \fB_BV\fP(\fBDS3231_A2IE\fP))"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_RSMASK\fP = (\fB_BV\fP(\fBDS3231_RS1\fP) | \fB_BV\fP(\fBDS3231_RS2\fP))"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_A1F\fP = 0"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_A2F\fP = 1"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_BSY\fP = 2"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_EN32KHZ\fP = 3"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_OSF\fP = 7"
+.br
+.ti -1c
+.RI "const uint8_t \fBDS3231_AIFMASK\fP = (\fB_BV\fP(\fBDS3231_A1F\fP) | \fB_BV\fP(\fBDS3231_A2F\fP))"
+.br
+.in -1c
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBDS3231AlarmFlag\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIDS3231AlarmFlag_Alarm1 \fP\fP
+.TP
+\fB\fIDS3231AlarmFlag_Alarm2 \fP\fP
+.TP
+\fB\fIDS3231AlarmFlag_AlarmBoth \fP\fP
+.PP
+Definition at line 216 of file RtcDS3231\&.h\&.
+.SS "enum \fBDS3231AlarmOneControl\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIDS3231AlarmOneControl_HoursMinutesSecondsDayOfMonthMatch \fP\fP
+.TP
+\fB\fIDS3231AlarmOneControl_OncePerSecond \fP\fP
+.TP
+\fB\fIDS3231AlarmOneControl_SecondsMatch \fP\fP
+.TP
+\fB\fIDS3231AlarmOneControl_MinutesSecondsMatch \fP\fP
+.TP
+\fB\fIDS3231AlarmOneControl_HoursMinutesSecondsMatch \fP\fP
+.TP
+\fB\fIDS3231AlarmOneControl_HoursMinutesSecondsDayOfWeekMatch \fP\fP
+.PP
+Definition at line 56 of file RtcDS3231\&.h\&.
+.SS "enum \fBDS3231AlarmTwoControl\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIDS3231AlarmTwoControl_HoursMinutesDayOfMonthMatch \fP\fP
+.TP
+\fB\fIDS3231AlarmTwoControl_OncePerMinute \fP\fP
+.TP
+\fB\fIDS3231AlarmTwoControl_MinutesMatch \fP\fP
+.TP
+\fB\fIDS3231AlarmTwoControl_HoursMinutesMatch \fP\fP
+.TP
+\fB\fIDS3231AlarmTwoControl_HoursMinutesDayOfWeekMatch \fP\fP
+.PP
+Definition at line 132 of file RtcDS3231\&.h\&.
+.SS "enum \fBDS3231SquareWaveClock\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIDS3231SquareWaveClock_1Hz \fP\fP
+.TP
+\fB\fIDS3231SquareWaveClock_1kHz \fP\fP
+.TP
+\fB\fIDS3231SquareWaveClock_4kHz \fP\fP
+.TP
+\fB\fIDS3231SquareWaveClock_8kHz \fP\fP
+.PP
+Definition at line 198 of file RtcDS3231\&.h\&.
+.SS "enum \fBDS3231SquareWavePinMode\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIDS3231SquareWavePin_ModeNone \fP\fP
+.TP
+\fB\fIDS3231SquareWavePin_ModeBatteryBackup \fP\fP
+.TP
+\fB\fIDS3231SquareWavePin_ModeClock \fP\fP
+.TP
+\fB\fIDS3231SquareWavePin_ModeAlarmOne \fP\fP
+.TP
+\fB\fIDS3231SquareWavePin_ModeAlarmTwo \fP\fP
+.TP
+\fB\fIDS3231SquareWavePin_ModeAlarmBoth \fP\fP
+.PP
+Definition at line 206 of file RtcDS3231\&.h\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const uint8_t DS3231_A1F = 0"
+
+.PP
+Definition at line 47 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_A1IE = 0"
+
+.PP
+Definition at line 35 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_A2F = 1"
+
+.PP
+Definition at line 48 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_A2IE = 1"
+
+.PP
+Definition at line 36 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_ADDRESS = 0x68"
+
+.PP
+Definition at line 14 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_AIEMASK = (\fB_BV\fP(\fBDS3231_A1IE\fP) | \fB_BV\fP(\fBDS3231_A2IE\fP))"
+
+.PP
+Definition at line 43 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_AIFMASK = (\fB_BV\fP(\fBDS3231_A1F\fP) | \fB_BV\fP(\fBDS3231_A2F\fP))"
+
+.PP
+Definition at line 52 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_BBSQW = 6"
+
+.PP
+Definition at line 41 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_BSY = 2"
+
+.PP
+Definition at line 49 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_CONV = 5"
+
+.PP
+Definition at line 40 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_EN32KHZ = 3"
+
+.PP
+Definition at line 50 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_EOSC = 7"
+
+.PP
+Definition at line 42 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_INTCN = 2"
+
+.PP
+Definition at line 37 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_OSF = 7"
+
+.PP
+Definition at line 51 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_REG_AGING = 0x10"
+
+.PP
+Definition at line 23 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_REG_ALARMONE = 0x07"
+
+.PP
+Definition at line 18 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_REG_ALARMONE_SIZE = 4"
+
+.PP
+Definition at line 29 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_REG_ALARMTWO = 0x0B"
+
+.PP
+Definition at line 19 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_REG_ALARMTWO_SIZE = 3"
+
+.PP
+Definition at line 30 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_REG_CONTROL = 0x0E"
+
+.PP
+Definition at line 21 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_REG_STATUS = 0x0F"
+
+.PP
+Definition at line 22 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_REG_TEMP = 0x11"
+
+.PP
+Definition at line 25 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_REG_TEMP_SIZE = 2"
+
+.PP
+Definition at line 32 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_REG_TIMEDATE = 0x00"
+
+.PP
+Definition at line 17 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_REG_TIMEDATE_SIZE = 7"
+
+.PP
+Definition at line 28 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_RS1 = 3"
+
+.PP
+Definition at line 38 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_RS2 = 4"
+
+.PP
+Definition at line 39 of file RtcDS3231\&.h\&.
+.SS "const uint8_t DS3231_RSMASK = (\fB_BV\fP(\fBDS3231_RS1\fP) | \fB_BV\fP(\fBDS3231_RS2\fP))"
+
+.PP
+Definition at line 44 of file RtcDS3231\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Canary from the source code\&.

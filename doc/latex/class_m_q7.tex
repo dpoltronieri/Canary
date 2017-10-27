@@ -1,0 +1,105 @@
+\hypertarget{class_m_q7}{}\section{M\+Q7 Class Reference}
+\label{class_m_q7}\index{M\+Q7@{M\+Q7}}
+
+
+{\ttfamily \#include $<$M\+Q\+Sensor.\+hpp$>$}
+
+
+
+Inheritance diagram for M\+Q7\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{class_m_q7__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for M\+Q7\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{class_m_q7__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_q7_a883b2f95cfa65f7ab734057d0d8e4797}{M\+Q7} (const uint8\+\_\+t mqpin)
+\item 
+float \hyperlink{class_m_q7_a985699da69427048ea6a01720c79bc2e}{read\+H2} ()
+\item 
+float \hyperlink{class_m_q7_a3ce5efda2320dfb57667e37767b0d570}{read\+Carbon\+Monoxide} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The class of the \hyperlink{class_m_q7}{M\+Q7} sensor, with it\textquotesingle{}s relevant data.
+
+\begin{DoxyAuthor}{Author}
+Daniel Pereira Poltronieri 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+October, 2017 Contact\+: \href{mailto:danppoltronieri@gmail.com}{\tt danppoltronieri@gmail.\+com} 
+\end{DoxyDate}
+
+
+Definition at line 197 of file M\+Q\+Sensor.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{M\+Q7@{M\+Q7}!M\+Q7@{M\+Q7}}
+\index{M\+Q7@{M\+Q7}!M\+Q7@{M\+Q7}}
+\subsubsection[{\texorpdfstring{M\+Q7(const uint8\+\_\+t mqpin)}{MQ7(const uint8_t mqpin)}}]{\setlength{\rightskip}{0pt plus 5cm}M\+Q7\+::\+M\+Q7 (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t}]{mqpin}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q7_a883b2f95cfa65f7ab734057d0d8e4797}{}\label{class_m_q7_a883b2f95cfa65f7ab734057d0d8e4797}
+\hyperlink{class_m_q7_a883b2f95cfa65f7ab734057d0d8e4797}{M\+Q7\+::\+M\+Q7} constructor. 
+\begin{DoxyParams}{Parameters}
+{\em mqpin} & The arduino pin to which the sensor is connected. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 310 of file M\+Q\+Sensor.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{M\+Q7@{M\+Q7}!read\+Carbon\+Monoxide@{read\+Carbon\+Monoxide}}
+\index{read\+Carbon\+Monoxide@{read\+Carbon\+Monoxide}!M\+Q7@{M\+Q7}}
+\subsubsection[{\texorpdfstring{read\+Carbon\+Monoxide()}{readCarbonMonoxide()}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q7\+::read\+Carbon\+Monoxide (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q7_a3ce5efda2320dfb57667e37767b0d570}{}\label{class_m_q7_a3ce5efda2320dfb57667e37767b0d570}
+Checks if the current data is old, then proceeds to either checking the sensor for the current value or returns the stored value. \begin{DoxyReturn}{Returns}
+The most recent Carbon Monoxide data point. 
+\end{DoxyReturn}
+
+
+Definition at line 335 of file M\+Q\+Sensor.\+cpp.
+
+\index{M\+Q7@{M\+Q7}!read\+H2@{read\+H2}}
+\index{read\+H2@{read\+H2}!M\+Q7@{M\+Q7}}
+\subsubsection[{\texorpdfstring{read\+H2()}{readH2()}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+Q7\+::read\+H2 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_m_q7_a985699da69427048ea6a01720c79bc2e}{}\label{class_m_q7_a985699da69427048ea6a01720c79bc2e}
+Checks if the current data is old, then proceeds to either checking the sensor for the current value or returns the stored value. \begin{DoxyReturn}{Returns}
+The most recent H2 data point. 
+\end{DoxyReturn}
+
+
+Definition at line 321 of file M\+Q\+Sensor.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+M\+Q-\/\+Sensor/src/\hyperlink{_m_q_sensor_8hpp}{M\+Q\+Sensor.\+hpp}\item 
+lib/\+M\+Q-\/\+Sensor/src/\hyperlink{_m_q_sensor_8cpp}{M\+Q\+Sensor.\+cpp}\end{DoxyCompactItemize}

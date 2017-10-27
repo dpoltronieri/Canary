@@ -1,127 +1,101 @@
-\hypertarget{dht_8h}{}\section{lib/\+D\+H\+T/dht.h File Reference}
-\label{dht_8h}\index{lib/\+D\+H\+T/dht.\+h@{lib/\+D\+H\+T/dht.\+h}}
-{\ttfamily \#include $<$W\+Program.\+h$>$}\\*
-{\ttfamily \#include $<$pins\+\_\+arduino.\+h$>$}\\*
-Include dependency graph for dht.\+h\+:
-% FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+\hypertarget{dht_8h}{}\section{lib/\+D\+H\+T/src/dht.h File Reference}
+\label{dht_8h}\index{lib/\+D\+H\+T/src/dht.\+h@{lib/\+D\+H\+T/src/dht.\+h}}
+{\ttfamily \#include \char`\"{}W\+Program.\+h\char`\"{}}\\*
+Include dependency graph for dht.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{dht_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{dht_8h__dep__incl}
+\end{center}
+\end{figure}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \hyperlink{classdht}{dht}
+class \hyperlink{class_d_h_t}{D\+HT}
+\item 
+class \hyperlink{class_interrupt_lock}{Interrupt\+Lock}
 \end{DoxyCompactItemize}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{dht_8h_a981ffad927ef4f937207f4374cf33e1c}{D\+H\+T\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+ON}~\char`\"{}0.\+1.\+21\char`\"{}
+\#define \hyperlink{dht_8h_afe84d42042833e4e334c977b93ff2407}{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+ER}~Serial
 \item 
-\#define \hyperlink{dht_8h_ab1b9cb0b80df3b9e1268f0e13ae80e11}{D\+H\+T\+L\+I\+B\+\_\+\+OK}~0
+\#define \hyperlink{dht_8h_a88edd2aa4feabff4af21a997d5d8aa23}{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+NT}(...)~\{ \}
 \item 
-\#define \hyperlink{dht_8h_acda0653986ebb86e8bfed007bbf6a059}{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+H\+E\+C\+K\+S\+UM}~-\/1
+\#define \hyperlink{dht_8h_ae414eccb9fbdc7c0cc6edfc588a3aa34}{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+LN}(...)~\{ \}
 \item 
-\#define \hyperlink{dht_8h_ad6f86a85e5e1342005c23ceac36ec192}{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}~-\/2
+\#define \hyperlink{dht_8h_ac7ca444ad6788a4e3686a83bc036efb6}{D\+H\+T11}~11
 \item 
-\#define \hyperlink{dht_8h_abc3e2e3759c80a2d31a059930990f49b}{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+N\+N\+E\+CT}~-\/3
+\#define \hyperlink{dht_8h_a1d34ec65a101891e5800d6e6a69fe528}{D\+H\+T22}~22
 \item 
-\#define \hyperlink{dht_8h_a6183db22278ba6596cd3d5aa26fb3b53}{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+C\+K\+\_\+L}~-\/4
+\#define \hyperlink{dht_8h_af718013a29c2115b00d7c77d2f28084b}{D\+H\+T21}~21
 \item 
-\#define \hyperlink{dht_8h_adc68fb358de41083fe47747a8702cc35}{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+C\+K\+\_\+H}~-\/5
-\item 
-\#define \hyperlink{dht_8h_a5d7db73dafb20a282eb84d84778d3ee3}{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T11\+\_\+\+W\+A\+K\+E\+UP}~18
-\item 
-\#define \hyperlink{dht_8h_ad4e4ae0f10e2d27eb4229474a55aadcb}{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T\+\_\+\+W\+A\+K\+E\+UP}~1
-\item 
-\#define \hyperlink{dht_8h_a3715db703c7182b74af1d672b85e245b}{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T11\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+OS}~1
-\item 
-\#define \hyperlink{dht_8h_a756c4be0b03863e3b04747e5fba12f87}{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+OS}~6
-\item 
-\#define \hyperlink{dht_8h_ad0e2e9ddfb66fe5e0727b63c7313ddf3}{D\+H\+T\+L\+I\+B\+\_\+\+T\+I\+M\+E\+O\+UT}~1000
+\#define \hyperlink{dht_8h_a3de32b1bf162072c5e2d695bea5bb296}{A\+M2301}~21
 \end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
-\index{dht.\+h@{dht.\+h}!D\+H\+T\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+ON@{D\+H\+T\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+ON}}
-\index{D\+H\+T\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+ON@{D\+H\+T\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+ON}!dht.\+h@{dht.\+h}}
-\subsubsection[{\texorpdfstring{D\+H\+T\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+ON}{DHT_LIB_VERSION}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T\+\_\+\+L\+I\+B\+\_\+\+V\+E\+R\+S\+I\+ON~\char`\"{}0.\+1.\+21\char`\"{}}\hypertarget{dht_8h_a981ffad927ef4f937207f4374cf33e1c}{}\label{dht_8h_a981ffad927ef4f937207f4374cf33e1c}
-
-
-Definition at line 22 of file dht.\+h.
-
-\index{dht.\+h@{dht.\+h}!D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T11\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+OS@{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T11\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+OS}}
-\index{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T11\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+OS@{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T11\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+OS}!dht.\+h@{dht.\+h}}
-\subsubsection[{\texorpdfstring{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T11\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+OS}{DHTLIB_DHT11_LEADING_ZEROS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T11\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+OS~1}\hypertarget{dht_8h_a3715db703c7182b74af1d672b85e245b}{}\label{dht_8h_a3715db703c7182b74af1d672b85e245b}
-
-
-Definition at line 34 of file dht.\+h.
-
-\index{dht.\+h@{dht.\+h}!D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T11\+\_\+\+W\+A\+K\+E\+UP@{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T11\+\_\+\+W\+A\+K\+E\+UP}}
-\index{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T11\+\_\+\+W\+A\+K\+E\+UP@{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T11\+\_\+\+W\+A\+K\+E\+UP}!dht.\+h@{dht.\+h}}
-\subsubsection[{\texorpdfstring{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T11\+\_\+\+W\+A\+K\+E\+UP}{DHTLIB_DHT11_WAKEUP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T11\+\_\+\+W\+A\+K\+E\+UP~18}\hypertarget{dht_8h_a5d7db73dafb20a282eb84d84778d3ee3}{}\label{dht_8h_a5d7db73dafb20a282eb84d84778d3ee3}
-
-
-Definition at line 31 of file dht.\+h.
-
-\index{dht.\+h@{dht.\+h}!D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+OS@{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+OS}}
-\index{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+OS@{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+OS}!dht.\+h@{dht.\+h}}
-\subsubsection[{\texorpdfstring{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+OS}{DHTLIB_DHT_LEADING_ZEROS}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T\+\_\+\+L\+E\+A\+D\+I\+N\+G\+\_\+\+Z\+E\+R\+OS~6}\hypertarget{dht_8h_a756c4be0b03863e3b04747e5fba12f87}{}\label{dht_8h_a756c4be0b03863e3b04747e5fba12f87}
+\index{dht.\+h@{dht.\+h}!A\+M2301@{A\+M2301}}
+\index{A\+M2301@{A\+M2301}!dht.\+h@{dht.\+h}}
+\subsubsection[{\texorpdfstring{A\+M2301}{AM2301}}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+M2301~21}\hypertarget{dht_8h_a3de32b1bf162072c5e2d695bea5bb296}{}\label{dht_8h_a3de32b1bf162072c5e2d695bea5bb296}
 
 
 Definition at line 35 of file dht.\+h.
 
-\index{dht.\+h@{dht.\+h}!D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T\+\_\+\+W\+A\+K\+E\+UP@{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T\+\_\+\+W\+A\+K\+E\+UP}}
-\index{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T\+\_\+\+W\+A\+K\+E\+UP@{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T\+\_\+\+W\+A\+K\+E\+UP}!dht.\+h@{dht.\+h}}
-\subsubsection[{\texorpdfstring{D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T\+\_\+\+W\+A\+K\+E\+UP}{DHTLIB_DHT_WAKEUP}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T\+L\+I\+B\+\_\+\+D\+H\+T\+\_\+\+W\+A\+K\+E\+UP~1}\hypertarget{dht_8h_ad4e4ae0f10e2d27eb4229474a55aadcb}{}\label{dht_8h_ad4e4ae0f10e2d27eb4229474a55aadcb}
-
-
-Definition at line 32 of file dht.\+h.
-
-\index{dht.\+h@{dht.\+h}!D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+C\+K\+\_\+H@{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+C\+K\+\_\+H}}
-\index{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+C\+K\+\_\+H@{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+C\+K\+\_\+H}!dht.\+h@{dht.\+h}}
-\subsubsection[{\texorpdfstring{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+C\+K\+\_\+H}{DHTLIB_ERROR_ACK_H}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+C\+K\+\_\+H~-\/5}\hypertarget{dht_8h_adc68fb358de41083fe47747a8702cc35}{}\label{dht_8h_adc68fb358de41083fe47747a8702cc35}
-
-
-Definition at line 29 of file dht.\+h.
-
-\index{dht.\+h@{dht.\+h}!D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+C\+K\+\_\+L@{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+C\+K\+\_\+L}}
-\index{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+C\+K\+\_\+L@{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+C\+K\+\_\+L}!dht.\+h@{dht.\+h}}
-\subsubsection[{\texorpdfstring{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+C\+K\+\_\+L}{DHTLIB_ERROR_ACK_L}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+A\+C\+K\+\_\+L~-\/4}\hypertarget{dht_8h_a6183db22278ba6596cd3d5aa26fb3b53}{}\label{dht_8h_a6183db22278ba6596cd3d5aa26fb3b53}
-
-
-Definition at line 28 of file dht.\+h.
-
-\index{dht.\+h@{dht.\+h}!D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+H\+E\+C\+K\+S\+UM@{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+H\+E\+C\+K\+S\+UM}}
-\index{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+H\+E\+C\+K\+S\+UM@{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+H\+E\+C\+K\+S\+UM}!dht.\+h@{dht.\+h}}
-\subsubsection[{\texorpdfstring{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+H\+E\+C\+K\+S\+UM}{DHTLIB_ERROR_CHECKSUM}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+H\+E\+C\+K\+S\+UM~-\/1}\hypertarget{dht_8h_acda0653986ebb86e8bfed007bbf6a059}{}\label{dht_8h_acda0653986ebb86e8bfed007bbf6a059}
-
-
-Definition at line 25 of file dht.\+h.
-
-\index{dht.\+h@{dht.\+h}!D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+N\+N\+E\+CT@{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+N\+N\+E\+CT}}
-\index{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+N\+N\+E\+CT@{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+N\+N\+E\+CT}!dht.\+h@{dht.\+h}}
-\subsubsection[{\texorpdfstring{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+N\+N\+E\+CT}{DHTLIB_ERROR_CONNECT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+C\+O\+N\+N\+E\+CT~-\/3}\hypertarget{dht_8h_abc3e2e3759c80a2d31a059930990f49b}{}\label{dht_8h_abc3e2e3759c80a2d31a059930990f49b}
+\index{dht.\+h@{dht.\+h}!D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+NT@{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+NT}}
+\index{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+NT@{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+NT}!dht.\+h@{dht.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+NT}{DEBUG_PRINT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+NT(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~\{ \}}\hypertarget{dht_8h_a88edd2aa4feabff4af21a997d5d8aa23}{}\label{dht_8h_a88edd2aa4feabff4af21a997d5d8aa23}
 
 
 Definition at line 27 of file dht.\+h.
 
-\index{dht.\+h@{dht.\+h}!D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT@{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}}
-\index{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT@{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}!dht.\+h@{dht.\+h}}
-\subsubsection[{\texorpdfstring{D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT}{DHTLIB_ERROR_TIMEOUT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T\+L\+I\+B\+\_\+\+E\+R\+R\+O\+R\+\_\+\+T\+I\+M\+E\+O\+UT~-\/2}\hypertarget{dht_8h_ad6f86a85e5e1342005c23ceac36ec192}{}\label{dht_8h_ad6f86a85e5e1342005c23ceac36ec192}
+\index{dht.\+h@{dht.\+h}!D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+ER@{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+ER}}
+\index{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+ER@{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+ER}!dht.\+h@{dht.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+ER}{DEBUG_PRINTER}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+ER~Serial}\hypertarget{dht_8h_afe84d42042833e4e334c977b93ff2407}{}\label{dht_8h_afe84d42042833e4e334c977b93ff2407}
 
 
-Definition at line 26 of file dht.\+h.
+Definition at line 20 of file dht.\+h.
 
-\index{dht.\+h@{dht.\+h}!D\+H\+T\+L\+I\+B\+\_\+\+OK@{D\+H\+T\+L\+I\+B\+\_\+\+OK}}
-\index{D\+H\+T\+L\+I\+B\+\_\+\+OK@{D\+H\+T\+L\+I\+B\+\_\+\+OK}!dht.\+h@{dht.\+h}}
-\subsubsection[{\texorpdfstring{D\+H\+T\+L\+I\+B\+\_\+\+OK}{DHTLIB_OK}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T\+L\+I\+B\+\_\+\+OK~0}\hypertarget{dht_8h_ab1b9cb0b80df3b9e1268f0e13ae80e11}{}\label{dht_8h_ab1b9cb0b80df3b9e1268f0e13ae80e11}
-
-
-Definition at line 24 of file dht.\+h.
-
-\index{dht.\+h@{dht.\+h}!D\+H\+T\+L\+I\+B\+\_\+\+T\+I\+M\+E\+O\+UT@{D\+H\+T\+L\+I\+B\+\_\+\+T\+I\+M\+E\+O\+UT}}
-\index{D\+H\+T\+L\+I\+B\+\_\+\+T\+I\+M\+E\+O\+UT@{D\+H\+T\+L\+I\+B\+\_\+\+T\+I\+M\+E\+O\+UT}!dht.\+h@{dht.\+h}}
-\subsubsection[{\texorpdfstring{D\+H\+T\+L\+I\+B\+\_\+\+T\+I\+M\+E\+O\+UT}{DHTLIB_TIMEOUT}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T\+L\+I\+B\+\_\+\+T\+I\+M\+E\+O\+UT~1000}\hypertarget{dht_8h_ad0e2e9ddfb66fe5e0727b63c7313ddf3}{}\label{dht_8h_ad0e2e9ddfb66fe5e0727b63c7313ddf3}
+\index{dht.\+h@{dht.\+h}!D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+LN@{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+LN}}
+\index{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+LN@{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+LN}!dht.\+h@{dht.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+LN}{DEBUG_PRINTLN}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+B\+U\+G\+\_\+\+P\+R\+I\+N\+T\+LN(
+\begin{DoxyParamCaption}
+\item[{}]{...}
+\end{DoxyParamCaption}
+)~\{ \}}\hypertarget{dht_8h_ae414eccb9fbdc7c0cc6edfc588a3aa34}{}\label{dht_8h_ae414eccb9fbdc7c0cc6edfc588a3aa34}
 
 
-Definition at line 43 of file dht.\+h.
+Definition at line 28 of file dht.\+h.
+
+\index{dht.\+h@{dht.\+h}!D\+H\+T11@{D\+H\+T11}}
+\index{D\+H\+T11@{D\+H\+T11}!dht.\+h@{dht.\+h}}
+\subsubsection[{\texorpdfstring{D\+H\+T11}{DHT11}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T11~11}\hypertarget{dht_8h_ac7ca444ad6788a4e3686a83bc036efb6}{}\label{dht_8h_ac7ca444ad6788a4e3686a83bc036efb6}
+
+
+Definition at line 32 of file dht.\+h.
+
+\index{dht.\+h@{dht.\+h}!D\+H\+T21@{D\+H\+T21}}
+\index{D\+H\+T21@{D\+H\+T21}!dht.\+h@{dht.\+h}}
+\subsubsection[{\texorpdfstring{D\+H\+T21}{DHT21}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T21~21}\hypertarget{dht_8h_af718013a29c2115b00d7c77d2f28084b}{}\label{dht_8h_af718013a29c2115b00d7c77d2f28084b}
+
+
+Definition at line 34 of file dht.\+h.
+
+\index{dht.\+h@{dht.\+h}!D\+H\+T22@{D\+H\+T22}}
+\index{D\+H\+T22@{D\+H\+T22}!dht.\+h@{dht.\+h}}
+\subsubsection[{\texorpdfstring{D\+H\+T22}{DHT22}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+H\+T22~22}\hypertarget{dht_8h_a1d34ec65a101891e5800d6e6a69fe528}{}\label{dht_8h_a1d34ec65a101891e5800d6e6a69fe528}
+
+
+Definition at line 33 of file dht.\+h.
 

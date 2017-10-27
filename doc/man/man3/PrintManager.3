@@ -1,4 +1,4 @@
-.TH "PrintManager" 3 "Wed Jul 5 2017" "Canary" \" -*- nroff -*-
+.TH "PrintManager" 3 "Fri Oct 27 2017" "Canary" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,13 +12,16 @@ PrintManager \-
 
 .in +1c
 .ti -1c
-.RI "\fBPrintManager\fP (HardwareSerial &serialPortHW)"
-.br
-.ti -1c
 .RI "\fBPrintManager\fP (HardwareSerial *serialPortHW)"
 .br
 .ti -1c
 .RI "\fBPrintManager\fP (SoftwareSerial *serialPortSW)"
+.br
+.ti -1c
+.RI "\fBPrintManager\fP (HardwareSerial *serialPortHW, \fBLogManager\fP *sdLogManager)"
+.br
+.ti -1c
+.RI "\fBPrintManager\fP (SoftwareSerial *serialPortSW, \fBLogManager\fP *sdLogManager)"
 .br
 .ti -1c
 .RI "uint8_t \fBsendData\fP ()"
@@ -30,20 +33,33 @@ PrintManager \-
 .RI "void \fBaddValue\fP (const char *fmt,\&.\&.\&.)"
 .br
 .ti -1c
-.RI "void \fBfastValue\fP (const char *fmt,\&.\&.\&.)"
+.RI "void \fBaddHeader\fP (const char *fmt,\&.\&.\&.)"
 .br
 .ti -1c
-.RI "void \fBaddValueSC\fP (const char *fmt,\&.\&.\&.)"
+.RI "void \fBfastValue\fP (const char *fmt,\&.\&.\&.)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBmakeHeader\fP ()"
+.br
+.ti -1c
+.RI "void \fBmakeCurrently\fP ()"
 .br
 .in -1c
 .SS "Protected Attributes"
 
 .in +1c
 .ti -1c
-.RI "HardwareSerial & \fB_serialPortHW\fP"
+.RI "String \fB_messageHeader\fP = '{'"
 .br
 .ti -1c
-.RI "String \fB_message\fP"
+.RI "String \fB_messageCurrently\fP = '\\'currently\\': {'"
+.br
+.ti -1c
+.RI "String \fB_timezone\fP = '\\'Brazil/Brasília\\''"
 .br
 .ti -1c
 .RI "uint8_t \fB_serialPortType\fP"
@@ -52,77 +68,112 @@ PrintManager \-
 .RI "double \fB_tempValue\fP"
 .br
 .ti -1c
+.RI "double \fB_latitude\fP"
+.br
+.ti -1c
+.RI "double \fB_longitude\fP"
+.br
+.ti -1c
 .RI "HardwareSerial * \fB_serialPortHW\fP"
 .br
 .ti -1c
 .RI "SoftwareSerial * \fB_serialPortSW\fP"
 .br
+.ti -1c
+.RI "\fBLogManager\fP * \fB_sdLogManager\fP"
+.br
 .in -1c
 .SH "Detailed Description"
 .PP 
-Definition at line 7 of file PrintManager\&.hpp\&.
+Definition at line 15 of file PrintManager\&.hpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
-.SS "PrintManager::PrintManager (HardwareSerial & serialPortHW)\fC [inline]\fP"
-
-.PP
-Definition at line 9 of file PrintManager\&.hpp\&.
 .SS "PrintManager::PrintManager (HardwareSerial * serialPortHW)\fC [inline]\fP"
 
 .PP
-Definition at line 16 of file PrintManager\&.hpp\&.
+Definition at line 17 of file PrintManager\&.hpp\&.
 .SS "PrintManager::PrintManager (SoftwareSerial * serialPortSW)\fC [inline]\fP"
 
 .PP
-Definition at line 22 of file PrintManager\&.hpp\&.
+Definition at line 23 of file PrintManager\&.hpp\&.
+.SS "PrintManager::PrintManager (HardwareSerial * serialPortHW, \fBLogManager\fP * sdLogManager)\fC [inline]\fP"
+
+.PP
+Definition at line 29 of file PrintManager\&.hpp\&.
+.SS "PrintManager::PrintManager (SoftwareSerial * serialPortSW, \fBLogManager\fP * sdLogManager)\fC [inline]\fP"
+
+.PP
+Definition at line 35 of file PrintManager\&.hpp\&.
 .SH "Member Function Documentation"
 .PP 
+.SS "void PrintManager::addHeader (const char * fmt,  \&.\&.\&.)"
+
+.PP
+Definition at line 95 of file PrintManager\&.cpp\&.
 .SS "void PrintManager::addValue (const char * fmt,  \&.\&.\&.)"
 
 .PP
 Definition at line 8 of file PrintManager\&.cpp\&.
-.SS "void PrintManager::addValueSC (const char * fmt,  \&.\&.\&.)"
-
-.PP
-Definition at line 86 of file PrintManager\&.cpp\&.
 .SS "void PrintManager::fastValue (const char fmt, const double value)"
 
 .PP
-Definition at line 48 of file PrintManager\&.cpp\&.
+Definition at line 131 of file PrintManager\&.cpp\&.
 .SS "void PrintManager::fastValue (const char * fmt,  \&.\&.\&.)"
 
+.SS "void PrintManager::makeCurrently (void)\fC [protected]\fP"
+
 .PP
-Definition at line 69 of file PrintManager\&.cpp\&.
+Definition at line 126 of file PrintManager\&.cpp\&.
+.SS "void PrintManager::makeHeader (void)\fC [protected]\fP"
+
+.PP
+Definition at line 116 of file PrintManager\&.cpp\&.
 .SS "uint8_t PrintManager::sendData ()"
 
 .PP
-Definition at line 54 of file PrintManager\&.cpp\&.
+Definition at line 137 of file PrintManager\&.cpp\&.
 .SH "Member Data Documentation"
 .PP 
-.SS "String PrintManager::_message\fC [protected]\fP"
+.SS "double PrintManager::_latitude\fC [protected]\fP"
 
 .PP
-Definition at line 39 of file PrintManager\&.hpp\&.
-.SS "HardwareSerial& PrintManager::_serialPortHW\fC [protected]\fP"
+Definition at line 56 of file PrintManager\&.hpp\&.
+.SS "double PrintManager::_longitude\fC [protected]\fP"
 
 .PP
-Definition at line 9 of file PrintManager\&.hpp\&.
+Definition at line 56 of file PrintManager\&.hpp\&.
+.SS "String PrintManager::_messageCurrently = '\\'currently\\': {'\fC [protected]\fP"
+
+.PP
+Definition at line 53 of file PrintManager\&.hpp\&.
+.SS "String PrintManager::_messageHeader = '{'\fC [protected]\fP"
+
+.PP
+Definition at line 52 of file PrintManager\&.hpp\&.
+.SS "\fBLogManager\fP* PrintManager::_sdLogManager\fC [protected]\fP"
+
+.PP
+Definition at line 59 of file PrintManager\&.hpp\&.
 .SS "HardwareSerial* PrintManager::_serialPortHW\fC [protected]\fP"
 
 .PP
-Definition at line 42 of file PrintManager\&.hpp\&.
+Definition at line 57 of file PrintManager\&.hpp\&.
 .SS "SoftwareSerial* PrintManager::_serialPortSW\fC [protected]\fP"
 
 .PP
-Definition at line 43 of file PrintManager\&.hpp\&.
+Definition at line 58 of file PrintManager\&.hpp\&.
 .SS "uint8_t PrintManager::_serialPortType\fC [protected]\fP"
 
 .PP
-Definition at line 40 of file PrintManager\&.hpp\&.
+Definition at line 55 of file PrintManager\&.hpp\&.
 .SS "double PrintManager::_tempValue\fC [protected]\fP"
 
 .PP
-Definition at line 41 of file PrintManager\&.hpp\&.
+Definition at line 56 of file PrintManager\&.hpp\&.
+.SS "String PrintManager::_timezone = '\\'Brazil/Brasília\\''\fC [protected]\fP"
+
+.PP
+Definition at line 54 of file PrintManager\&.hpp\&.
 
 .SH "Author"
 .PP 

@@ -1,0 +1,434 @@
+\hypertarget{_rtc_d_s3231_8h}{}\section{lib/\+R\+T\+C/src/\+Rtc\+D\+S3231.h File Reference}
+\label{_rtc_d_s3231_8h}\index{lib/\+R\+T\+C/src/\+Rtc\+D\+S3231.\+h@{lib/\+R\+T\+C/src/\+Rtc\+D\+S3231.\+h}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\\*
+{\ttfamily \#include $<$Rtc\+Date\+Time.\+h$>$}\\*
+{\ttfamily \#include $<$Rtc\+Temperature.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}Rtc\+Utility.\+h\char`\"{}}\\*
+Include dependency graph for Rtc\+D\+S3231.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_rtc_d_s3231_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_d_s3231_alarm_one}{D\+S3231\+Alarm\+One}
+\item 
+class \hyperlink{class_d_s3231_alarm_two}{D\+S3231\+Alarm\+Two}
+\item 
+class \hyperlink{class_rtc_d_s3231}{Rtc\+D\+S3231$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+O\+D $>$}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7}{D\+S3231\+Alarm\+One\+Control} \{ \\*
+\hyperlink{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7a64bc953a8218ce9b030f0270512dbaa2}{D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Day\+Of\+Month\+Match} = 0x00, 
+\hyperlink{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7a9ab9f73b2657f0acddb2052ca635f071}{D\+S3231\+Alarm\+One\+Control\+\_\+\+Once\+Per\+Second} = 0x17, 
+\hyperlink{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7ad2ba9b378411bdd13d217e626fa35dcf}{D\+S3231\+Alarm\+One\+Control\+\_\+\+Seconds\+Match} = 0x16, 
+\hyperlink{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7aa3d896284536561a11c535c608006acf}{D\+S3231\+Alarm\+One\+Control\+\_\+\+Minutes\+Seconds\+Match} = 0x14, 
+\\*
+\hyperlink{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7a04c375ddcdcca38eb56a8b8812057340}{D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Match} = 0x10, 
+\hyperlink{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7a55560520bf190342d1d17c4999b2b7c2}{D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Day\+Of\+Week\+Match} = 0x08
+ \}
+\item 
+enum \hyperlink{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8ea}{D\+S3231\+Alarm\+Two\+Control} \{ \\*
+\hyperlink{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8eaaad1ae7dacbfa21b7db1efd733fa7d7f9}{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Day\+Of\+Month\+Match} = 0x00, 
+\hyperlink{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8eaa36d1e29b20c62e50ff17ae6c09e33800}{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Once\+Per\+Minute} = 0x0b, 
+\hyperlink{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8eaa561296f9e86ddb3beeb6d08ab38892a2}{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Minutes\+Match} = 0x0a, 
+\hyperlink{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8eaa601c781f8fab7225f18ec9119292d53e}{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Match} = 0x08, 
+\\*
+\hyperlink{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8eaaf927d08d0c948c857555fcf112bb9a1f}{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Day\+Of\+Week\+Match} = 0x04
+ \}
+\item 
+enum \hyperlink{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35}{D\+S3231\+Square\+Wave\+Clock} \{ \hyperlink{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35a707be34aac4a543bcf1fe265c233121c}{D\+S3231\+Square\+Wave\+Clock\+\_\+1\+Hz} = 0b00000000, 
+\hyperlink{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35aff8ab8561bd471041344b84baffba3d2}{D\+S3231\+Square\+Wave\+Clock\+\_\+1k\+Hz} = 0b00001000, 
+\hyperlink{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35a34f0d7cf1058081cae7c97061b80134e}{D\+S3231\+Square\+Wave\+Clock\+\_\+4k\+Hz} = 0b00010000, 
+\hyperlink{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35ac50cb39ce827afcd776d8f56951cafff}{D\+S3231\+Square\+Wave\+Clock\+\_\+8k\+Hz} = 0b00011000
+ \}
+\item 
+enum \hyperlink{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eee}{D\+S3231\+Square\+Wave\+Pin\+Mode} \{ \\*
+\hyperlink{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeeaef16ed4cb61575166bed5acb3aed90a2}{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+None}, 
+\hyperlink{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeea7423926f1adcdce4c24de47b939ab9cf}{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Battery\+Backup}, 
+\hyperlink{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeea82d6dd2b50e8df97bc5781a10fcc3458}{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Clock}, 
+\hyperlink{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeea094aa81704b577b4fb6000b07d7e087d}{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+One}, 
+\\*
+\hyperlink{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeeaa3dd6e07719ac45e8ad285f8dd2425a3}{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+Two}, 
+\hyperlink{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeea4ee2d93a03a299af5c292b8ff2aea353}{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+Both}
+ \}
+\item 
+enum \hyperlink{_rtc_d_s3231_8h_a14ff88e820f55bcdd9763e4c8a18cfec}{D\+S3231\+Alarm\+Flag} \{ \hyperlink{_rtc_d_s3231_8h_a14ff88e820f55bcdd9763e4c8a18cfeca749425a8f752dfe2b819844a02080e28}{D\+S3231\+Alarm\+Flag\+\_\+\+Alarm1} = 0x01, 
+\hyperlink{_rtc_d_s3231_8h_a14ff88e820f55bcdd9763e4c8a18cfeca458eb7f99f792d73063800bcd6cc747c}{D\+S3231\+Alarm\+Flag\+\_\+\+Alarm2} = 0x02, 
+\hyperlink{_rtc_d_s3231_8h_a14ff88e820f55bcdd9763e4c8a18cfeca90b902358ec6751acf73df5d4abdf9a9}{D\+S3231\+Alarm\+Flag\+\_\+\+Alarm\+Both} = 0x03
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_aed1bc016c0bcd03a9395f83eb5112293}{D\+S3231\+\_\+\+A\+D\+D\+R\+E\+SS} = 0x68
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a3471e80a32003ea22409276bde01b74b}{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+I\+M\+E\+D\+A\+TE} = 0x00
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_ab6cc2f8e591c0ae59ee4dc9509841bec}{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+O\+NE} = 0x07
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a76728d738f31ea9b3170ef4288a8431a}{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+T\+WO} = 0x0B
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_aff6c9dbe33cfa8fc1e8428d40d6f3ff5}{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+C\+O\+N\+T\+R\+OL} = 0x0E
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_ad70d97617489e126d7739e1dc2a8189b}{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+S\+T\+A\+T\+US} = 0x0F
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_ac0d903b2c58be3074a0e0bff92d423fb}{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+G\+I\+NG} = 0x10
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a534576d54f95f4aabd3afe2b2c3f760e}{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+E\+MP} = 0x11
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_afe4b53357021d858e1450f2c0641bda8}{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+I\+M\+E\+D\+A\+T\+E\+\_\+\+S\+I\+ZE} = 7
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a1d11a234ebc099f96922b5744c4a31e2}{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+O\+N\+E\+\_\+\+S\+I\+ZE} = 4
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_af9fd547157477412b93ebadbfb22cb0c}{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+T\+W\+O\+\_\+\+S\+I\+ZE} = 3
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a7f5a0ce7649a8f1034c919ee871e6adc}{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+E\+M\+P\+\_\+\+S\+I\+ZE} = 2
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a342f28398cb56c8308a9227ee6aeb3fd}{D\+S3231\+\_\+\+A1\+IE} = 0
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a2ad3ab64a7aef35eac704150ca830177}{D\+S3231\+\_\+\+A2\+IE} = 1
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_aefae4a9bb00240aac8e97dfdaeb4814e}{D\+S3231\+\_\+\+I\+N\+T\+CN} = 2
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a30e1490ae723996c26421f1b6e3771ae}{D\+S3231\+\_\+\+R\+S1} = 3
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a75ee20ef0bec5c31f09b8a88237701a6}{D\+S3231\+\_\+\+R\+S2} = 4
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a33e2cb2c4a671b849636d28aa7e746b5}{D\+S3231\+\_\+\+C\+O\+NV} = 5
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_ab47e532a6062d78fffd8e5a5c7661570}{D\+S3231\+\_\+\+B\+B\+S\+QW} = 6
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a1e07afd1133a886d0c704ac1addedd4a}{D\+S3231\+\_\+\+E\+O\+SC} = 7
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a93c6ec3fad5ecde53d7ddfa8e75defda}{D\+S3231\+\_\+\+A\+I\+E\+M\+A\+SK} = (\hyperlink{_rtc_utility_8h_a7d425596273d3668a700af992b2c1965}{\+\_\+\+BV}(\hyperlink{_rtc_d_s3231_8h_a342f28398cb56c8308a9227ee6aeb3fd}{D\+S3231\+\_\+\+A1\+IE}) $\vert$ \hyperlink{_rtc_utility_8h_a7d425596273d3668a700af992b2c1965}{\+\_\+\+BV}(\hyperlink{_rtc_d_s3231_8h_a2ad3ab64a7aef35eac704150ca830177}{D\+S3231\+\_\+\+A2\+IE}))
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a3319cdf3eaaa501b900f3d79994b74cf}{D\+S3231\+\_\+\+R\+S\+M\+A\+SK} = (\hyperlink{_rtc_utility_8h_a7d425596273d3668a700af992b2c1965}{\+\_\+\+BV}(\hyperlink{_rtc_d_s3231_8h_a30e1490ae723996c26421f1b6e3771ae}{D\+S3231\+\_\+\+R\+S1}) $\vert$ \hyperlink{_rtc_utility_8h_a7d425596273d3668a700af992b2c1965}{\+\_\+\+BV}(\hyperlink{_rtc_d_s3231_8h_a75ee20ef0bec5c31f09b8a88237701a6}{D\+S3231\+\_\+\+R\+S2}))
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_af178865671685bb019b1a21898e6e7fc}{D\+S3231\+\_\+\+A1F} = 0
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a3a09ebcc73ed8502cbab83ce26ec1407}{D\+S3231\+\_\+\+A2F} = 1
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a15db93505c415445ee24a5dbaf150998}{D\+S3231\+\_\+\+B\+SY} = 2
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a35353248999f9faf0a27b734977b2da5}{D\+S3231\+\_\+\+E\+N32\+K\+HZ} = 3
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a7f3db3ce64f1a95b073d3228a4f10c8a}{D\+S3231\+\_\+\+O\+SF} = 7
+\item 
+const uint8\+\_\+t \hyperlink{_rtc_d_s3231_8h_a04621ec3406968e2d52063b924db9cf7}{D\+S3231\+\_\+\+A\+I\+F\+M\+A\+SK} = (\hyperlink{_rtc_utility_8h_a7d425596273d3668a700af992b2c1965}{\+\_\+\+BV}(\hyperlink{_rtc_d_s3231_8h_af178865671685bb019b1a21898e6e7fc}{D\+S3231\+\_\+\+A1F}) $\vert$ \hyperlink{_rtc_utility_8h_a7d425596273d3668a700af992b2c1965}{\+\_\+\+BV}(\hyperlink{_rtc_d_s3231_8h_a3a09ebcc73ed8502cbab83ce26ec1407}{D\+S3231\+\_\+\+A2F}))
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+Flag@{D\+S3231\+Alarm\+Flag}}
+\index{D\+S3231\+Alarm\+Flag@{D\+S3231\+Alarm\+Flag}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+Alarm\+Flag}{DS3231AlarmFlag}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf D\+S3231\+Alarm\+Flag}}\hypertarget{_rtc_d_s3231_8h_a14ff88e820f55bcdd9763e4c8a18cfec}{}\label{_rtc_d_s3231_8h_a14ff88e820f55bcdd9763e4c8a18cfec}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{D\+S3231\+Alarm\+Flag\+\_\+\+Alarm1@{D\+S3231\+Alarm\+Flag\+\_\+\+Alarm1}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+Flag\+\_\+\+Alarm1@{D\+S3231\+Alarm\+Flag\+\_\+\+Alarm1}}\item[{\em 
+D\+S3231\+Alarm\+Flag\+\_\+\+Alarm1\hypertarget{_rtc_d_s3231_8h_a14ff88e820f55bcdd9763e4c8a18cfeca749425a8f752dfe2b819844a02080e28}{}\label{_rtc_d_s3231_8h_a14ff88e820f55bcdd9763e4c8a18cfeca749425a8f752dfe2b819844a02080e28}
+}]\index{D\+S3231\+Alarm\+Flag\+\_\+\+Alarm2@{D\+S3231\+Alarm\+Flag\+\_\+\+Alarm2}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+Flag\+\_\+\+Alarm2@{D\+S3231\+Alarm\+Flag\+\_\+\+Alarm2}}\item[{\em 
+D\+S3231\+Alarm\+Flag\+\_\+\+Alarm2\hypertarget{_rtc_d_s3231_8h_a14ff88e820f55bcdd9763e4c8a18cfeca458eb7f99f792d73063800bcd6cc747c}{}\label{_rtc_d_s3231_8h_a14ff88e820f55bcdd9763e4c8a18cfeca458eb7f99f792d73063800bcd6cc747c}
+}]\index{D\+S3231\+Alarm\+Flag\+\_\+\+Alarm\+Both@{D\+S3231\+Alarm\+Flag\+\_\+\+Alarm\+Both}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+Flag\+\_\+\+Alarm\+Both@{D\+S3231\+Alarm\+Flag\+\_\+\+Alarm\+Both}}\item[{\em 
+D\+S3231\+Alarm\+Flag\+\_\+\+Alarm\+Both\hypertarget{_rtc_d_s3231_8h_a14ff88e820f55bcdd9763e4c8a18cfeca90b902358ec6751acf73df5d4abdf9a9}{}\label{_rtc_d_s3231_8h_a14ff88e820f55bcdd9763e4c8a18cfeca90b902358ec6751acf73df5d4abdf9a9}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 216 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+One\+Control@{D\+S3231\+Alarm\+One\+Control}}
+\index{D\+S3231\+Alarm\+One\+Control@{D\+S3231\+Alarm\+One\+Control}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+Alarm\+One\+Control}{DS3231AlarmOneControl}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf D\+S3231\+Alarm\+One\+Control}}\hypertarget{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7}{}\label{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Day\+Of\+Month\+Match@{D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Day\+Of\+Month\+Match}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Day\+Of\+Month\+Match@{D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Day\+Of\+Month\+Match}}\item[{\em 
+D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Day\+Of\+Month\+Match\hypertarget{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7a64bc953a8218ce9b030f0270512dbaa2}{}\label{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7a64bc953a8218ce9b030f0270512dbaa2}
+}]\index{D\+S3231\+Alarm\+One\+Control\+\_\+\+Once\+Per\+Second@{D\+S3231\+Alarm\+One\+Control\+\_\+\+Once\+Per\+Second}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+One\+Control\+\_\+\+Once\+Per\+Second@{D\+S3231\+Alarm\+One\+Control\+\_\+\+Once\+Per\+Second}}\item[{\em 
+D\+S3231\+Alarm\+One\+Control\+\_\+\+Once\+Per\+Second\hypertarget{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7a9ab9f73b2657f0acddb2052ca635f071}{}\label{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7a9ab9f73b2657f0acddb2052ca635f071}
+}]\index{D\+S3231\+Alarm\+One\+Control\+\_\+\+Seconds\+Match@{D\+S3231\+Alarm\+One\+Control\+\_\+\+Seconds\+Match}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+One\+Control\+\_\+\+Seconds\+Match@{D\+S3231\+Alarm\+One\+Control\+\_\+\+Seconds\+Match}}\item[{\em 
+D\+S3231\+Alarm\+One\+Control\+\_\+\+Seconds\+Match\hypertarget{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7ad2ba9b378411bdd13d217e626fa35dcf}{}\label{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7ad2ba9b378411bdd13d217e626fa35dcf}
+}]\index{D\+S3231\+Alarm\+One\+Control\+\_\+\+Minutes\+Seconds\+Match@{D\+S3231\+Alarm\+One\+Control\+\_\+\+Minutes\+Seconds\+Match}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+One\+Control\+\_\+\+Minutes\+Seconds\+Match@{D\+S3231\+Alarm\+One\+Control\+\_\+\+Minutes\+Seconds\+Match}}\item[{\em 
+D\+S3231\+Alarm\+One\+Control\+\_\+\+Minutes\+Seconds\+Match\hypertarget{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7aa3d896284536561a11c535c608006acf}{}\label{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7aa3d896284536561a11c535c608006acf}
+}]\index{D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Match@{D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Match}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Match@{D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Match}}\item[{\em 
+D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Match\hypertarget{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7a04c375ddcdcca38eb56a8b8812057340}{}\label{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7a04c375ddcdcca38eb56a8b8812057340}
+}]\index{D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Day\+Of\+Week\+Match@{D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Day\+Of\+Week\+Match}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Day\+Of\+Week\+Match@{D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Day\+Of\+Week\+Match}}\item[{\em 
+D\+S3231\+Alarm\+One\+Control\+\_\+\+Hours\+Minutes\+Seconds\+Day\+Of\+Week\+Match\hypertarget{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7a55560520bf190342d1d17c4999b2b7c2}{}\label{_rtc_d_s3231_8h_aee303344b910c99a596a83018642f2a7a55560520bf190342d1d17c4999b2b7c2}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 56 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+Two\+Control@{D\+S3231\+Alarm\+Two\+Control}}
+\index{D\+S3231\+Alarm\+Two\+Control@{D\+S3231\+Alarm\+Two\+Control}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+Alarm\+Two\+Control}{DS3231AlarmTwoControl}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf D\+S3231\+Alarm\+Two\+Control}}\hypertarget{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8ea}{}\label{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8ea}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Day\+Of\+Month\+Match@{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Day\+Of\+Month\+Match}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Day\+Of\+Month\+Match@{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Day\+Of\+Month\+Match}}\item[{\em 
+D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Day\+Of\+Month\+Match\hypertarget{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8eaaad1ae7dacbfa21b7db1efd733fa7d7f9}{}\label{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8eaaad1ae7dacbfa21b7db1efd733fa7d7f9}
+}]\index{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Once\+Per\+Minute@{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Once\+Per\+Minute}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+Two\+Control\+\_\+\+Once\+Per\+Minute@{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Once\+Per\+Minute}}\item[{\em 
+D\+S3231\+Alarm\+Two\+Control\+\_\+\+Once\+Per\+Minute\hypertarget{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8eaa36d1e29b20c62e50ff17ae6c09e33800}{}\label{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8eaa36d1e29b20c62e50ff17ae6c09e33800}
+}]\index{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Minutes\+Match@{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Minutes\+Match}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+Two\+Control\+\_\+\+Minutes\+Match@{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Minutes\+Match}}\item[{\em 
+D\+S3231\+Alarm\+Two\+Control\+\_\+\+Minutes\+Match\hypertarget{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8eaa561296f9e86ddb3beeb6d08ab38892a2}{}\label{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8eaa561296f9e86ddb3beeb6d08ab38892a2}
+}]\index{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Match@{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Match}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Match@{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Match}}\item[{\em 
+D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Match\hypertarget{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8eaa601c781f8fab7225f18ec9119292d53e}{}\label{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8eaa601c781f8fab7225f18ec9119292d53e}
+}]\index{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Day\+Of\+Week\+Match@{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Day\+Of\+Week\+Match}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Day\+Of\+Week\+Match@{D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Day\+Of\+Week\+Match}}\item[{\em 
+D\+S3231\+Alarm\+Two\+Control\+\_\+\+Hours\+Minutes\+Day\+Of\+Week\+Match\hypertarget{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8eaaf927d08d0c948c857555fcf112bb9a1f}{}\label{_rtc_d_s3231_8h_a453a5caa2fec7d65bbc41f1b3e93a8eaaf927d08d0c948c857555fcf112bb9a1f}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 132 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Square\+Wave\+Clock@{D\+S3231\+Square\+Wave\+Clock}}
+\index{D\+S3231\+Square\+Wave\+Clock@{D\+S3231\+Square\+Wave\+Clock}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+Square\+Wave\+Clock}{DS3231SquareWaveClock}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf D\+S3231\+Square\+Wave\+Clock}}\hypertarget{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35}{}\label{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{D\+S3231\+Square\+Wave\+Clock\+\_\+1\+Hz@{D\+S3231\+Square\+Wave\+Clock\+\_\+1\+Hz}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Square\+Wave\+Clock\+\_\+1\+Hz@{D\+S3231\+Square\+Wave\+Clock\+\_\+1\+Hz}}\item[{\em 
+D\+S3231\+Square\+Wave\+Clock\+\_\+1\+Hz\hypertarget{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35a707be34aac4a543bcf1fe265c233121c}{}\label{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35a707be34aac4a543bcf1fe265c233121c}
+}]\index{D\+S3231\+Square\+Wave\+Clock\+\_\+1k\+Hz@{D\+S3231\+Square\+Wave\+Clock\+\_\+1k\+Hz}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Square\+Wave\+Clock\+\_\+1k\+Hz@{D\+S3231\+Square\+Wave\+Clock\+\_\+1k\+Hz}}\item[{\em 
+D\+S3231\+Square\+Wave\+Clock\+\_\+1k\+Hz\hypertarget{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35aff8ab8561bd471041344b84baffba3d2}{}\label{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35aff8ab8561bd471041344b84baffba3d2}
+}]\index{D\+S3231\+Square\+Wave\+Clock\+\_\+4k\+Hz@{D\+S3231\+Square\+Wave\+Clock\+\_\+4k\+Hz}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Square\+Wave\+Clock\+\_\+4k\+Hz@{D\+S3231\+Square\+Wave\+Clock\+\_\+4k\+Hz}}\item[{\em 
+D\+S3231\+Square\+Wave\+Clock\+\_\+4k\+Hz\hypertarget{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35a34f0d7cf1058081cae7c97061b80134e}{}\label{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35a34f0d7cf1058081cae7c97061b80134e}
+}]\index{D\+S3231\+Square\+Wave\+Clock\+\_\+8k\+Hz@{D\+S3231\+Square\+Wave\+Clock\+\_\+8k\+Hz}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Square\+Wave\+Clock\+\_\+8k\+Hz@{D\+S3231\+Square\+Wave\+Clock\+\_\+8k\+Hz}}\item[{\em 
+D\+S3231\+Square\+Wave\+Clock\+\_\+8k\+Hz\hypertarget{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35ac50cb39ce827afcd776d8f56951cafff}{}\label{_rtc_d_s3231_8h_a5d785d7ce9800d856044079fed07aa35ac50cb39ce827afcd776d8f56951cafff}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 198 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Square\+Wave\+Pin\+Mode@{D\+S3231\+Square\+Wave\+Pin\+Mode}}
+\index{D\+S3231\+Square\+Wave\+Pin\+Mode@{D\+S3231\+Square\+Wave\+Pin\+Mode}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+Square\+Wave\+Pin\+Mode}{DS3231SquareWavePinMode}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf D\+S3231\+Square\+Wave\+Pin\+Mode}}\hypertarget{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eee}{}\label{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eee}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+None@{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+None}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+None@{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+None}}\item[{\em 
+D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+None\hypertarget{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeeaef16ed4cb61575166bed5acb3aed90a2}{}\label{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeeaef16ed4cb61575166bed5acb3aed90a2}
+}]\index{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Battery\+Backup@{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Battery\+Backup}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Battery\+Backup@{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Battery\+Backup}}\item[{\em 
+D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Battery\+Backup\hypertarget{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeea7423926f1adcdce4c24de47b939ab9cf}{}\label{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeea7423926f1adcdce4c24de47b939ab9cf}
+}]\index{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Clock@{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Clock}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Clock@{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Clock}}\item[{\em 
+D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Clock\hypertarget{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeea82d6dd2b50e8df97bc5781a10fcc3458}{}\label{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeea82d6dd2b50e8df97bc5781a10fcc3458}
+}]\index{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+One@{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+One}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+One@{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+One}}\item[{\em 
+D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+One\hypertarget{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeea094aa81704b577b4fb6000b07d7e087d}{}\label{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeea094aa81704b577b4fb6000b07d7e087d}
+}]\index{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+Two@{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+Two}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+Two@{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+Two}}\item[{\em 
+D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+Two\hypertarget{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeeaa3dd6e07719ac45e8ad285f8dd2425a3}{}\label{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeeaa3dd6e07719ac45e8ad285f8dd2425a3}
+}]\index{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+Both@{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+Both}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+Both@{D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+Both}}\item[{\em 
+D\+S3231\+Square\+Wave\+Pin\+\_\+\+Mode\+Alarm\+Both\hypertarget{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeea4ee2d93a03a299af5c292b8ff2aea353}{}\label{_rtc_d_s3231_8h_a4203fa3e3c40492217bc8de3cc077eeea4ee2d93a03a299af5c292b8ff2aea353}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 206 of file Rtc\+D\+S3231.\+h.
+
+
+
+\subsection{Variable Documentation}
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+A1F@{D\+S3231\+\_\+\+A1F}}
+\index{D\+S3231\+\_\+\+A1F@{D\+S3231\+\_\+\+A1F}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+A1F}{DS3231_A1F}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+A1F = 0}\hypertarget{_rtc_d_s3231_8h_af178865671685bb019b1a21898e6e7fc}{}\label{_rtc_d_s3231_8h_af178865671685bb019b1a21898e6e7fc}
+
+
+Definition at line 47 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+A1\+IE@{D\+S3231\+\_\+\+A1\+IE}}
+\index{D\+S3231\+\_\+\+A1\+IE@{D\+S3231\+\_\+\+A1\+IE}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+A1\+IE}{DS3231_A1IE}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+A1\+IE = 0}\hypertarget{_rtc_d_s3231_8h_a342f28398cb56c8308a9227ee6aeb3fd}{}\label{_rtc_d_s3231_8h_a342f28398cb56c8308a9227ee6aeb3fd}
+
+
+Definition at line 35 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+A2F@{D\+S3231\+\_\+\+A2F}}
+\index{D\+S3231\+\_\+\+A2F@{D\+S3231\+\_\+\+A2F}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+A2F}{DS3231_A2F}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+A2F = 1}\hypertarget{_rtc_d_s3231_8h_a3a09ebcc73ed8502cbab83ce26ec1407}{}\label{_rtc_d_s3231_8h_a3a09ebcc73ed8502cbab83ce26ec1407}
+
+
+Definition at line 48 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+A2\+IE@{D\+S3231\+\_\+\+A2\+IE}}
+\index{D\+S3231\+\_\+\+A2\+IE@{D\+S3231\+\_\+\+A2\+IE}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+A2\+IE}{DS3231_A2IE}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+A2\+IE = 1}\hypertarget{_rtc_d_s3231_8h_a2ad3ab64a7aef35eac704150ca830177}{}\label{_rtc_d_s3231_8h_a2ad3ab64a7aef35eac704150ca830177}
+
+
+Definition at line 36 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+A\+D\+D\+R\+E\+SS@{D\+S3231\+\_\+\+A\+D\+D\+R\+E\+SS}}
+\index{D\+S3231\+\_\+\+A\+D\+D\+R\+E\+SS@{D\+S3231\+\_\+\+A\+D\+D\+R\+E\+SS}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+A\+D\+D\+R\+E\+SS}{DS3231_ADDRESS}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+A\+D\+D\+R\+E\+SS = 0x68}\hypertarget{_rtc_d_s3231_8h_aed1bc016c0bcd03a9395f83eb5112293}{}\label{_rtc_d_s3231_8h_aed1bc016c0bcd03a9395f83eb5112293}
+
+
+Definition at line 14 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+A\+I\+E\+M\+A\+SK@{D\+S3231\+\_\+\+A\+I\+E\+M\+A\+SK}}
+\index{D\+S3231\+\_\+\+A\+I\+E\+M\+A\+SK@{D\+S3231\+\_\+\+A\+I\+E\+M\+A\+SK}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+A\+I\+E\+M\+A\+SK}{DS3231_AIEMASK}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+A\+I\+E\+M\+A\+SK = ({\bf \+\_\+\+BV}({\bf D\+S3231\+\_\+\+A1\+IE}) $\vert$ {\bf \+\_\+\+BV}({\bf D\+S3231\+\_\+\+A2\+IE}))}\hypertarget{_rtc_d_s3231_8h_a93c6ec3fad5ecde53d7ddfa8e75defda}{}\label{_rtc_d_s3231_8h_a93c6ec3fad5ecde53d7ddfa8e75defda}
+
+
+Definition at line 43 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+A\+I\+F\+M\+A\+SK@{D\+S3231\+\_\+\+A\+I\+F\+M\+A\+SK}}
+\index{D\+S3231\+\_\+\+A\+I\+F\+M\+A\+SK@{D\+S3231\+\_\+\+A\+I\+F\+M\+A\+SK}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+A\+I\+F\+M\+A\+SK}{DS3231_AIFMASK}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+A\+I\+F\+M\+A\+SK = ({\bf \+\_\+\+BV}({\bf D\+S3231\+\_\+\+A1F}) $\vert$ {\bf \+\_\+\+BV}({\bf D\+S3231\+\_\+\+A2F}))}\hypertarget{_rtc_d_s3231_8h_a04621ec3406968e2d52063b924db9cf7}{}\label{_rtc_d_s3231_8h_a04621ec3406968e2d52063b924db9cf7}
+
+
+Definition at line 52 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+B\+B\+S\+QW@{D\+S3231\+\_\+\+B\+B\+S\+QW}}
+\index{D\+S3231\+\_\+\+B\+B\+S\+QW@{D\+S3231\+\_\+\+B\+B\+S\+QW}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+B\+B\+S\+QW}{DS3231_BBSQW}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+B\+B\+S\+QW = 6}\hypertarget{_rtc_d_s3231_8h_ab47e532a6062d78fffd8e5a5c7661570}{}\label{_rtc_d_s3231_8h_ab47e532a6062d78fffd8e5a5c7661570}
+
+
+Definition at line 41 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+B\+SY@{D\+S3231\+\_\+\+B\+SY}}
+\index{D\+S3231\+\_\+\+B\+SY@{D\+S3231\+\_\+\+B\+SY}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+B\+SY}{DS3231_BSY}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+B\+SY = 2}\hypertarget{_rtc_d_s3231_8h_a15db93505c415445ee24a5dbaf150998}{}\label{_rtc_d_s3231_8h_a15db93505c415445ee24a5dbaf150998}
+
+
+Definition at line 49 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+C\+O\+NV@{D\+S3231\+\_\+\+C\+O\+NV}}
+\index{D\+S3231\+\_\+\+C\+O\+NV@{D\+S3231\+\_\+\+C\+O\+NV}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+C\+O\+NV}{DS3231_CONV}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+C\+O\+NV = 5}\hypertarget{_rtc_d_s3231_8h_a33e2cb2c4a671b849636d28aa7e746b5}{}\label{_rtc_d_s3231_8h_a33e2cb2c4a671b849636d28aa7e746b5}
+
+
+Definition at line 40 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+E\+N32\+K\+HZ@{D\+S3231\+\_\+\+E\+N32\+K\+HZ}}
+\index{D\+S3231\+\_\+\+E\+N32\+K\+HZ@{D\+S3231\+\_\+\+E\+N32\+K\+HZ}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+E\+N32\+K\+HZ}{DS3231_EN32KHZ}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+E\+N32\+K\+HZ = 3}\hypertarget{_rtc_d_s3231_8h_a35353248999f9faf0a27b734977b2da5}{}\label{_rtc_d_s3231_8h_a35353248999f9faf0a27b734977b2da5}
+
+
+Definition at line 50 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+E\+O\+SC@{D\+S3231\+\_\+\+E\+O\+SC}}
+\index{D\+S3231\+\_\+\+E\+O\+SC@{D\+S3231\+\_\+\+E\+O\+SC}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+E\+O\+SC}{DS3231_EOSC}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+E\+O\+SC = 7}\hypertarget{_rtc_d_s3231_8h_a1e07afd1133a886d0c704ac1addedd4a}{}\label{_rtc_d_s3231_8h_a1e07afd1133a886d0c704ac1addedd4a}
+
+
+Definition at line 42 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+I\+N\+T\+CN@{D\+S3231\+\_\+\+I\+N\+T\+CN}}
+\index{D\+S3231\+\_\+\+I\+N\+T\+CN@{D\+S3231\+\_\+\+I\+N\+T\+CN}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+I\+N\+T\+CN}{DS3231_INTCN}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+I\+N\+T\+CN = 2}\hypertarget{_rtc_d_s3231_8h_aefae4a9bb00240aac8e97dfdaeb4814e}{}\label{_rtc_d_s3231_8h_aefae4a9bb00240aac8e97dfdaeb4814e}
+
+
+Definition at line 37 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+O\+SF@{D\+S3231\+\_\+\+O\+SF}}
+\index{D\+S3231\+\_\+\+O\+SF@{D\+S3231\+\_\+\+O\+SF}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+O\+SF}{DS3231_OSF}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+O\+SF = 7}\hypertarget{_rtc_d_s3231_8h_a7f3db3ce64f1a95b073d3228a4f10c8a}{}\label{_rtc_d_s3231_8h_a7f3db3ce64f1a95b073d3228a4f10c8a}
+
+
+Definition at line 51 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+G\+I\+NG@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+G\+I\+NG}}
+\index{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+G\+I\+NG@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+G\+I\+NG}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+G\+I\+NG}{DS3231_REG_AGING}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+G\+I\+NG = 0x10}\hypertarget{_rtc_d_s3231_8h_ac0d903b2c58be3074a0e0bff92d423fb}{}\label{_rtc_d_s3231_8h_ac0d903b2c58be3074a0e0bff92d423fb}
+
+
+Definition at line 23 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+O\+NE@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+O\+NE}}
+\index{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+O\+NE@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+O\+NE}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+O\+NE}{DS3231_REG_ALARMONE}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+O\+NE = 0x07}\hypertarget{_rtc_d_s3231_8h_ab6cc2f8e591c0ae59ee4dc9509841bec}{}\label{_rtc_d_s3231_8h_ab6cc2f8e591c0ae59ee4dc9509841bec}
+
+
+Definition at line 18 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+O\+N\+E\+\_\+\+S\+I\+ZE@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+O\+N\+E\+\_\+\+S\+I\+ZE}}
+\index{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+O\+N\+E\+\_\+\+S\+I\+ZE@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+O\+N\+E\+\_\+\+S\+I\+ZE}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+O\+N\+E\+\_\+\+S\+I\+ZE}{DS3231_REG_ALARMONE_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+O\+N\+E\+\_\+\+S\+I\+ZE = 4}\hypertarget{_rtc_d_s3231_8h_a1d11a234ebc099f96922b5744c4a31e2}{}\label{_rtc_d_s3231_8h_a1d11a234ebc099f96922b5744c4a31e2}
+
+
+Definition at line 29 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+T\+WO@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+T\+WO}}
+\index{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+T\+WO@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+T\+WO}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+T\+WO}{DS3231_REG_ALARMTWO}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+T\+WO = 0x0B}\hypertarget{_rtc_d_s3231_8h_a76728d738f31ea9b3170ef4288a8431a}{}\label{_rtc_d_s3231_8h_a76728d738f31ea9b3170ef4288a8431a}
+
+
+Definition at line 19 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+T\+W\+O\+\_\+\+S\+I\+ZE@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+T\+W\+O\+\_\+\+S\+I\+ZE}}
+\index{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+T\+W\+O\+\_\+\+S\+I\+ZE@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+T\+W\+O\+\_\+\+S\+I\+ZE}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+T\+W\+O\+\_\+\+S\+I\+ZE}{DS3231_REG_ALARMTWO_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+R\+E\+G\+\_\+\+A\+L\+A\+R\+M\+T\+W\+O\+\_\+\+S\+I\+ZE = 3}\hypertarget{_rtc_d_s3231_8h_af9fd547157477412b93ebadbfb22cb0c}{}\label{_rtc_d_s3231_8h_af9fd547157477412b93ebadbfb22cb0c}
+
+
+Definition at line 30 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+R\+E\+G\+\_\+\+C\+O\+N\+T\+R\+OL@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+C\+O\+N\+T\+R\+OL}}
+\index{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+C\+O\+N\+T\+R\+OL@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+C\+O\+N\+T\+R\+OL}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+C\+O\+N\+T\+R\+OL}{DS3231_REG_CONTROL}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+R\+E\+G\+\_\+\+C\+O\+N\+T\+R\+OL = 0x0E}\hypertarget{_rtc_d_s3231_8h_aff6c9dbe33cfa8fc1e8428d40d6f3ff5}{}\label{_rtc_d_s3231_8h_aff6c9dbe33cfa8fc1e8428d40d6f3ff5}
+
+
+Definition at line 21 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+R\+E\+G\+\_\+\+S\+T\+A\+T\+US@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+S\+T\+A\+T\+US}}
+\index{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+S\+T\+A\+T\+US@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+S\+T\+A\+T\+US}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+S\+T\+A\+T\+US}{DS3231_REG_STATUS}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+R\+E\+G\+\_\+\+S\+T\+A\+T\+US = 0x0F}\hypertarget{_rtc_d_s3231_8h_ad70d97617489e126d7739e1dc2a8189b}{}\label{_rtc_d_s3231_8h_ad70d97617489e126d7739e1dc2a8189b}
+
+
+Definition at line 22 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+E\+MP@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+E\+MP}}
+\index{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+E\+MP@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+E\+MP}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+E\+MP}{DS3231_REG_TEMP}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+E\+MP = 0x11}\hypertarget{_rtc_d_s3231_8h_a534576d54f95f4aabd3afe2b2c3f760e}{}\label{_rtc_d_s3231_8h_a534576d54f95f4aabd3afe2b2c3f760e}
+
+
+Definition at line 25 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+E\+M\+P\+\_\+\+S\+I\+ZE@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+E\+M\+P\+\_\+\+S\+I\+ZE}}
+\index{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+E\+M\+P\+\_\+\+S\+I\+ZE@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+E\+M\+P\+\_\+\+S\+I\+ZE}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+E\+M\+P\+\_\+\+S\+I\+ZE}{DS3231_REG_TEMP_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+E\+M\+P\+\_\+\+S\+I\+ZE = 2}\hypertarget{_rtc_d_s3231_8h_a7f5a0ce7649a8f1034c919ee871e6adc}{}\label{_rtc_d_s3231_8h_a7f5a0ce7649a8f1034c919ee871e6adc}
+
+
+Definition at line 32 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+I\+M\+E\+D\+A\+TE@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+I\+M\+E\+D\+A\+TE}}
+\index{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+I\+M\+E\+D\+A\+TE@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+I\+M\+E\+D\+A\+TE}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+I\+M\+E\+D\+A\+TE}{DS3231_REG_TIMEDATE}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+I\+M\+E\+D\+A\+TE = 0x00}\hypertarget{_rtc_d_s3231_8h_a3471e80a32003ea22409276bde01b74b}{}\label{_rtc_d_s3231_8h_a3471e80a32003ea22409276bde01b74b}
+
+
+Definition at line 17 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+I\+M\+E\+D\+A\+T\+E\+\_\+\+S\+I\+ZE@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+I\+M\+E\+D\+A\+T\+E\+\_\+\+S\+I\+ZE}}
+\index{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+I\+M\+E\+D\+A\+T\+E\+\_\+\+S\+I\+ZE@{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+I\+M\+E\+D\+A\+T\+E\+\_\+\+S\+I\+ZE}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+I\+M\+E\+D\+A\+T\+E\+\_\+\+S\+I\+ZE}{DS3231_REG_TIMEDATE_SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+R\+E\+G\+\_\+\+T\+I\+M\+E\+D\+A\+T\+E\+\_\+\+S\+I\+ZE = 7}\hypertarget{_rtc_d_s3231_8h_afe4b53357021d858e1450f2c0641bda8}{}\label{_rtc_d_s3231_8h_afe4b53357021d858e1450f2c0641bda8}
+
+
+Definition at line 28 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+R\+S1@{D\+S3231\+\_\+\+R\+S1}}
+\index{D\+S3231\+\_\+\+R\+S1@{D\+S3231\+\_\+\+R\+S1}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+R\+S1}{DS3231_RS1}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+R\+S1 = 3}\hypertarget{_rtc_d_s3231_8h_a30e1490ae723996c26421f1b6e3771ae}{}\label{_rtc_d_s3231_8h_a30e1490ae723996c26421f1b6e3771ae}
+
+
+Definition at line 38 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+R\+S2@{D\+S3231\+\_\+\+R\+S2}}
+\index{D\+S3231\+\_\+\+R\+S2@{D\+S3231\+\_\+\+R\+S2}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+R\+S2}{DS3231_RS2}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+R\+S2 = 4}\hypertarget{_rtc_d_s3231_8h_a75ee20ef0bec5c31f09b8a88237701a6}{}\label{_rtc_d_s3231_8h_a75ee20ef0bec5c31f09b8a88237701a6}
+
+
+Definition at line 39 of file Rtc\+D\+S3231.\+h.
+
+\index{Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}!D\+S3231\+\_\+\+R\+S\+M\+A\+SK@{D\+S3231\+\_\+\+R\+S\+M\+A\+SK}}
+\index{D\+S3231\+\_\+\+R\+S\+M\+A\+SK@{D\+S3231\+\_\+\+R\+S\+M\+A\+SK}!Rtc\+D\+S3231.\+h@{Rtc\+D\+S3231.\+h}}
+\subsubsection[{\texorpdfstring{D\+S3231\+\_\+\+R\+S\+M\+A\+SK}{DS3231_RSMASK}}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t D\+S3231\+\_\+\+R\+S\+M\+A\+SK = ({\bf \+\_\+\+BV}({\bf D\+S3231\+\_\+\+R\+S1}) $\vert$ {\bf \+\_\+\+BV}({\bf D\+S3231\+\_\+\+R\+S2}))}\hypertarget{_rtc_d_s3231_8h_a3319cdf3eaaa501b900f3d79994b74cf}{}\label{_rtc_d_s3231_8h_a3319cdf3eaaa501b900f3d79994b74cf}
+
+
+Definition at line 44 of file Rtc\+D\+S3231.\+h.
+

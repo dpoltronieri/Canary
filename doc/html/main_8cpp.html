@@ -33,7 +33,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Canary
    </div>
-   <div id="projectbrief">The Canary Project is a mobile ambient monitoring device developed in Arduino and written in C++ with a companion app to be developed for Android and iOS. Its goal is to monitor air quality through the measurement of air pollutants, temperature, humidity and sound pollution levels.</div>
+   <div id="projectbrief">The Canary project is a environmental monitoring platform.</div>
   </td>
  </tr>
  </tbody>
@@ -105,84 +105,40 @@ $(document).ready(function(){initNavTree('main_8cpp.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">main.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;Arduino.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8hpp_source.html">main.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="dht_8h_source.html">dht.h</a>&quot;</code><br />
-<code>#include &lt;<a class="el" href="ldr_8hpp_source.html">ldr.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_m_q_sensor_8hpp_source.html">../lib/MQ-Sensor/src/MQSensor.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="src_2_print_manager_8hpp_source.html">../lib/PrintManager/src/PrintManager.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#src_2main_8cpp" alt=""/></div>
-<!-- MAP 0 -->
+<map name="src_2main_8cpp" id="src_2main_8cpp">
+<area shape="rect" id="node3" href="main_8hpp.html" title="main.hpp" alt="" coords="549,80,623,107"/>
+<area shape="rect" id="node4" href="dht_8h.html" title="../lib/DHT/src/dht.h" alt="" coords="45,162,180,189"/>
+<area shape="rect" id="node6" href="ldr_8hpp.html" title="ldr.hpp" alt="" coords="615,244,677,271"/>
+<area shape="rect" id="node7" href="_m_q_sensor_8hpp.html" title="../lib/MQ&#45;Sensor/src\l/MQSensor.hpp" alt="" coords="790,155,929,196"/>
+<area shape="rect" id="node8" href="_print_manager_8hpp.html" title="../lib/PrintManager\l/src/PrintManager.hpp" alt="" coords="953,155,1104,196"/>
+<area shape="rect" id="node13" href="_rtc_d_s1307_8h.html" title="../lib/RTC/src/RtcDS1307.h" alt="" coords="331,162,515,189"/>
+<area shape="rect" id="node17" href="_tiny_g_p_s_09_09_8h.html" title="TinyGPS++.h" alt="" coords="204,162,307,189"/>
+<area shape="rect" id="node10" href="_log_manager_8hpp.html" title="LogManager.hpp" alt="" coords="985,244,1104,271"/>
+<area shape="rect" id="node14" href="_rtc_date_time_8h.html" title="RtcDateTime.h" alt="" coords="368,244,479,271"/>
+<area shape="rect" id="node15" href="_rtc_utility_8h.html" title="RtcUtility.h" alt="" coords="503,244,591,271"/>
+</map>
 </div>
 </div>
 <p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a79111e78831efb8ac76fa8123357475e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a79111e78831efb8ac76fa8123357475e">DHT11_PIN</a>&#160;&#160;&#160;5</td></tr>
-<tr class="separator:a79111e78831efb8ac76fa8123357475e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51fd859df7f54aaa2ef64c36c97b548a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a51fd859df7f54aaa2ef64c36c97b548a">LDR_PIN</a>&#160;&#160;&#160;A0</td></tr>
-<tr class="separator:a51fd859df7f54aaa2ef64c36c97b548a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
 <tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
 <tr class="separator:afe461d27b9c48d5921c00d521181f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a09ab68438bdac8b1dd88db68d6cd77bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdht.html">dht</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a09ab68438bdac8b1dd88db68d6cd77bd">DHTSensor</a></td></tr>
-<tr class="separator:a09ab68438bdac8b1dd88db68d6cd77bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1d8643b0106d98cb7314e0a1996eae5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classldr.html">ldr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af1d8643b0106d98cb7314e0a1996eae5">LDRSensor</a> = <a class="el" href="classldr.html">ldr</a>(<a class="el" href="main_8cpp.html#a51fd859df7f54aaa2ef64c36c97b548a">LDR_PIN</a>)</td></tr>
-<tr class="separator:af1d8643b0106d98cb7314e0a1996eae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6cc5b21108322d634d1546f757f5530"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_m_q_sensor.html">MQSensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af6cc5b21108322d634d1546f757f5530">Dummy</a> = <a class="el" href="class_m_q_sensor.html#a7f29aed48ad89d8403f08a4e83b136b5">MQSensor::NewMQSensor</a>(1, MQ_SENSOR_DUMMY)</td></tr>
-<tr class="separator:af6cc5b21108322d634d1546f757f5530"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79fd83e3b2484c3ae567ebe99411826f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_print_manager.html">PrintManager</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a79fd83e3b2484c3ae567ebe99411826f">BT_Serial</a> = <a class="el" href="class_print_manager.html">PrintManager</a>(&amp;Serial1)</td></tr>
-<tr class="separator:a79fd83e3b2484c3ae567ebe99411826f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad552816238335da6d338deadfd59a7b2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad552816238335da6d338deadfd59a7b2">TemperatureHumidity</a> [10]</td></tr>
-<tr class="separator:ad552816238335da6d338deadfd59a7b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a class="anchor" id="a79111e78831efb8ac76fa8123357475e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DHT11_PIN&#160;&#160;&#160;5</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="main_8cpp_source.html#l00013">13</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a51fd859df7f54aaa2ef64c36c97b548a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LDR_PIN&#160;&#160;&#160;A0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="main_8cpp_source.html#l00014">14</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="afe461d27b9c48d5921c00d521181f12f"></a>
 <div class="memitem">
@@ -197,15 +153,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="main_8cpp_source.html#l00057">57</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="main_8cpp_afe461d27b9c48d5921c00d521181f12f_cgraph.png" border="0" usemap="#main_8cpp_afe461d27b9c48d5921c00d521181f12f_cgraph" alt=""/></div>
-<!-- MAP 1 -->
-</div>
-</p>
+<p>Definition at line <a class="el" href="main_8cpp_source.html#l00070">70</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -222,78 +170,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="main_8cpp_source.html#l00034">34</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="a79fd83e3b2484c3ae567ebe99411826f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_print_manager.html">PrintManager</a> BT_Serial = <a class="el" href="class_print_manager.html">PrintManager</a>(&amp;Serial1)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="main_8cpp_source.html#l00020">20</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a09ab68438bdac8b1dd88db68d6cd77bd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classdht.html">dht</a> DHTSensor</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="main_8cpp_source.html#l00017">17</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af6cc5b21108322d634d1546f757f5530"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_m_q_sensor.html">MQSensor</a> Dummy = <a class="el" href="class_m_q_sensor.html#a7f29aed48ad89d8403f08a4e83b136b5">MQSensor::NewMQSensor</a>(1, MQ_SENSOR_DUMMY)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="main_8cpp_source.html#l00019">19</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af1d8643b0106d98cb7314e0a1996eae5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classldr.html">ldr</a> LDRSensor = <a class="el" href="classldr.html">ldr</a>(<a class="el" href="main_8cpp.html#a51fd859df7f54aaa2ef64c36c97b548a">LDR_PIN</a>)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
 <p>Definition at line <a class="el" href="main_8cpp_source.html#l00018">18</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad552816238335da6d338deadfd59a7b2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double TemperatureHumidity[10]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="main_8cpp_source.html#l00031">31</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>

@@ -1,0 +1,191 @@
+\hypertarget{class_rtc_d_s1307}{}\section{Rtc\+D\+S1307$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$ Class Template Reference}
+\label{class_rtc_d_s1307}\index{Rtc\+D\+S1307$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+O\+D $>$@{Rtc\+D\+S1307$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+O\+D $>$}}
+
+
+{\ttfamily \#include $<$Rtc\+D\+S1307.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_rtc_d_s1307_a3cc15257ca35d2016ea9cd952fce19fc}{Rtc\+D\+S1307} (T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD \&wire)
+\item 
+void \hyperlink{class_rtc_d_s1307_a7c9ca31bbee2bf317f9f7d0858670f77}{Begin} ()
+\item 
+bool \hyperlink{class_rtc_d_s1307_a59c23764273ce04cd12c7b24e05d6aad}{Is\+Date\+Time\+Valid} ()
+\item 
+bool \hyperlink{class_rtc_d_s1307_abef3ed4e0898645e62d293a5d8e3c8db}{Get\+Is\+Running} ()
+\item 
+void \hyperlink{class_rtc_d_s1307_a48280782960f2d3d6bfcc14db3382475}{Set\+Is\+Running} (bool is\+Running)
+\item 
+void \hyperlink{class_rtc_d_s1307_aa03bfac5015bbe14843c66c88132e8ef}{Set\+Date\+Time} (const \hyperlink{class_rtc_date_time}{Rtc\+Date\+Time} \&dt)
+\item 
+\hyperlink{class_rtc_date_time}{Rtc\+Date\+Time} \hyperlink{class_rtc_d_s1307_ae8005e50deb2e86d623005dda35695e2}{Get\+Date\+Time} ()
+\item 
+void \hyperlink{class_rtc_d_s1307_aa2b6fa5bac40e4eea1ffb6b01cd291bd}{Set\+Memory} (uint8\+\_\+t memory\+Address, uint8\+\_\+t value)
+\item 
+uint8\+\_\+t \hyperlink{class_rtc_d_s1307_a551c58ba184626780b1f806cc9eb124d}{Get\+Memory} (uint8\+\_\+t memory\+Address)
+\item 
+uint8\+\_\+t \hyperlink{class_rtc_d_s1307_ac4f358e59516475f5af176c47ccee7a2}{Set\+Memory} (uint8\+\_\+t memory\+Address, const uint8\+\_\+t $\ast$p\+Value, uint8\+\_\+t count\+Bytes)
+\item 
+uint8\+\_\+t \hyperlink{class_rtc_d_s1307_a784a1fbf6367c4a73a95748cf9f94e23}{Get\+Memory} (uint8\+\_\+t memory\+Address, uint8\+\_\+t $\ast$p\+Value, uint8\+\_\+t count\+Bytes)
+\item 
+void \hyperlink{class_rtc_d_s1307_afacd4cf1293032ece5df359e7e7c38d5}{Set\+Square\+Wave\+Pin} (\hyperlink{_rtc_d_s1307_8h_a85910be6fed3842f050e1e3e3c03f229}{D\+S1307\+Square\+Wave\+Out} pin\+Mode)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD$>$\\*
+class Rtc\+D\+S1307$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+O\+D $>$}
+
+
+
+Definition at line 43 of file Rtc\+D\+S1307.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Rtc\+D\+S1307@{Rtc\+D\+S1307}!Rtc\+D\+S1307@{Rtc\+D\+S1307}}
+\index{Rtc\+D\+S1307@{Rtc\+D\+S1307}!Rtc\+D\+S1307@{Rtc\+D\+S1307}}
+\subsubsection[{\texorpdfstring{Rtc\+D\+S1307(\+T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+O\+D \&wire)}{RtcDS1307(T_WIRE_METHOD &wire)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD$>$ {\bf Rtc\+D\+S1307}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::{\bf Rtc\+D\+S1307} (
+\begin{DoxyParamCaption}
+\item[{T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD \&}]{wire}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s1307_a3cc15257ca35d2016ea9cd952fce19fc}{}\label{class_rtc_d_s1307_a3cc15257ca35d2016ea9cd952fce19fc}
+
+
+Definition at line 46 of file Rtc\+D\+S1307.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\index{Rtc\+D\+S1307@{Rtc\+D\+S1307}!Begin@{Begin}}
+\index{Begin@{Begin}!Rtc\+D\+S1307@{Rtc\+D\+S1307}}
+\subsubsection[{\texorpdfstring{Begin()}{Begin()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD$>$ void {\bf Rtc\+D\+S1307}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s1307_a7c9ca31bbee2bf317f9f7d0858670f77}{}\label{class_rtc_d_s1307_a7c9ca31bbee2bf317f9f7d0858670f77}
+
+
+Definition at line 51 of file Rtc\+D\+S1307.\+h.
+
+\index{Rtc\+D\+S1307@{Rtc\+D\+S1307}!Get\+Date\+Time@{Get\+Date\+Time}}
+\index{Get\+Date\+Time@{Get\+Date\+Time}!Rtc\+D\+S1307@{Rtc\+D\+S1307}}
+\subsubsection[{\texorpdfstring{Get\+Date\+Time()}{GetDateTime()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD$>$ {\bf Rtc\+Date\+Time} {\bf Rtc\+D\+S1307}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Get\+Date\+Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s1307_ae8005e50deb2e86d623005dda35695e2}{}\label{class_rtc_d_s1307_ae8005e50deb2e86d623005dda35695e2}
+
+
+Definition at line 100 of file Rtc\+D\+S1307.\+h.
+
+\index{Rtc\+D\+S1307@{Rtc\+D\+S1307}!Get\+Is\+Running@{Get\+Is\+Running}}
+\index{Get\+Is\+Running@{Get\+Is\+Running}!Rtc\+D\+S1307@{Rtc\+D\+S1307}}
+\subsubsection[{\texorpdfstring{Get\+Is\+Running()}{GetIsRunning()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD$>$ bool {\bf Rtc\+D\+S1307}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Get\+Is\+Running (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s1307_abef3ed4e0898645e62d293a5d8e3c8db}{}\label{class_rtc_d_s1307_abef3ed4e0898645e62d293a5d8e3c8db}
+
+
+Definition at line 61 of file Rtc\+D\+S1307.\+h.
+
+\index{Rtc\+D\+S1307@{Rtc\+D\+S1307}!Get\+Memory@{Get\+Memory}}
+\index{Get\+Memory@{Get\+Memory}!Rtc\+D\+S1307@{Rtc\+D\+S1307}}
+\subsubsection[{\texorpdfstring{Get\+Memory(uint8\+\_\+t memory\+Address)}{GetMemory(uint8_t memoryAddress)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD$>$ uint8\+\_\+t {\bf Rtc\+D\+S1307}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Get\+Memory (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{memory\+Address}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s1307_a551c58ba184626780b1f806cc9eb124d}{}\label{class_rtc_d_s1307_a551c58ba184626780b1f806cc9eb124d}
+
+
+Definition at line 128 of file Rtc\+D\+S1307.\+h.
+
+\index{Rtc\+D\+S1307@{Rtc\+D\+S1307}!Get\+Memory@{Get\+Memory}}
+\index{Get\+Memory@{Get\+Memory}!Rtc\+D\+S1307@{Rtc\+D\+S1307}}
+\subsubsection[{\texorpdfstring{Get\+Memory(uint8\+\_\+t memory\+Address, uint8\+\_\+t $\ast$p\+Value, uint8\+\_\+t count\+Bytes)}{GetMemory(uint8_t memoryAddress, uint8_t *pValue, uint8_t countBytes)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD$>$ uint8\+\_\+t {\bf Rtc\+D\+S1307}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Get\+Memory (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{memory\+Address, }
+\item[{uint8\+\_\+t $\ast$}]{p\+Value, }
+\item[{uint8\+\_\+t}]{count\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s1307_a784a1fbf6367c4a73a95748cf9f94e23}{}\label{class_rtc_d_s1307_a784a1fbf6367c4a73a95748cf9f94e23}
+
+
+Definition at line 161 of file Rtc\+D\+S1307.\+h.
+
+\index{Rtc\+D\+S1307@{Rtc\+D\+S1307}!Is\+Date\+Time\+Valid@{Is\+Date\+Time\+Valid}}
+\index{Is\+Date\+Time\+Valid@{Is\+Date\+Time\+Valid}!Rtc\+D\+S1307@{Rtc\+D\+S1307}}
+\subsubsection[{\texorpdfstring{Is\+Date\+Time\+Valid()}{IsDateTimeValid()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD$>$ bool {\bf Rtc\+D\+S1307}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Is\+Date\+Time\+Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s1307_a59c23764273ce04cd12c7b24e05d6aad}{}\label{class_rtc_d_s1307_a59c23764273ce04cd12c7b24e05d6aad}
+
+
+Definition at line 56 of file Rtc\+D\+S1307.\+h.
+
+\index{Rtc\+D\+S1307@{Rtc\+D\+S1307}!Set\+Date\+Time@{Set\+Date\+Time}}
+\index{Set\+Date\+Time@{Set\+Date\+Time}!Rtc\+D\+S1307@{Rtc\+D\+S1307}}
+\subsubsection[{\texorpdfstring{Set\+Date\+Time(const Rtc\+Date\+Time \&dt)}{SetDateTime(const RtcDateTime &dt)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD$>$ void {\bf Rtc\+D\+S1307}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Set\+Date\+Time (
+\begin{DoxyParamCaption}
+\item[{const {\bf Rtc\+Date\+Time} \&}]{dt}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s1307_aa03bfac5015bbe14843c66c88132e8ef}{}\label{class_rtc_d_s1307_aa03bfac5015bbe14843c66c88132e8ef}
+
+
+Definition at line 80 of file Rtc\+D\+S1307.\+h.
+
+\index{Rtc\+D\+S1307@{Rtc\+D\+S1307}!Set\+Is\+Running@{Set\+Is\+Running}}
+\index{Set\+Is\+Running@{Set\+Is\+Running}!Rtc\+D\+S1307@{Rtc\+D\+S1307}}
+\subsubsection[{\texorpdfstring{Set\+Is\+Running(bool is\+Running)}{SetIsRunning(bool isRunning)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD$>$ void {\bf Rtc\+D\+S1307}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Set\+Is\+Running (
+\begin{DoxyParamCaption}
+\item[{bool}]{is\+Running}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s1307_a48280782960f2d3d6bfcc14db3382475}{}\label{class_rtc_d_s1307_a48280782960f2d3d6bfcc14db3382475}
+
+
+Definition at line 66 of file Rtc\+D\+S1307.\+h.
+
+\index{Rtc\+D\+S1307@{Rtc\+D\+S1307}!Set\+Memory@{Set\+Memory}}
+\index{Set\+Memory@{Set\+Memory}!Rtc\+D\+S1307@{Rtc\+D\+S1307}}
+\subsubsection[{\texorpdfstring{Set\+Memory(uint8\+\_\+t memory\+Address, uint8\+\_\+t value)}{SetMemory(uint8_t memoryAddress, uint8_t value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD$>$ void {\bf Rtc\+D\+S1307}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Set\+Memory (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{memory\+Address, }
+\item[{uint8\+\_\+t}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s1307_aa2b6fa5bac40e4eea1ffb6b01cd291bd}{}\label{class_rtc_d_s1307_aa2b6fa5bac40e4eea1ffb6b01cd291bd}
+
+
+Definition at line 120 of file Rtc\+D\+S1307.\+h.
+
+\index{Rtc\+D\+S1307@{Rtc\+D\+S1307}!Set\+Memory@{Set\+Memory}}
+\index{Set\+Memory@{Set\+Memory}!Rtc\+D\+S1307@{Rtc\+D\+S1307}}
+\subsubsection[{\texorpdfstring{Set\+Memory(uint8\+\_\+t memory\+Address, const uint8\+\_\+t $\ast$p\+Value, uint8\+\_\+t count\+Bytes)}{SetMemory(uint8_t memoryAddress, const uint8_t *pValue, uint8_t countBytes)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD$>$ uint8\+\_\+t {\bf Rtc\+D\+S1307}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Set\+Memory (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{memory\+Address, }
+\item[{const uint8\+\_\+t $\ast$}]{p\+Value, }
+\item[{uint8\+\_\+t}]{count\+Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s1307_ac4f358e59516475f5af176c47ccee7a2}{}\label{class_rtc_d_s1307_ac4f358e59516475f5af176c47ccee7a2}
+
+
+Definition at line 139 of file Rtc\+D\+S1307.\+h.
+
+\index{Rtc\+D\+S1307@{Rtc\+D\+S1307}!Set\+Square\+Wave\+Pin@{Set\+Square\+Wave\+Pin}}
+\index{Set\+Square\+Wave\+Pin@{Set\+Square\+Wave\+Pin}!Rtc\+D\+S1307@{Rtc\+D\+S1307}}
+\subsubsection[{\texorpdfstring{Set\+Square\+Wave\+Pin(\+D\+S1307\+Square\+Wave\+Out pin\+Mode)}{SetSquareWavePin(DS1307SquareWaveOut pinMode)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD$>$ void {\bf Rtc\+D\+S1307}$<$ T\+\_\+\+W\+I\+R\+E\+\_\+\+M\+E\+T\+H\+OD $>$\+::Set\+Square\+Wave\+Pin (
+\begin{DoxyParamCaption}
+\item[{{\bf D\+S1307\+Square\+Wave\+Out}}]{pin\+Mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_rtc_d_s1307_afacd4cf1293032ece5df359e7e7c38d5}{}\label{class_rtc_d_s1307_afacd4cf1293032ece5df359e7e7c38d5}
+
+
+Definition at line 188 of file Rtc\+D\+S1307.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+R\+T\+C/src/\hyperlink{_rtc_d_s1307_8h}{Rtc\+D\+S1307.\+h}\end{DoxyCompactItemize}

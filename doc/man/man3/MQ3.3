@@ -1,4 +1,4 @@
-.TH "MQ3" 3 "Wed Jul 5 2017" "Canary" \" -*- nroff -*-
+.TH "MQ3" 3 "Fri Oct 27 2017" "Canary" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -29,25 +29,51 @@ Inherits \fBMQSensor\fP\&.
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-Definition at line 159 of file MQSensor\&.hpp\&.
+The class of the \fBMQ3\fP sensor, with it's relevant data\&.
+.PP
+\fBAuthor:\fP
+.RS 4
+Daniel Pereira Poltronieri 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+October, 2017 Contact: danppoltronieri@gmail.com 
+.RE
+.PP
+
+.PP
+Definition at line 168 of file MQSensor\&.hpp\&.
 .SH "Constructor & Destructor Documentation"
 .PP 
 .SS "MQ3::MQ3 (const uint8_t mqpin)"
+Contructor, creates a \fBMQ3\fP object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImqpin\fP The arduino pin to which the sensor is connected\&. 
+.RE
+.PP
 
 .PP
-Definition at line 247 of file MQSensor\&.cpp\&.
+Definition at line 284 of file MQSensor\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "float const MQ3::MQGetGasPercentage (const float rs_ro_ratio, const uint8_t gas_id)"
 
-.PP
-Definition at line 251 of file MQSensor\&.cpp\&.
 .SS "float* MQ3::read (bool print)"
 
 .SS "float MQ3::readC2H5OH ()"
+Checks if the current data is old, then proceeds to either checking the sensor for the current value or returns the stored value\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The most recent C2H5OH data point\&. 
+.RE
+.PP
 
 .PP
-Definition at line 256 of file MQSensor\&.cpp\&.
+Definition at line 291 of file MQSensor\&.cpp\&.
 
 .SH "Author"
 .PP 

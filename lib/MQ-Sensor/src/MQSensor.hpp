@@ -36,6 +36,19 @@ enum GAS_TYPE : const uint8_t {
 };
 }
 
+/**
+ * \class MQSensor
+ *
+ * This is a father class to all MQSensor types, it is not intended to be
+ * instanciated, but can be used as a pointer array if your code needs so, also
+ * can be used to instanciate and use multiple types of MQ sensor in the same
+ * object.
+ *
+ * \author Daniel Pereira Poltronieri \date October, 2017 Contact:
+ * danppoltronieri@gmail.com
+ *
+ *
+ */
 class MQSensor {
 private:
 
@@ -44,6 +57,12 @@ public:
     // lembrar o nome dessa estrutura
     static MQSensor NewMQSensor(const uint8_t mqpin, const uint8_t mqtype);
     // This prevents instanciating a MQSensor and helps with inheritance
+
+    /**
+     * A fast read of the protected MQSensor::_MQ_pin value.
+     * @return
+     * A fast analogRead() of the MQSensor::_MQ_pin.
+     */
     inline double check(void){
         double temp = analogRead(_MQ_pin);
 
@@ -72,11 +91,14 @@ protected:
       _READ_SAMPLE_INTERVAL        = 50,
       _READ_SAMPLE_TIMES = 5;
     // TODO: Decidir se _RO_CLEAN_AIR_FACTOR é relevante
-    float _RO_CLEAN_AIR_FACTOR = 9.83; // Esse é um chute
-    float _Ro = 10;                    // Segundo o datasheet, deve ser igual à _RL_VALUE, e quer dizer a resistência do sensor em determinada PPM do gás principal
-    // float _RL_VALUE = 10;              // define the load resistance on the board, in kilo ohms
-    float _RL_VALUE = 1; // define the load resistance on the board, in kilo ohms
-
+    float _RO_CLEAN_AIR_FACTOR = 9.83; /*!< Basically a guess, comes in the datasheet.
+                                        */
+    float _Ro       = 10;              /*!< Acording to the datasheet, this should be equal to _RL_VALUE in a determined concentration of the gas.
+                                        * Currently unused.
+                                        */
+    float _RL_VALUE = 1;               /*!< The load resistance in the board, in kilo Ohms.
+                                        * The sensor prototyping board comes with a 1KOhm resistor in series after the MQ Sensor.
+                                        */
     MQSensor(const uint8_t mqpin);
     float const MQRead();
     float const MQGetPPM(const float sensor_tension, const float * gas_curve);
@@ -84,6 +106,17 @@ protected:
     float cleanAirCallibrate();
     float const inline MQResistanceCalculation(const float raw_adc);
 };
+
+/**
+ * \class MQDummy
+ *
+ * This is a dummy sensor, to be used to generate random values for debugging purposes.
+ *
+ * \author Daniel Pereira Poltronieri
+ * \date October, 2017
+ * Contact: danppoltronieri@gmail.com
+ *
+ */
 
 class MQDummy : public MQSensor {
 public:
@@ -103,6 +136,17 @@ protected:
     uint16_t _current_value;
 };
 
+/**
+ * \class MQPotentiometer
+ *
+ * This uses a potentiometer as a sensor, to be used to generate values for debugging purposes.
+ * May be of better use if expandanded to handle a gas curve.
+ *
+ * \author Daniel Pereira Poltronieri
+ * \date October, 2017
+ * Contact: danppoltronieri@gmail.com
+ *
+ */
 class MQPotentiometer : public MQSensor {
 public:
 
@@ -111,6 +155,16 @@ public:
 protected:
 };
 
+/**
+ * \class MQ3
+ *
+ * The class of the MQ3 sensor, with it's relevant data.
+ *
+ * \author Daniel Pereira Poltronieri
+ * \date October, 2017
+ * Contact: danppoltronieri@gmail.com
+ *
+ */
 class MQ3 : public MQSensor {
 public:
 
@@ -130,6 +184,16 @@ private:
     float _C2H5OH = 0;
 };
 
+/**
+ * \class MQ7
+ *
+ * The class of the MQ7 sensor, with it's relevant data.
+ *
+ * \author Daniel Pereira Poltronieri
+ * \date October, 2017
+ * Contact: danppoltronieri@gmail.com
+ *
+ */
 class MQ7 : public MQSensor {
 public:
 

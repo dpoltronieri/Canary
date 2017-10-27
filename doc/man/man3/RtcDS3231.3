@@ -1,0 +1,164 @@
+.TH "RtcDS3231< T_WIRE_METHOD >" 3 "Fri Oct 27 2017" "Canary" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RtcDS3231< T_WIRE_METHOD > \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <RtcDS3231\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRtcDS3231\fP (T_WIRE_METHOD &wire)"
+.br
+.ti -1c
+.RI "void \fBBegin\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsDateTimeValid\fP ()"
+.br
+.ti -1c
+.RI "bool \fBGetIsRunning\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetIsRunning\fP (bool isRunning)"
+.br
+.ti -1c
+.RI "void \fBSetDateTime\fP (const \fBRtcDateTime\fP &dt)"
+.br
+.ti -1c
+.RI "\fBRtcDateTime\fP \fBGetDateTime\fP ()"
+.br
+.ti -1c
+.RI "\fBRtcTemperature\fP \fBGetTemperature\fP ()"
+.br
+.ti -1c
+.RI "void \fBEnable32kHzPin\fP (bool enable)"
+.br
+.ti -1c
+.RI "void \fBSetSquareWavePin\fP (\fBDS3231SquareWavePinMode\fP pinMode)"
+.br
+.ti -1c
+.RI "void \fBSetSquareWavePinClockFrequency\fP (\fBDS3231SquareWaveClock\fP freq)"
+.br
+.ti -1c
+.RI "void \fBSetAlarmOne\fP (const \fBDS3231AlarmOne\fP &alarm)"
+.br
+.ti -1c
+.RI "void \fBSetAlarmTwo\fP (const \fBDS3231AlarmTwo\fP &alarm)"
+.br
+.ti -1c
+.RI "\fBDS3231AlarmOne\fP \fBGetAlarmOne\fP ()"
+.br
+.ti -1c
+.RI "\fBDS3231AlarmTwo\fP \fBGetAlarmTwo\fP ()"
+.br
+.ti -1c
+.RI "\fBDS3231AlarmFlag\fP \fBLatchAlarmsTriggeredFlags\fP ()"
+.br
+.ti -1c
+.RI "void \fBForceTemperatureCompensationUpdate\fP (bool block)"
+.br
+.ti -1c
+.RI "int8_t \fBGetAgingOffset\fP ()"
+.br
+.ti -1c
+.RI "void \fBSetAgingOffset\fP (int8_t value)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<class T_WIRE_METHOD>
+.br
+class RtcDS3231< T_WIRE_METHOD >"
+
+.PP
+Definition at line 223 of file RtcDS3231\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "template<class T_WIRE_METHOD > \fBRtcDS3231\fP< T_WIRE_METHOD >::\fBRtcDS3231\fP (T_WIRE_METHOD & wire)\fC [inline]\fP"
+
+.PP
+Definition at line 226 of file RtcDS3231\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "template<class T_WIRE_METHOD > void \fBRtcDS3231\fP< T_WIRE_METHOD >::Begin ()\fC [inline]\fP"
+
+.PP
+Definition at line 231 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > void \fBRtcDS3231\fP< T_WIRE_METHOD >::Enable32kHzPin (bool enable)\fC [inline]\fP"
+
+.PP
+Definition at line 334 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > void \fBRtcDS3231\fP< T_WIRE_METHOD >::ForceTemperatureCompensationUpdate (bool block)\fC [inline]\fP"
+
+.PP
+Definition at line 482 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > int8_t \fBRtcDS3231\fP< T_WIRE_METHOD >::GetAgingOffset ()\fC [inline]\fP"
+
+.PP
+Definition at line 495 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > \fBDS3231AlarmOne\fP \fBRtcDS3231\fP< T_WIRE_METHOD >::GetAlarmOne ()\fC [inline]\fP"
+
+.PP
+Definition at line 423 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > \fBDS3231AlarmTwo\fP \fBRtcDS3231\fP< T_WIRE_METHOD >::GetAlarmTwo ()\fC [inline]\fP"
+
+.PP
+Definition at line 449 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > \fBRtcDateTime\fP \fBRtcDS3231\fP< T_WIRE_METHOD >::GetDateTime ()\fC [inline]\fP"
+
+.PP
+Definition at line 292 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > bool \fBRtcDS3231\fP< T_WIRE_METHOD >::GetIsRunning ()\fC [inline]\fP"
+
+.PP
+Definition at line 242 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > \fBRtcTemperature\fP \fBRtcDS3231\fP< T_WIRE_METHOD >::GetTemperature ()\fC [inline]\fP"
+
+.PP
+Definition at line 319 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > bool \fBRtcDS3231\fP< T_WIRE_METHOD >::IsDateTimeValid ()\fC [inline]\fP"
+
+.PP
+Definition at line 236 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > \fBDS3231AlarmFlag\fP \fBRtcDS3231\fP< T_WIRE_METHOD >::LatchAlarmsTriggeredFlags ()\fC [inline]\fP"
+
+.PP
+Definition at line 473 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > void \fBRtcDS3231\fP< T_WIRE_METHOD >::SetAgingOffset (int8_t value)\fC [inline]\fP"
+
+.PP
+Definition at line 499 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > void \fBRtcDS3231\fP< T_WIRE_METHOD >::SetAlarmOne (const \fBDS3231AlarmOne\fP & alarm)\fC [inline]\fP"
+
+.PP
+Definition at line 398 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > void \fBRtcDS3231\fP< T_WIRE_METHOD >::SetAlarmTwo (const \fBDS3231AlarmTwo\fP & alarm)\fC [inline]\fP"
+
+.PP
+Definition at line 411 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > void \fBRtcDS3231\fP< T_WIRE_METHOD >::SetDateTime (const \fBRtcDateTime\fP & dt)\fC [inline]\fP"
+
+.PP
+Definition at line 261 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > void \fBRtcDS3231\fP< T_WIRE_METHOD >::SetIsRunning (bool isRunning)\fC [inline]\fP"
+
+.PP
+Definition at line 247 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > void \fBRtcDS3231\fP< T_WIRE_METHOD >::SetSquareWavePin (\fBDS3231SquareWavePinMode\fP pinMode)\fC [inline]\fP"
+
+.PP
+Definition at line 349 of file RtcDS3231\&.h\&.
+.SS "template<class T_WIRE_METHOD > void \fBRtcDS3231\fP< T_WIRE_METHOD >::SetSquareWavePinClockFrequency (\fBDS3231SquareWaveClock\fP freq)\fC [inline]\fP"
+
+.PP
+Definition at line 387 of file RtcDS3231\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Canary from the source code\&.
