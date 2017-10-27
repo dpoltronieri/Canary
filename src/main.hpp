@@ -1,11 +1,22 @@
 #ifndef MAIN_H
 #define  MAIN_H
+// #include "Arduino.h"
+// #include <../lib/DHT/src/dht.h>
+// #include <ldr.hpp>
+// #include <../lib/MQ-Sensor/src/MQSensor.hpp>
+// #include <../lib/PrintManager/src/PrintManager.hpp>
+// #include <../lib/RTC/src/RtcDS1307.h>
+// #include <Wire.h>
+// #include <TinyGPS++.h>
+// #include <SPI.h>
+// #include <SD.h>
+// #include <EEPROM.h>
 #include "Arduino.h"
-#include <../lib/DHT/src/dht.h>
+#include <dht.h>
 #include <ldr.hpp>
-#include <../lib/MQ-Sensor/src/MQSensor.hpp>
-#include <../lib/PrintManager/src/PrintManager.hpp>
-#include <../lib/RTC/src/RtcDS1307.h>
+#include <MQSensor.hpp>
+#include <PrintManager.hpp>
+#include <RtcDS1307.h>
 #include <Wire.h>
 #include <TinyGPS++.h>
 #include <SPI.h>
