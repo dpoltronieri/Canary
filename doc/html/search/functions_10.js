@@ -3,7 +3,7 @@ var searchData=
   ['rawdegrees',['RawDegrees',['../struct_raw_degrees.html#a156d5ced092fa1473b9b669a29be3509',1,'RawDegrees']]],
   ['rawlat',['rawLat',['../struct_tiny_g_p_s_location.html#abe2a4fbfe28299aae87c5b4c3c58bcad',1,'TinyGPSLocation']]],
   ['rawlng',['rawLng',['../struct_tiny_g_p_s_location.html#a9fe126feca0bdcfa9224a428b86d68db',1,'TinyGPSLocation']]],
-  ['read',['read',['../class_d_h_t.html#a3f36687c0c3dc3978384e7524ee46f24',1,'DHT::read()'],['../class_m_q3.html#a255ec0e64ea27c082f5d448d521a1303',1,'MQ3::read()']]],
+  ['read',['read',['../class_d_h_t.html#a3f36687c0c3dc3978384e7524ee46f24',1,'DHT']]],
   ['readc2h5oh',['readC2H5OH',['../class_m_q3.html#ab186b1fdf6217d4a175c88c26422138a',1,'MQ3']]],
   ['readcarbonmonoxide',['readCarbonMonoxide',['../class_m_q7.html#a3ce5efda2320dfb57667e37767b0d570',1,'MQ7']]],
   ['readh2',['readH2',['../class_m_q7.html#a985699da69427048ea6a01720c79bc2e',1,'MQ7']]],

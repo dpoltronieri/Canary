@@ -1,7 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"pages.html":[],
-"struct_raw_degrees.html":[5,0,12],
 "struct_raw_degrees.html#a11831d9220f303bd716d9412af28e84e":[5,0,12,2],
 "struct_raw_degrees.html#a13564009c60e20dbf03b158114d1c0e2":[5,0,12,1],
 "struct_raw_degrees.html#a156d5ced092fa1473b9b669a29be3509":[5,0,12,0],

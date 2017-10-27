@@ -235,10 +235,8 @@ var NAVTREEINDEX0 =
 "class_log_manager.html#ac888b10c83f7f2e898846cd2089cc5e2":[5,0,5,4],
 "class_log_manager.html#ad626761e95838c0e04968f362a1e7d3e":[5,0,5,1],
 "class_m_q3.html":[5,0,6],
-"class_m_q3.html#a255ec0e64ea27c082f5d448d521a1303":[5,0,6,2],
 "class_m_q3.html#a6d7d7060e08b946cbb85a5938064d0ae":[5,0,6,0],
-"class_m_q3.html#ab186b1fdf6217d4a175c88c26422138a":[5,0,6,3],
-"class_m_q3.html#abadddbaa140943a12375741adbce67fe":[5,0,6,1],
+"class_m_q3.html#ab186b1fdf6217d4a175c88c26422138a":[5,0,6,1],
 "class_m_q7.html":[5,0,7],
 "class_m_q7.html#a3ce5efda2320dfb57667e37767b0d570":[5,0,7,1],
 "class_m_q7.html#a883b2f95cfa65f7ab734057d0d8e4797":[5,0,7,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX0 =
 "class_m_q_dummy.html#af00eaac2153761e9bbdf201d95bf415a":[5,0,8,2],
 "class_m_q_potentiometer.html":[5,0,9],
 "class_m_q_potentiometer.html#a9a890ae1eee63b533f2865fcc82a5e66":[5,0,9,0],
-"class_m_q_sensor.html":[5,0,10]
+"class_m_q_sensor.html":[5,0,10],
+"class_m_q_sensor.html#a03eb97a82d462ee54ed249bc11da916a":[5,0,10,15],
+"class_m_q_sensor.html#a0f3bae5bf979432426997711ffed8acb":[5,0,10,9]
 };

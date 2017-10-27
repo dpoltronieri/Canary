@@ -17,12 +17,6 @@ Inherits \fBMQSensor\fP\&.
 .RI "\fBMQ3\fP (const uint8_t mqpin)"
 .br
 .ti -1c
-.RI "float * \fBread\fP (bool print)"
-.br
-.ti -1c
-.RI "float const \fBMQGetGasPercentage\fP (const float rs_ro_ratio, const uint8_t gas_id)"
-.br
-.ti -1c
 .RI "float \fBreadC2H5OH\fP ()"
 .br
 .in -1c
@@ -59,10 +53,6 @@ Contructor, creates a \fBMQ3\fP object\&.
 Definition at line 284 of file MQSensor\&.cpp\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "float const MQ3::MQGetGasPercentage (const float rs_ro_ratio, const uint8_t gas_id)"
-
-.SS "float* MQ3::read (bool print)"
-
 .SS "float MQ3::readC2H5OH ()"
 Checks if the current data is old, then proceeds to either checking the sensor for the current value or returns the stored value\&. 
 .PP

@@ -170,10 +170,10 @@ public:
 
     MQ3(const uint8_t mqpin);
 
-    // TODO: decidir se read(bool print) vai ser eliminado
-    float * read(bool print);
-    // Easier access function
-    float const MQGetGasPercentage(const float rs_ro_ratio, const uint8_t gas_id);
+    // // TODO: decidir se read(bool print) vai ser eliminado
+    // float * read(bool print);
+    // // Easier access function
+    // float const MQGetGasPercentage(const float rs_ro_ratio, const uint8_t gas_id);
     float readC2H5OH();
 
 

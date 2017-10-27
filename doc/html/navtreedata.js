@@ -35,8 +35,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_8_d_s3231___alarms_8vsarduino_8h.html",
-"class_m_q_sensor.html#a03eb97a82d462ee54ed249bc11da916a",
-"pages.html"
+"class_m_q_sensor.html#a2cf9585b95f5beaac2dc8edbab7eff42",
+"struct_raw_degrees.html#a11831d9220f303bd716d9412af28e84e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

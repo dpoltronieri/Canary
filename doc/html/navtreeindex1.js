@@ -1,7 +1,5 @@
 var NAVTREEINDEX1 =
 {
-"class_m_q_sensor.html#a03eb97a82d462ee54ed249bc11da916a":[5,0,10,15],
-"class_m_q_sensor.html#a0f3bae5bf979432426997711ffed8acb":[5,0,10,9],
 "class_m_q_sensor.html#a2cf9585b95f5beaac2dc8edbab7eff42":[5,0,10,24],
 "class_m_q_sensor.html#a3b011e9da2ebc25fe596444fa3cb026d":[5,0,10,1],
 "class_m_q_sensor.html#a3c6ba8a07087b67ee99941bced73e940":[5,0,10,22],
@@ -249,5 +247,7 @@ var NAVTREEINDEX1 =
 "md_README_PTBR.html":[4],
 "md_lib_DHT_PULL_REQUEST_TEMPLATE.html":[0],
 "md_lib_DHT_README.html":[1],
-"md_lib_RTC_README.html":[2]
+"md_lib_RTC_README.html":[2],
+"pages.html":[],
+"struct_raw_degrees.html":[5,0,12]
 };
