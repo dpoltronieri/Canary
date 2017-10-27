@@ -12,6 +12,17 @@ enum serialPortType : const uint8_t {
 };
 }
 
+/**
+ * \class MQSensor
+ *
+ * This library is intended to save data in a JSON format either to a SD cad or to a serial output, with multiple constructors for the object.
+ *
+ * \author Daniel Pereira Poltronieri \date October, 2017 Contact:
+ * danppoltronieri@gmail.com
+ *
+ *
+ */
+
 class PrintManager {
 public:
     PrintManager(HardwareSerial * serialPortHW)
