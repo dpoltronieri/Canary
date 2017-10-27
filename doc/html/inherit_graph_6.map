@@ -1,7 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_m_q_sensor.html" title="MQSensor" alt="" coords="5,81,89,108"/>
-<area shape="rect" id="node2" href="$class_m_q3.html" title="MQ3" alt="" coords="174,5,225,32"/>
-<area shape="rect" id="node3" href="$class_m_q7.html" title="MQ7" alt="" coords="174,56,225,83"/>
-<area shape="rect" id="node4" href="$class_m_q_dummy.html" title="MQDummy" alt="" coords="155,107,244,133"/>
-<area shape="rect" id="node5" href="$class_m_q_potentiometer.html" title="MQPotentiometer" alt="" coords="137,157,261,184"/>
-</map>
