@@ -3,6 +3,8 @@
 
 /*
  * https://www.mycurvefit.com/
+ * http://keisan.casio.com/exec/system/14059930973581
+ * http://arohatgi.info/WebPlotDigitizer/
  */
 
 /**

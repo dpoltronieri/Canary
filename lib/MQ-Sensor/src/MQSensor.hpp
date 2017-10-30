@@ -178,7 +178,7 @@ public:
 
 
 private:
-    float _C2H5OHCurve[2] = { 4.389099, 2.8093614 };
+    float _C2H5OHCurve[2] = { 3.9203077, 3.01218874 };
 
 
     float _C2H5OH = 0;
@@ -206,7 +206,7 @@ public:
 
 private:
     float _H2Curve[3],
-      _CarbonMonoxideCurve[2] = { 2.3459358, 3.1224636 };
+      _CarbonMonoxideCurve[2] = { 2.58206523, 3.04297307 };
 
 
     float _H2         = 0,
